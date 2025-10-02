@@ -61,3 +61,46 @@
   gap: 1rem;
   max-width: 220px;
 }
+
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+  .whatsapp-container {
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  .qr-section .qr-code {
+    width: 180px;
+    height: 180px;
+  }
+
+  .info-section {
+    margin-top: 1rem;
+  }
+
+  .info-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .qr-section .qr-code {
+    width: 150px;
+    height: 150px;
+  }
+
+  .info-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .info-section p {
+    font-size: 0.9rem;
+  }
+}
