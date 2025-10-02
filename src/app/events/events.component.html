@@ -23,7 +23,7 @@
           <li><a  *ngIf="isLoggedIn"
                   [routerLink]="['add-events']" [routerLinkActive]="['current']">Add an Event</a></li>
           <li><a [routerLink]="['upcoming-events']" [routerLinkActive]="['current']">Upcoming Events</a></li>
-          <li><a [routerLink]="['sunday-worship-service']" [routerLinkActive]="['current']">Sunday Worship Service</a></li>
+          <li><a [routerLink]="['saturday-worship-service']" [routerLinkActive]="['current']">Saturday Worship Service</a></li>
           <li><a [routerLink]="['holy-communion-service']" [routerLinkActive]="['current']">Holy Communion Service</a></li>
           <li><a [routerLink]="['baptism-service']" [routerLinkActive]="['current']">Baptism Service</a></li>
           <li><a [routerLink]="['midnight-prayer']" [routerLinkActive]="['current']">Midnight Prayer</a></li>
@@ -78,3 +78,7 @@
   </div> <!-- end social-content -->
 
 </section> <!-- end s-social -->
+
+
+
+<app-footer/>

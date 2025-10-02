@@ -13,7 +13,6 @@ import {
   runTransaction,
   increment, setDoc,
 } from '@angular/fire/firestore';
-import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage';
 import {Observable} from 'rxjs';
 
 @Component({

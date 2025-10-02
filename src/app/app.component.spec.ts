@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'lifeline-herne-international' title`, () => {
+  it(`should have the 'gottes-licht-dortmund' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('lifeline-herne-international');
+    expect(app.title).toEqual('gottes-licht-dortmund');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, lifeline-herne-international');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, gottes-licht-dortmund');
   });
 });

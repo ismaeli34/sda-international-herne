@@ -1,26 +1,25 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {AngularFireAuth} from '@angular/fire/compat/auth';
-import { Router } from '@angular/router';
 import { GoogleAuthProvider} from '@angular/fire/auth'
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {
   Auth,
   authState,
 } from '@angular/fire/auth';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
   private loggedIn$ = new BehaviorSubject<boolean>(false);
 
   currentUser$:Observable<any>;
-  constructor(private auth: Auth, private fireauth : AngularFireAuth,
-              private router : Router) {
+  constructor(private auth: Auth, private fireauth : AngularFireAuth, private router : Router) {
 
     // listen to auth changes
 
-    this.currentUser$ = authState(this.auth);
+  this.currentUser$ = authState(this.auth);
 
 
     this.fireauth.authState.subscribe(user => {

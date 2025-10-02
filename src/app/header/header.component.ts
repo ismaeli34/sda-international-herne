@@ -4,14 +4,27 @@ import {TranslateModule, TranslateService} from '@ngx-translate/core';
 import {AuthService} from '../services/auth.service';
 import {LanguageService} from '../services/language.service';
 import {CommonModule} from '@angular/common';
+import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-header',
   imports: [TranslateModule, RouterModule, CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
+  animations: [
+    trigger('fadeUp', [
+      transition(':enter', [ // when element enters DOM
+        style({ opacity: 0, transform: 'translateY(50px)' }),
+        animate('800ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ])
+  ]
 })
 export class HeaderComponent implements OnInit{
+
+  isMobile: boolean = false;
+
+
   languages: Language[] = [
     { lang: 'en', name: 'English', flag: '🇬🇧',  value: 'en', },
     { lang: 'de', name: 'German', flag: '🇩🇪', value: 'de' },
@@ -65,6 +78,9 @@ export class HeaderComponent implements OnInit{
 
   ngOnInit() {
     // Subscribe to language changes from the service
+
+    this.checkScreen();
+    window.addEventListener('resize', () => this.checkScreen());
     this.lang = this.languageService.getCurrentLang();
 
 
@@ -80,6 +96,10 @@ export class HeaderComponent implements OnInit{
       this.isLoggedIn = status;
       this.cdr.detectChanges();
     });
+  }
+
+  checkScreen() {
+    this.isMobile = window.innerWidth <= 1024;
   }
 
   logout(){

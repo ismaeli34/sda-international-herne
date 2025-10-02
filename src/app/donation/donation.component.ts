@@ -23,7 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
 export class DonationComponent {
   readonly panelOpenState = signal(false);
  // bankdetails = environment.bankDetails;
-
+emailAddress ="kontakt@herne-international-sda.de";
 
 
 }

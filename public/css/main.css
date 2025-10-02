@@ -3388,13 +3388,14 @@ html.no-csstransitions .hero-content {
 }
 
 .page-header--about {
-  /*background-image: url(../images/header-bgs/about-header-bg-2000.jpg);*/
-  background-image: url(../images/header-bgs/new_about_miracle_center_2.jpg);
+  background-position: center top; /* moves image down */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/header-bgs/sda_4.jpeg);
 }
 
 .page-header--contact {
-  /*background-image: url(../images/header-bgs/contact-header-bg-2000.jpg);*/
-  background-image: url(../images/header-bgs/new-contact-bg.jpg);
+  background-image: url(../images/header-bgs/sda_2.jpeg);
 
 }
 
@@ -3403,17 +3404,17 @@ html.no-csstransitions .hero-content {
 }
 
 .page-header--events {
-  background-image: url(../images/header-bgs/events-header-bg-2000.jpg);
+  background-image: url(../images/header-bgs/sda_8.jpeg);
 }
 .page-header--donation {
-  background-image: url(../images/header-bgs/miracle_center_6.jpg);
-  background-position: center top; /* moves image down */
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(../images/header-bgs/sda_22.jpeg);
 }
 
 .page-header--connect {
-  background-image: url(../images/header-bgs/connect-header-bg-2000.jpg);
+  background-image: url(../images/header-bgs/sda_3.jpeg);
+  background-position: center top; /* moves image down */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page-header--volunteer {

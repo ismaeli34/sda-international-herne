@@ -1,25 +1,12 @@
 
-///* Apply black color to all text inside this component */
-//:host {
-//  color: black;
-//
-//  /* Ensure all headings, paragraphs, lists, and bold text inherit black */
-//  h1, h2, h3, h4, h5, h6,
-//  p,
-//  ul, li,
-//  b,
-//  strong {
-//    color: black;
-//  }
-//}
-
-
-.justify-text {
+.justify-text,b,h2,ul,li {
   text-align: justify;
+  color: black;
 }
 
 .heading-margin-top {
   margin-top: -5px;
 }
+
 
 

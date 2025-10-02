@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import {CommonModule} from '@angular/common';
+import {WhatsappComponent} from '../whatsapp/whatsapp.component';
+import {ZoomComponent} from '../zoom/zoom.component';
+import {ZoomCardComponent} from '../zoom-card/zoom-card.component';
 
 
 @Component({
   selector: 'app-home',
-  imports: [ CommonModule],
+  imports: [CommonModule, WhatsappComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [

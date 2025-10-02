@@ -1,14 +1,21 @@
 .heading-margin-top{
   margin-top: -5px;
+  color: #0f3d81;
 }
 
-.welcome-text{
+
+.justify-text,b,h2,ul,li {
   text-align: justify;
+  color: black;
 }
-.justify-text{
-  text-align: justify;
+
+h3{
+  color: #0f3d81;
 
 }
+
+
+
 
 mat-expansion-panel {
   margin-bottom: 10px;

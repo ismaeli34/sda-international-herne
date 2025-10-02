@@ -3625,9 +3625,9 @@ td:last-child {
 }
 
 .intro-header__big-type {
-    font-size  : clamp(var(--text-display), var(--text-3xl) + 10vw, 18.4rem);
-    line-height: 1;
-    margin-top : 0;
+  font-size  : clamp(var(--text-display), calc(var(--text-sm) + 5vw), 12rem);
+  line-height: 1;
+  margin-top : 0;
 }
 
 .intro-pic-primary {
@@ -4742,22 +4742,38 @@ td:last-child {
     list-style : none;
     margin-left: 0;
 }
-
 .s-footer .opening-hours li {
-    display    : flex;
-    padding    : 0;
-    align-items: baseline;
+  display: flex;
+  flex-wrap: nowrap;       /* prevent line break */
+  align-items: center;
+  gap: 0.8rem;             /* optional spacing between day and time */
+}
+
+.s-footer .opening-hours__days,
+.s-footer .opening-hours__time {
+  font-size: 1.8rem;      /* smaller text */
+  white-space: nowrap;     /* prevent breaking to next line */
 }
 
 .s-footer .opening-hours__days {
-    margin-right: 1.6rem;
+  margin-right: 0.8rem;   /* optional, smaller spacing */
 }
 
-.s-footer .opening-hours__time {
-    font-size     : var(--text-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-}
+/*.s-footer .opening-hours li {*/
+/*    display    : flex;*/
+/*    padding    : 0;*/
+/*    align-items: baseline;*/
+/*}*/
+
+/*.s-footer .opening-hours__days {*/
+/*    margin-right: 1.6rem;*/
+/*}*/
+
+/*.s-footer .opening-hours__time {*/
+/*    font-size     : var(--text-sm);*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 0.02em;*/
+/*}*/
 
 .footer-block {
     margin-bottom: var(--vspace-0_5);

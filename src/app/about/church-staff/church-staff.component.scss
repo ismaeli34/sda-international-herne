@@ -1,0 +1,38 @@
+.staff-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.staff-card {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 350px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.designation {
+  font-style: italic;
+  color: #555;
+}
+
+.email {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.heading-margin-top{
+  margin-top: -20px;
+}

@@ -3,8 +3,13 @@
 
     <div class="s-header__block">
       <div class="header-logo">
-        <a class="logo"  routerLink="">
-          <img src="/Gottes Licht_logo.png" alt="Homepage" class="logo-img">
+        <a class="logo"  routerLink="" @fadeUp>
+          <img src="/sda_icon_herne.png" alt="Homepage" class="logo-img">
+          <span class="logo-text">SDA
+             <span *ngIf="!isMobile">International Church, Herne</span>
+  <span *ngIf="isMobile">Church, Herne</span>
+          </span>
+
         </a>
       </div>
     </div> <!-- end s-header__block -->
@@ -49,7 +54,7 @@
           <ul class="events-submenu" [class.is-visible]="showEventMenu">
             <li *ngIf="isLoggedIn" routerLinkActive="current"><a routerLink="/events/add-events">Add Events</a></li>
             <li routerLinkActive="current"><a routerLink="/events/upcoming-events">Upcoming Events</a></li>
-            <li routerLinkActive="current"><a routerLink="/events/sunday-worship-service">Sunday Worship Service</a></li>
+            <li routerLinkActive="current"><a routerLink="/events/saturday-worship-service">Saturday Worship Service</a></li>
             <li routerLinkActive="current"><a routerLink="/events/holy-communion-service">Holy Communion Service</a></li>
             <li routerLinkActive="current"><a routerLink="/events/baptism-service">Baptism Service</a></li>
             <li routerLinkActive="current"><a routerLink="/events/midnight-prayer">Midnight Prayer</a></li>

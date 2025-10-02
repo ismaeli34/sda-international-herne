@@ -1,4 +1,4 @@
-/* Styles for the About sidebar card */
+/* Styles for the Connect sidebar card */
 .connect-sidebar-card {
   background-color: #fff; /* White background for the card */
   border: 1px solid #e0e0e0; /* Light border */
@@ -6,9 +6,12 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
   overflow: hidden; /* Ensures border-radius applies to content */
   margin-bottom: 3rem; /* Space below the card */
+  max-width: 220px; /* Adjust to match the first image */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Styles for the optional card header (like "About IBCD") */
+/* Styles for the optional card header (like "Connect IBCD") */
 .connect-sidebar-header {
   font-size: 1.6rem; /* Adjust as needed */
   font-weight: bold;
@@ -35,7 +38,7 @@
 
 .connect-menu a {
   display: block; /* Make the whole area clickable */
-  padding: 1.5rem 2rem; /* Generous padding for each item */
+  padding: 1rem 1.2rem; /* Generous padding for each item */
   color: #333; /* Default link color */
   text-decoration: none; /* Remove underline */
   font-size: 1.1rem; /* Adjust font size */
@@ -65,15 +68,10 @@
   padding-left: 0;
 }
 
-
-
 /* You may need to also adjust the content column */
 .page-content .column.large-9 {
   padding-left: 30px; /* Adjust this value to your liking */
 }
-
-
-
 
 .welcome-text p {
   font-size: 1rem; /* medium font size, adjust if needed */
@@ -82,4 +80,25 @@
   margin-bottom: 1.5rem; /* spacing below paragraph */
 }
 
+.page-content .column.large-9 {
+  flex: 2;              /* take all remaining space */
+  max-width: 100%;      /* prevent it from shrinking */
+  padding-left: 2rem;   /* small gap from sidebar */
+}
 
+.page-header--connect {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  text-align: center;
+  min-height: 250px;         /* adjust based on how tall you want the header */
+  position: relative;        /* keeps overlay working */
+}
+
+.page-header__content {
+  margin: 0; /* remove row's default spacing */
+}
+
+.page-header__content h1 {
+  color: #ffffff;       /* ensure visible */
+}

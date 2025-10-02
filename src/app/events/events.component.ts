@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Router, RouterModule} from '@angular/router';
 import {AuthService} from '../services/auth.service';
+import {FooterComponent} from '../footer/footer.component';
 
 interface Event {
   id: number;
@@ -15,7 +16,7 @@ interface Event {
 
 @Component({
   selector: 'app-events',
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule, FooterComponent],
   templateUrl: './events.component.html',
   styleUrl: './events.component.scss'
 })

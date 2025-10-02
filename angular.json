@@ -32,9 +32,17 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "@angular/material/prebuilt-themes/azure-blue.css",
+              "src/styles.scss",
+              "public/css/styles.css",
+              "public/css/vendor.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "public/js/plugins.js",
+              "public/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -98,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

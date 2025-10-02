@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
+import {FooterComponent} from '../footer/footer.component';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [
+    FooterComponent
+  ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 
-  email ="edoprince2000@yahoo.com";
-  phone1="+49-015776393379";
-  phone2 ="+49-015211404118"
+  email ="kontakt@herne-international-sda.de";
+  phone1="+49-1621948601";
+  address ="Bochumer Str. 229,\n" +
+    "            44625 Herne"
 
 }

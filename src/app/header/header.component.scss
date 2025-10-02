@@ -10,10 +10,20 @@
 }
 
 .header-logo .logo-img {
-  width: 60px;  /* set logo width */
-  height: 60px; /* set logo height */
-  margin-right: 10px; /* space between logo and text */
-  margin-top: -40px; /* adjust the value to move it up */
+  width: 65px;   /* slightly bigger */
+  height: 65px;  /* same as width */
+  margin-right: 10px;
+  margin-top: -20px; /* adjust if needed */
+}
+
+.header-logo .logo-text {
+  color: white;              /* white text */
+  font-size: 20px;           /* adjust size */
+  font-weight: 600;          /* make it boldish */
+  line-height: 1.2;          /* spacing */
+  margin-left: 10px;         /* space between logo and text */
+  white-space: nowrap;       /* keep it in one line */
+  margin-top: -20px; /* adjust if needed */
 
 }
 /* ====== HEADER STYLES ====== */
@@ -224,3 +234,28 @@
   }
 }
 
+
+@media (max-width: 1024px) {
+  /* Make header content a flex container to align items vertically */
+  .s-header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* vertical alignment for logo and hamburger */
+  }
+
+  /* Hamburger menu adjustments */
+  .header-menu-toggle {
+    top: 30px;
+    right: 20px;
+    position: absolute; /* remove absolute positioning */
+    margin-left: auto;  /* push it to the far right if needed */
+  }
+
+  /* Optionally adjust size for mobile */
+  .header-menu-toggle span,
+  .header-menu-toggle span::before,
+  .header-menu-toggle span::after {
+    height: 3px;
+    width: 25px;
+  }
+}
