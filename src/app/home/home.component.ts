@@ -4,11 +4,12 @@ import {CommonModule} from '@angular/common';
 import {WhatsappComponent} from '../whatsapp/whatsapp.component';
 import {ZoomComponent} from '../zoom/zoom.component';
 import {ZoomCardComponent} from '../zoom-card/zoom-card.component';
+import {RouterLink} from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, WhatsappComponent],
+  imports: [CommonModule, WhatsappComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [

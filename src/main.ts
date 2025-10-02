@@ -13,12 +13,12 @@ import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBFgLHZ6m-QK_QI6AUKvZSv8322w3ft5P4",
-  authDomain: "miracle-center-angular-7eb95.firebaseapp.com",
-  projectId: "miracle-center-angular-7eb95",
-  storageBucket: "miracle-center-angular-7eb95.firebasestorage.app",
-  messagingSenderId: "248075961691",
-  appId: "1:248075961691:web:2ffab3cd06e3c7ec08867e"
+  apiKey: "AIzaSyDPyscZYlf4gkPD77LeGoR1ZphrRNo8tjE",
+  authDomain: "sda-international-herne.firebaseapp.com",
+  projectId: "sda-international-herne",
+  storageBucket: "sda-international-herne.firebasestorage.app",
+  messagingSenderId: "1021988756339",
+  appId: "1:1021988756339:web:3930877f44309a25988306"
 };
 
 bootstrapApplication(AppComponent, {
@@ -41,6 +41,6 @@ bootstrapApplication(AppComponent, {
         autoHeight: true,
         imageSize: 'cover'
       } as GalleryConfig
-    }, provideFirebaseApp(() => initializeApp({ projectId: "miracle-center-angular-7eb95", appId: "1:248075961691:web:2ffab3cd06e3c7ec08867e", storageBucket: "miracle-center-angular-7eb95.firebasestorage.app", apiKey: "AIzaSyBFgLHZ6m-QK_QI6AUKvZSv8322w3ft5P4", authDomain: "miracle-center-angular-7eb95.firebaseapp.com", messagingSenderId: "248075961691" })), provideAuth(() => getAuth()), provideFirestore(() => getFirestore())
+    }, provideFirebaseApp(() => initializeApp(firebaseConfig)), provideAuth(() => getAuth()), provideFirestore(() => getFirestore())
   ]
 }).catch(err => console.error(err));
