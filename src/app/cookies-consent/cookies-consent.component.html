@@ -1,0 +1,12 @@
+<div class="cookies-banner" *ngIf="showBanner">
+  <span class="banner-text">
+    We use cookies to ensure that we give you the best experience on our website.
+    You can read our
+    <a routerLink="/privacy-policy">privacy policy</a> by following the link.
+    If you continue to use this site we will assume that you are happy with it.
+  </span>
+  <div class="banner-actions">
+    <button class="ok-button" (click)="acceptCookies()">Ok</button>
+    <span class="close-button" (click)="closeBanner()">×</span>
+  </div>
+</div>

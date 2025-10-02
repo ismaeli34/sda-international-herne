@@ -1,0 +1,80 @@
+<!-- page header
+================================================== -->
+<section class="page-header page-header--events">
+
+  <div class="gradient-overlay"></div>
+  <div class="row page-header__content">
+    <div class="column">
+      <h1> Events</h1>
+    </div>
+  </div>
+
+</section> <!-- end page-header -->
+
+
+<!-- page content
+================================================== -->
+<section class="page-content">
+
+  <div class="row">
+    <div class="column large-3 medium-full">
+      <div class="events-sidebar-card"> <div class="events-sidebar-header">Events</div>
+        <ul class="events-menu">
+          <li><a  *ngIf="isLoggedIn"
+                  [routerLink]="['add-events']" [routerLinkActive]="['current']">Add an Event</a></li>
+          <li><a [routerLink]="['upcoming-events']" [routerLinkActive]="['current']">Upcoming Events</a></li>
+          <li><a [routerLink]="['sunday-worship-service']" [routerLinkActive]="['current']">Sunday Worship Service</a></li>
+          <li><a [routerLink]="['holy-communion-service']" [routerLinkActive]="['current']">Holy Communion Service</a></li>
+          <li><a [routerLink]="['baptism-service']" [routerLinkActive]="['current']">Baptism Service</a></li>
+          <li><a [routerLink]="['midnight-prayer']" [routerLinkActive]="['current']">Midnight Prayer</a></li>
+          <li><a [routerLink]="['child-dedication']" [routerLinkActive]="['current']">Child Dedication</a></li>
+          <li><a [routerLink]="['membership-class']" [routerLinkActive]="['current']">Membership Class</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="column large-9 medium-full">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+
+</section> <!-- end page content -->
+
+
+<!-- Social
+================================================== -->
+<section class="s-social">
+
+  <div class="row social-content">
+    <div class="column">
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a href="#0" title="">
+            <span class="social-list__icon social-list__icon--facebook"></span>
+            <span class="social-list__text">Facebook</span>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a href="#0" title="">
+            <span class="social-list__icon social-list__icon--twitter"></span>
+            <span class="social-list__text">Twitter</span>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a href="#0" title="">
+            <span class="social-list__icon social-list__icon--instagram"></span>
+            <span class="social-list__text">Instagram</span>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a href="#0" title="">
+            <span class="social-list__icon social-list__icon--email"></span>
+            <span class="social-list__text">Email</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div> <!-- end social-content -->
+
+</section> <!-- end s-social -->

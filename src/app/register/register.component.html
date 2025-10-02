@@ -1,0 +1,26 @@
+<div class="register-wrapper d-flex justify-content-center align-items-center">
+  <div class="card register-card shadow-lg">
+    <div class="card-body">
+      <form>
+        <h4 class="text-primary mb-4">Register</h4>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="email" name="email">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password">
+        </div>
+
+        <br>
+        <button type="button" class="btn btn-info mb-3" (click)="register()">Register</button>
+
+        <div class="text-center">
+          <a  style="font-size: small"  href="/login">Have an account? <span class="text-danger">Login</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

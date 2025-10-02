@@ -1,0 +1,155 @@
+{
+  "home": "Startseite",
+  "about": {
+    "main": "Über uns",
+    "about-us": "Über uns",
+    "our-pastor": "Unser Pastor",
+    "faith-statement": "Glaubensbekenntnis",
+    "our-mission": "Unsere Mission",
+    "history": "Geschichte",
+    "church-staff": "Kirchenpersonal",
+    "supporting-El Bethel AG church": "Unterstützung von Bethel",
+    "gallery": "Galerie",
+    "welcome": {
+      "subhead": "Willkommen in unserer Kirche",
+      "description": "In der El Bethel Assemblies of God Dortmund sind wir eine geistgeleitete Familie, die sich der Anbetung, dem Gebet und der Begegnung mit der Kraft Gottes im Alltag widmet. Wir glauben, dass derselbe Gott, der in der Bibel Wunder wirkte, auch heute Heilung, Befreiung und Hoffnung bringt und Leben durch Glauben und die Leitung des Heiligen Geistes verwandelt.",
+      "button": "Mehr über El Bethel Assemblies of God"
+    },
+    "schedule": {
+      "main-church-service": {
+        "title": "Hauptgottesdienst",
+        "time": "Sonntag - 11:30 Uhr",
+        "location": "Hannöversche Str. 22A, 44143 Dortmund, Deutschland"
+      },
+      "kids-church": {
+        "title": "Kinderkirche",
+        "time": "Sonntag - 11:30 Uhr",
+        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+      },
+      "prayer-meeting": {
+        "title": "Gebetstreffen",
+        "time": "Mittwoch - 18:00 bis 19:30 Uhr",
+        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+      }
+    }
+  },
+  "connect": {
+    "main": "Verbinden",
+    "bible-studies": "Bibelstudien",
+    "ministries": "Dienstbereiche",
+    "prayer-meetings": "Gebetstreffen",
+    "service-teams": "Dienstteams"
+  },
+  "events": {
+    "main": "Veranstaltungen",
+    "add-events": "Veranstaltungen hinzufügen",
+    "upcoming-events": "Bevorstehende Veranstaltungen",
+    "sunday-service": "Sonntagsgottesdienst",
+    "holy-communion": "Heilige Kommunion",
+    "baptism-service": "Taufgottesdienst",
+    "midnight-prayer": "Mitternachtsgebet",
+    "dedication": "Weihe",
+    "membership": "Mitgliedschaft",
+    "subhead": "Bevorstehende Veranstaltungen",
+    "sunday-worship": {
+      "title": "Sonntagsgottesdienst",
+      "description": "Erleben Sie einen schönen Sonntag, indem Sie mit uns in der El Bethel AG Kirche als Familie Gott loben und anbeten. 'Anbetung', geprägt von der kraftvollen und unbestreitbaren Gegenwart des Heiligen Geistes und dem lebensverändernden 'Wort', ist ein wunderbarer Start in die Woche. Treffen und pflegen Sie Gemeinschaft mit anderen Mitgliedern unserer Kirche und entdecken Sie, wie sehr Sie hier dazugehören. Wenn Sie uns noch nie besucht haben, heißen wir Sie herzlich willkommen!",
+      "meta": {
+        "date": "Jeden Sonntag",
+        "time": "11:30 Uhr",
+        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+      }
+    },
+    "prayer-service": {
+      "title": "Gebetsgottesdienst",
+      "description": "Erleben Sie die Kraft des Gebets in unserem Gebetsgottesdienst in der El Bethel AG Kirche. Als Familie kommen wir zusammen, um unsere Herzen zu Gott zu erheben und darauf zu vertrauen, dass Er in unserem Leben wirkt. In dieser geistgefüllten Atmosphäre wird Frieden wiederhergestellt, Lasten werden gelöst und Stärke erneuert. Gebet bringt uns nicht nur näher zu Gott, sondern auch zueinander. Egal, ob es Ihr erster Besuch ist oder Sie schon einmal da waren, wir heißen Sie herzlich willkommen, zu sehen, wie Gebet Ihr Leben verändern kann!",
+      "meta": {
+        "date": "Jeden Freitag",
+        "time": "18:00 - 20:00 Uhr",
+        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+      }
+    },
+    "good-morning-jesus": {
+      "title": "Guten Morgen Jesus",
+      "description": "Starten Sie Ihren Samstag schön mit 'Guten Morgen Jesus' in der El Bethel AG Kirche. Kommen Sie als Familie, um den Herrn durch aufrichtiges Gebet, erhebliche Anbetung und das lebensspendende Wort zu begrüßen. Gefüllt mit der Gegenwart des Heiligen Geistes, bringen die Morgenstunden mit Jesus Frieden, Freude und neue Kraft für die kommende Woche. Treffen und verbinden Sie sich mit anderen Mitgliedern unserer Kirche und entdecken Sie, wie sehr Sie hier dazugehören. Wenn es Ihr erster Besuch ist, heißen wir Sie herzlich willkommen!",
+      "meta": {
+        "date": "Jeden Samstag",
+        "time": "09:00 - 10:00 Uhr",
+        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+      }
+    },
+    "midnight-service": {
+      "title": "Mitternachtsgottesdienst",
+      "description": "Erleben Sie eine kraftvolle Begegnung mit Gott bei unserem Mitternachtsgottesdienst in der El Bethel AG Kirche, der am letzten Freitag jedes Monats stattfindet. Kommen Sie als Familie für Anbetung, Gebet und das lebensverändernde Wort in der Gegenwart des Heiligen Geistes. Diese heilige Zeit eignet sich perfekt für Reflexion, Erneuerung und Durchbrüche. Treffen und pflegen Sie Gemeinschaft mit anderen Mitgliedern und entdecken Sie, wie sehr Sie hier dazugehören. Wenn es Ihr erster Besuch ist, heißen wir Sie herzlich willkommen!",
+      "meta": {
+        "date": "Letzter Freitag des Monats",
+        "time": "22:00 - 02:00 Uhr",
+        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+      }
+    }
+  },
+  "support-us": "Unterstützen Sie uns",
+  "contact": "Kontakt",
+  "church": {
+    "title": "Mehr als eine Kirche – wir sind eine Familie in Christus",
+    "buttons": {
+      "about": "Über uns",
+      "events": "Bevorstehende Veranstaltungen"
+    },
+    "social": {
+      "title": "Folgen Sie uns",
+      "facebook": "Facebook",
+      "youtube": "YouTube",
+      "instagram": "Instagram"
+    },
+    "scroll": "Mehr anzeigen"
+  },
+  "series": {
+    "subhead": "Aktuelle Serie",
+    "title": "Gestalte dein Leben mit den Worten des Lebens",
+    "description": "Aut sed amet et quis aliquid laborum minus consequatur. Animi repellendus quas. Est voluptates minima ut dolorum aliquid sint. Ratione et et molestias rerum quibusdam. Deserunt suscipit ut expedita. Non numquam aut eum perferendis molestiae praesentium aliquid voluptatum numquam dolorum aliquid sint minima.",
+    "buttons": {
+      "watch-video": "Video ansehen",
+      "listen-message": "Botschaft anhören"
+    },
+    "subscribe": {
+      "text": "Verpassen Sie keine Botschaft. Abonnieren Sie unsere YouTube- und Podcast-Kanäle.",
+      "links": {
+        "apple-podcast": "Apple Podcast",
+        "spotify": "Spotify",
+        "soundcloud": "SoundCloud",
+        "youtube": "YouTube"
+      }
+    }
+  },
+  "social": {
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "instagram": "Instagram",
+    "email": "E-Mail"
+  },
+  "footer": {
+    "logo": {
+      "title": "El Bethel Assemblies of God Dortmund",
+      "subtitle": "Dortmund, Deutschland"
+    },
+    "description": "El Bethel AG ist eine Kirche, die an Jesus glaubt, eine Kirche, die Gott und Menschen liebt.",
+    "location": {
+      "title": "Unser Standort",
+      "address": "Hannöversche Str. 22A, 44143 Dortmund",
+      "button": "Wegbeschreibung"
+    },
+    "quick-links": {
+      "title": "Schnellzugriff",
+      "links": {
+        "home": "Startseite",
+        "about": "Über uns",
+        "events": "Veranstaltungen",
+        "support-us": "Unterstützen Sie uns",
+        "contact": "Kontakt"
+      }
+    },
+    "copyright": "Design von Ronney",
+    "back-to-top": "Nach oben"
+  }
+}

@@ -1,0 +1,86 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.register-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin-top: 40px;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.register-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+h4 {
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.form-control {
+  border-radius: 0.75rem;
+  padding: 0.65rem;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  width: 110%;
+  max-width: 450px;
+  margin: 0 auto;
+  display: block;
+}
+
+.form-control:focus {
+  border-color: #17a2b8;
+  box-shadow: 0 0 8px rgba(23, 162, 184, 0.3);
+}
+
+.btn-info {
+  width: 100%;
+  border-radius: 0.75rem;
+  padding: 0.6rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  color: #fff;
+}
+
+a {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+.text-center{
+  display: flex;                  /* Flexbox for layout */
+  align-items: center;            /* Vertical center */
+  justify-content: center;
+}

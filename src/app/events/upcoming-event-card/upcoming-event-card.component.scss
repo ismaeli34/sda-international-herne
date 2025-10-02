@@ -1,0 +1,82 @@
+.event-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-inline: auto;
+  gap: 20px;
+}
+
+.event-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes actions to bottom */
+}
+
+.event-info {
+  h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #2c3e50;
+  }
+
+  p {
+    font-size: 16px;
+    color: #555;
+  }
+}
+
+.event-actions {
+  margin-top: auto; /* pushes to bottom */
+  display: flex;
+  gap: 10px;
+
+  button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+
+    &:first-child {
+      background-color: #3498db;
+      color: #fff;
+
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+
+    &:last-child {
+      background-color: #e74c3c;
+      color: #fff;
+
+      &:hover {
+        background-color: #c0392b;
+      }
+    }
+  }
+}
+
+.event-flyer img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
+.heading-margin-top{
+  margin-top: -5px;
+}
+
+.justify-text{
+  text-align: justify;
+}

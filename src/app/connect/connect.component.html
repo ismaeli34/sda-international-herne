@@ -1,0 +1,30 @@
+<section class="page-header page-header--about">
+  <div class="gradient-overlay"></div>
+  <div class="row page-header__content">
+    <div class="column">
+      <h1>Connect with us</h1>
+    </div>
+  </div>
+</section>
+
+<section class="page-content">
+  <div class="row">
+    <div class="column large-3 medium-full">
+      <div class="connect-sidebar-card"> <div class="connect-sidebar-header">Connect with MCCI</div>
+        <ul class="connect-menu">
+          <li><a [routerLink]="['.']" [routerLinkActiveOptions]="{exact: true}" [routerLinkActive]="['current']">Connect with Us</a></li>
+          <li><a [routerLink]="['bible-studies']" [routerLinkActive]="['current']">Bible Studies</a></li>
+          <li><a [routerLink]="['ministries']" [routerLinkActive]="['current']">Ministries</a></li>
+          <li><a [routerLink]="['prayer-meetings']" [routerLinkActive]="['current']">Prayer Meetings</a></li>
+          <li><a [routerLink]="['service-teams']" [routerLinkActive]="['current']">Service Teams</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="column large-9 medium-full">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>
+
+

@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-content">
+    <div class="event-details">
+      <h2>{{ event.title }}</h2>
+      <p>{{ event.description }}</p>
+
+      <div *ngIf="isAdmin" class="actions">
+        <button (click)="edit.emit(event)">Edit</button>
+        <button (click)="delete.emit(event.id)">Delete</button>
+      </div>
+    </div>
+
+    <div class="event-flyer" *ngIf="event.flyer">
+      <img [src]="event.flyer" alt="Event Flyer" />
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--<div class="card">-->
+<!--  <div class="card-content">-->
+<!--    <div class="event-details">-->
+<!--      <h2>{{ event.title }}</h2>-->
+<!--      <p><strong>Description:</strong> {{ event.description }}</p>-->
+<!--      <p><strong>Audience:</strong> {{ event.audience }}</p>-->
+<!--      <p><strong>Date:</strong> {{ event.date }}</p>-->
+<!--      <p><strong>Time:</strong> {{ event.time }}</p>-->
+<!--      <p><strong>Location:</strong> {{ event.location }}</p>-->
+<!--      <p><strong>Cost:</strong> {{ event.cost }}</p>-->
+<!--      <p><strong>Action:</strong> {{ event.actionItem }}</p>-->
+<!--      <p><strong>Contact:</strong> {{ event.contactPerson }}</p>-->
+
+<!--      <div *ngIf="isAdmin" class="actions">-->
+<!--        <button (click)="edit.emit(event)">Edit</button>-->
+<!--        <button (click)="delete.emit(event.id)">Delete</button>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Flyer image on right &ndash;&gt;-->
+<!--    <div class="event-flyer" *ngIf="event.flyer">-->
+<!--      <img [src]="event.flyer" alt="Event Flyer" />-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

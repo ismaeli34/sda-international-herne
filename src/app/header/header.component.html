@@ -1,0 +1,78 @@
+<header class="s-header">
+  <div class="container s-header__content">
+
+    <div class="s-header__block">
+      <div class="header-logo">
+        <a class="logo"  routerLink="">
+          <img src="/Gottes Licht_logo.png" alt="Homepage" class="logo-img">
+        </a>
+      </div>
+    </div> <!-- end s-header__block -->
+
+
+    <nav class="header-nav-wrap" [class.is-open]="isMenuOpen">
+      <ul class="header-nav_new">
+        <!-- Home -->
+        <li routerLinkActive="current" [routerLinkActiveOptions]="{ exact: true }">
+          <a routerLink="/" title="Home">Home</a>
+        </li>
+
+        <!-- About -->
+        <li class="has-submenu" routerLinkActive="current">
+          <a routerLink="/about/about-us" title="About">About</a>
+          <ul class="about-submenu" [class.is-visible]="showAboutMenu">
+            <li routerLinkActive="current"><a routerLink="/about/about-us">About Us</a></li>
+            <li routerLinkActive="current"><a routerLink="/about/our-pastor">Our Pastor</a></li>
+            <li routerLinkActive="current"><a routerLink="/about/faith-statement">Faith Statement</a></li>
+            <li routerLinkActive="current"><a routerLink="/about/purpose-and-mission">Purpose and Mission</a></li>
+            <li routerLinkActive="current"><a routerLink="/about/history">History</a></li>
+            <li routerLinkActive="current"><a routerLink="/about/church-staff">Church Staff</a></li>
+            <li routerLinkActive="current"><a routerLink="/about/gallery">Gallery</a></li>
+          </ul>
+        </li>
+
+        <!-- Connect -->
+        <li class="has-submenu" routerLinkActive="current">
+          <a routerLink="/connect" title="Connect">Connect</a>
+          <ul class="connect-submenu" [class.is-visible]="showConnectMenu">
+            <li routerLinkActive="current"><a routerLink="/connect">Connect</a></li>
+            <li routerLinkActive="current"><a routerLink="/connect/bible-studies">Bible Studies</a></li>
+            <li routerLinkActive="current"><a routerLink="/connect/ministries">Ministries</a></li>
+            <li routerLinkActive="current"><a routerLink="/connect/prayer-meetings">Prayer Meeting</a></li>
+            <li routerLinkActive="current"><a routerLink="/connect/service-teams">Service Teams</a></li>
+          </ul>
+        </li>
+
+        <!-- Events -->
+        <li class="has-submenu" routerLinkActive="current">
+          <a routerLink="/events" title="Events">Events</a>
+          <ul class="events-submenu" [class.is-visible]="showEventMenu">
+            <li *ngIf="isLoggedIn" routerLinkActive="current"><a routerLink="/events/add-events">Add Events</a></li>
+            <li routerLinkActive="current"><a routerLink="/events/upcoming-events">Upcoming Events</a></li>
+            <li routerLinkActive="current"><a routerLink="/events/sunday-worship-service">Sunday Worship Service</a></li>
+            <li routerLinkActive="current"><a routerLink="/events/holy-communion-service">Holy Communion Service</a></li>
+            <li routerLinkActive="current"><a routerLink="/events/baptism-service">Baptism Service</a></li>
+            <li routerLinkActive="current"><a routerLink="/events/midnight-prayer">Midnight Prayer</a></li>
+            <li routerLinkActive="current"><a routerLink="/events/child-dedication">Child Dedication</a></li>
+            <li routerLinkActive="current"><a routerLink="/events/membership-class">Membership Class</a></li>
+          </ul>
+        </li>
+
+        <!-- Support Us -->
+        <li routerLinkActive="current"><a routerLink="/donation" title="Support us">Support Us</a></li>
+
+        <!-- Contact -->
+        <li routerLinkActive="current"><a routerLink="/contact" title="Contact us">Contact Us</a></li>
+
+        <!-- Login / Logout -->
+        <li *ngIf="!isLoggedIn" routerLinkActive="current"><a routerLink="/login" title="Login">Login</a></li>
+        <li *ngIf="isLoggedIn">
+          <a style="cursor:pointer;" (click)="logout()" title="Logout">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div> <!-- end s-header__content -->
+  <a class="header-menu-toggle" (click)="toggleMenu()" ><span></span></a>
+
+</header>

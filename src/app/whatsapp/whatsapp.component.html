@@ -1,0 +1,20 @@
+<!-- whatsapp-login.component.html -->
+<div class="whatsapp-container">
+  <div class="qr-section">
+    <qrcode [qrdata]="groupLink" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+  <div class="info-section">
+    <img src="/whatsapp_icon.jpg" width="50px" height="50px" alt="QR Code" class="qr-code" />
+    <h2>WhatsApp</h2>
+    <p>Scan the QR Code or <a [href]="groupLink" target="_blank"><b> <u>click here</u></b> </a> to join directly.</p>
+
+
+    <p>Use WhatsApp on your phone to scan the code</p>
+
+
+    <p class="note">
+     Join our Church Whatsapp Group
+    </p>
+  </div>
+</div>
+

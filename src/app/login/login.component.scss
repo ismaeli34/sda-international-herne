@@ -1,0 +1,104 @@
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-wrapper {
+  min-height: 100vh;           /* full viewport height */
+  display: flex;               /* flexbox */
+  justify-content: center;     /* horizontal center */
+  align-items: center;         /* vertical center */
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin-top: 40px;
+}
+.login-card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.login-card .form-control {
+  width: 110%;         /* make it larger than the card content */
+  max-width: 450px;    /* cap width for responsiveness */
+  margin: 0 auto;      /* keep it centered */
+  display: block;
+}
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+h4 {
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.form-control {
+  border-radius: 0.75rem;
+  padding: 0.65rem;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #17a2b8;
+  box-shadow: 0 0 8px rgba(23, 162, 184, 0.3);
+}
+
+.btn-info {
+  width: 100%;
+  border-radius: 0.75rem;
+  padding: 0.6rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  color: #fff;
+}
+
+a {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+.google-card {
+  display: flex;                  /* Flexbox for layout */
+  align-items: center;            /* Vertical center */
+  justify-content: center;        /* Horizontal center */
+  gap: 10px;                      /* spacing between icon and text */
+  border-radius: 0.75rem;
+  background-color: #fff;         /* match official Google button */
+  border: 1px solid #ddd;
+  padding: 0.65rem 1rem;
+  font-weight: 500;
+  color: #444;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.google-card:hover {
+  background-color: #f8f8f8;
+  transform: scale(1.02);
+}
+
+
+

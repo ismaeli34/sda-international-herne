@@ -1,0 +1,6 @@
+<div class="upcoming-events">
+  <app-upcoming-event-card
+    *ngFor="let event of events$ | async"
+    [event]="event">
+  </app-upcoming-event-card>
+</div>

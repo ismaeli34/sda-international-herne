@@ -1,0 +1,20 @@
+
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* remove underline from link */
+}
+
+.footer-logo.logo-img {
+  width: 30px;  /* set logo width */
+  height: 30px; /* set logo height */
+  margin-right: 10px; /* space between logo and text */
+  margin-top: -40px; /* adjust the value to move it up */
+
+}
