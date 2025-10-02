@@ -3414,6 +3414,10 @@ html.no-csstransitions .hero-content {
   background-image: url(../images/header-bgs/sda_22.jpeg);
 }
 
+.page-header--impressum {
+  background-image: url(../images/header-bgs/sda_7.jpeg);
+}
+
 .page-header--connect {
   background-image: url(../images/header-bgs/sda_3.jpeg);
   background-position: center top; /* moves image down */
