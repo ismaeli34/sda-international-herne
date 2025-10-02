@@ -1897,6 +1897,7 @@ ul.disc li::before {
     width         : 0.6rem;
     height        : 0.6rem;
     border-radius : 50%;
+    border-radius : 50%;
     background    : var(--color-bg-accent);
     position      : absolute;
     left          : calc(var(--vspace-0_25) * -1);
@@ -5009,3 +5010,4 @@ td:last-child {
         line-height: var(--vspace-0_75);
     }
 }
+

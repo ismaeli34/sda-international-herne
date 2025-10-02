@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
 import {CommonModule} from '@angular/common';
 import {WhatsappComponent} from '../whatsapp/whatsapp.component';
-import {ZoomComponent} from '../zoom/zoom.component';
-import {ZoomCardComponent} from '../zoom-card/zoom-card.component';
-import {RouterLink} from '@angular/router';
+
 
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, WhatsappComponent, RouterLink],
+  imports: [CommonModule, WhatsappComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [
@@ -23,4 +21,13 @@ import {RouterLink} from '@angular/router';
 })
 export class HomeComponent {
 
+  youtubeLink ="https://www.youtube.com/@LIFELINE-Herne"
+  facebookLink = "https://www.facebook.com/InternationalSDAChurchinHerne/";
+  instagramLink ="https://www.instagram.com/internationalsdachurchinherne/"
+  emailLink="kontakt@herne-international-sda.de";
+
+
+
+  constructor() {
+  }
 }

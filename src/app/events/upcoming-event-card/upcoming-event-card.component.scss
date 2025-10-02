@@ -80,3 +80,42 @@
 .justify-text{
   text-align: justify;
 }
+
+
+/* ✅ Responsive Styles */
+@media screen and (max-width: 768px) {
+  .event-card {
+    flex-direction: column; /* stack */
+    text-align: center;
+    align-items: center;
+  }
+
+  .event-left {
+    order: 2; /* show flyer first if you like */
+    width: 100%;
+  }
+
+  .event-flyer {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .event-flyer img {
+    max-width: 100%; /* full width on mobile */
+  }
+
+  .event-actions {
+    justify-content: center;
+  }
+}
+
+.heading-margin-top {
+  margin-top: -5px;
+}
+
+.justify-text {
+  text-align: justify;
+}

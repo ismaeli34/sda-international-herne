@@ -11,4 +11,11 @@ import {RouterLink} from "@angular/router";
 })
 export class FooterComponent {
 
+
+  youtubeLink ="https://www.youtube.com/@LIFELINE-Herne"
+  facebookLink = "https://www.facebook.com/InternationalSDAChurchinHerne/";
+  instagramLink ="https://www.instagram.com/internationalsdachurchinherne/"
+  emailLink="kontakt@herne-international-sda.de";
+
+
 }

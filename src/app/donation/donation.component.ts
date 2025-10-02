@@ -9,13 +9,13 @@ import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-donation',
-    imports: [
-        MatAccordion,
-        MatExpansionPanel,
-        MatExpansionPanelHeader,
-        MatExpansionPanelTitle,
-        MatIconModule
-    ],
+  imports: [
+    MatAccordion,
+    MatExpansionPanel,
+    MatExpansionPanelHeader,
+    MatExpansionPanelTitle,
+    MatIconModule,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './donation.component.html',
   styleUrl: './donation.component.scss'

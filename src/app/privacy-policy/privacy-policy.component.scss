@@ -2,7 +2,6 @@
   text-align: justify;
 }
 
-
 .privacy-container {
   max-width: 800px;
   margin: 0 auto;
@@ -34,4 +33,23 @@
 
 .privacy-container a:hover {
   text-decoration: underline;
+}
+.page-content {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  background-color: #f9f9f9; /* optional */
+}
+
+.page-header__content {
+  margin: 0; /* remove row's default spacing */
+}
+
+.page-header--privacy {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  text-align: center;
+  min-height: 250px;         /* adjust based on how tall you want the header */
+  position: relative;        /* keeps overlay working */
 }

@@ -27,3 +27,13 @@
 .impressum-container a:hover {
   text-decoration: underline;
 }
+
+
+.page-header--impressum {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  text-align: center;
+  min-height: 250px;         /* adjust based on how tall you want the header */
+  position: relative;        /* keeps overlay working */
+}
