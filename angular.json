@@ -41,7 +41,10 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "public/js/plugins.js",
-              "public/js/main.js"
+              "public/js/main.js",
+              "public/js/app.js",
+              "public/js/modernizr.js",
+              "public/js/jquery-3.2.1.min.js"
             ]
           },
           "configurations": {

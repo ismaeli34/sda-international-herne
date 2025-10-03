@@ -139,6 +139,20 @@
     --color-2-950                 : #30211a;
     --color-2                     : var(--color-2-500);
 
+
+  --color-3-50   : #fff8f2;
+  --color-3-100  : #ffe6cc;
+  --color-3-200  : #ffd1a3;
+  --color-3-300  : #ffb878;
+  --color-3-400  : #ff9f50;
+  --color-3-500  : #ff8528;
+  --color-3-600  : #e56e20;
+  --color-3-700  : #bf5719;
+  --color-3-800  : #994414;
+  --color-3-900  : #7a3510;
+  --color-3-950  : #3d1a08;
+  --color-3      : var(--color-3-500);
+
   /* neutrals
    * generated using
    * Tint & Shade Generator
@@ -188,9 +202,9 @@
     --color-bg                    : var(--color-neutral-950);
     --color-bg-inverse            : var(--color-neutral-600);
 
-    --color-bg-primary            : var(--color-1-600);
-    --color-bg-primary-light      : var(--color-1-500);
-    --color-bg-primary-dark       : var(--color-1-700);
+    --color-bg-primary            : var(--color-3-500);
+    --color-bg-primary-light      : var(--color-3-400);
+    --color-bg-primary-dark       : var(--color-3-700);
 
     --color-bg-secondary          : var(--color-2-500);
     --color-bg-secondary-light    : var(--color-2-400);
@@ -4648,7 +4662,7 @@ td:last-child {
 
 .s-footer a:focus,
 .s-footer a:hover {
-    color: var(--color-1-500);
+    color: var( --color-1-500);
 }
 
 .s-footer .grid-cols {
