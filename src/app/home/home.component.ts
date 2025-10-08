@@ -50,11 +50,13 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Matthew 22:37–39 – "Love the Lord your God with all your heart, soul, & mind and love your neighbor as yourself."', img: '/sda_27.jpeg' },
     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'John 13:34–35 – "Love one another as I have loved you. By this everyone will know you are My disciples."', img: '/sda_11.jpeg' },
     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Joshua 24:15 – "As for me and my house, we will serve the Lord."', img: '/sda_28.jpeg' },
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Psalm 133:1 – "How good and pleasant it is when God’s people live together in unity!"', img: '/sda_2.jpeg' },
+     { author: 'Welcome to', title: 'SDA International', topic: 'Church',  des: 'Hebrews 13:16 – "Do not forget to do good and to share with others, for with such sacrifices God is pleased."', img: '/sda_36.jpeg' },
+     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Psalm 133:1 – "How good and pleasant it is when God’s people live together in unity!"', img: '/sda_2.jpeg' },
     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Ephesians 4:2–3 – "Be humble, gentle, and patient. Keep the unity of the Spirit through the bond of peace."', img: '/sda_12.jpeg' },
     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Colossians 3:14 – "Above all, put on love, which binds everything together in perfect unity."', img: '/sda_16.jpeg' },
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Philippians 2:2 – "Be like-minded, having the same love, being one in spirit and purpose."', img: '/sda_34.jpeg' },
-  ];
+    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'James 2:17 – "Faith by itself, if it is not accompanied by action, is dead."', img: '/sda_35.jpeg' },
+
+   ];
 
 
   youtubeLink ="https://www.youtube.com/@LIFELINE-Herne"
