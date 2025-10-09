@@ -9,12 +9,12 @@
   text-decoration: none; /* remove underline from link */
 }
 
-.header-logo .logo-img {
-  width: 65px;   /* slightly bigger */
-  height: 65px;  /* same as width */
-  margin-right: 10px;
-  margin-top: -20px; /* adjust if needed */
-}
+//.header-logo .logo-img {
+//  width: 65px;   /* slightly bigger */
+//  height: 65px;  /* same as width */
+//  margin-right: 10px;
+//  margin-top: -20px; /* adjust if needed */
+//}
 
 .header-logo .logo-text {
   color: white;              /* white text */
@@ -28,42 +28,53 @@
 }
 /* ====== HEADER STYLES ====== */
 .s-header {
-  background-color: #000; /* Black background */
-  padding: 1rem 0;
-  position: relative;
+  background-color: black; /* Black background */
+  padding: 5rem 0;
   z-index: 1000;
-  border-bottom: 1px solid #333;
+  position: sticky; /* make it sticky */
+
+  top: 0;
 }
+
 
 .container {
   max-width: 1200px;
+  background-color: black;
   margin: 0 auto;
   padding: 0 1rem;
+  left: 0;
+  top:-32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.logo-img {
-  max-height: 60px;
-}
+//.logo-img {
+//  max-height: 700px;
+//}
 
 /* ====== NAVIGATION ====== */
 .header-nav-wrap {
+  background-color: black;
   display: flex;
+  margin-top: 0;
   flex-direction: row;
   align-items: center;
+
 }
 
 .header-nav_new {
   list-style: none;
   display: flex;
   gap: 1rem;
+
 }
 
 .header-nav_new li {
   position: relative;
+  top: 0;
+
 }
 
 .header-nav_new li a {
@@ -75,11 +86,11 @@
 }
 
 .header-nav_new li a:hover {
-  color: #00bfff;
+  color: #f1683b;
 }
 
 .header-nav_new li.current > a {
-  color: #00bfff;
+  color: #f1683b;
 }
 
 /* ====== SUBMENU STYLES ====== */
@@ -118,7 +129,7 @@
 }
 
 .has-submenu ul li a {
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem ;
   white-space: nowrap;
   color: #fff;
 }
@@ -241,6 +252,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center; /* vertical alignment for logo and hamburger */
+    flex-wrap: wrap;
+
   }
 
   /* Hamburger menu adjustments */

@@ -3239,7 +3239,7 @@ td:last-child {
 }
 
 .s-header .s-header__content {
-    background-color: transparent;
+    /*background-color: transparent;*/
 }
 
 .s-header.offset {
