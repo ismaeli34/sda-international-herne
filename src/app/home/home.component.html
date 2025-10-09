@@ -8,10 +8,10 @@
       <div class="item" *ngFor="let slide of slides; let i = index" [class.active]="i === currentIndex">
         <div class="item-inner">
           <div class="content">
-            <div class="author">{{slide.author}}</div>
-            <div class="title">{{slide.title}}</div>
-            <div class="topic">{{slide.topic}}</div>
-            <div class="des">{{slide.des}}</div>
+            <div @fadeUp  class="author">{{slide.author}}</div>
+            <div @fadeUp class="title">{{slide.title}}</div>
+            <div @fadeUp class="topic">{{slide.topic}}</div>
+            <div @fadeUp class="des">{{slide.des}}</div>
 
           </div>
           <img [src]="slide.img" [alt]="slide.title" />

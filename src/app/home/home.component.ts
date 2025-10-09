@@ -10,6 +10,13 @@ import {HomeGalleryComponent} from './home-gallery/home-gallery.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [
+    trigger('fadeUp', [
+      transition(':enter', [ // when element enters DOM
+        style({ opacity: 0, transform: 'translateY(50px)' }),
+        animate('800ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ]),
+
     trigger('carouselFade', [
       transition(':increment', [
         query(':enter, :leave', style({ position: 'absolute', width: '100%', height: '100%' }), { optional: true }),
@@ -23,6 +30,7 @@ import {HomeGalleryComponent} from './home-gallery/home-gallery.component';
           ], { optional: true })
         ])
       ]),
+
       transition(':decrement', [
         query(':enter, :leave', style({ position: 'absolute', width: '100%', height: '100%' }), { optional: true }),
         group([
