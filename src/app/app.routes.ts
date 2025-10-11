@@ -19,7 +19,7 @@ import {ZoomComponent} from './zoom/zoom.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   // lazy loading
-  { path:'about', loadChildren:() =>       import('./about/about.routes').then(m => m.ABOUT_ROUTES)
+  { path:'about', loadChildren:() =>       import('./about/about.module').then(m => m.AboutModule)
   },
   {path:'connect',loadChildren:()=> import('./connect/connect.module').then(m=>m.ConnectModule)},
   {path:'events',loadChildren:()=> import('./events/events.module').then(m=>m.EventsModule)},

@@ -11,6 +11,7 @@ import {UpcomingEventsComponent} from './upcoming-events/upcoming-events.compone
 import {AddEventsComponent} from './add-events/add-events.component';
 import {UpdateUpcomingEventCardComponent} from './update-upcoming-event-card/update-upcoming-event-card.component';
 import {SaturdayWorshipServiceComponent} from './saturday-worship-service/saturday-worship-service.component';
+import {AuthGuard} from '../auth.guard';
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
       {path:'membership-class',component: MembershipClassComponent},
       {path:'upcoming-events',component: UpcomingEventsComponent},
       {path:'update-upcoming-events/:id',component: UpdateUpcomingEventCardComponent},
-      {path:'add-events',component: AddEventsComponent}
+      {path:'add-events',component: AddEventsComponent, canActivate: [AuthGuard]}
 
 
     ]

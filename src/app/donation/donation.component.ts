@@ -14,7 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatExpansionPanel,
     MatExpansionPanelHeader,
     MatExpansionPanelTitle,
-    MatIconModule,
+    MatIconModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './donation.component.html',

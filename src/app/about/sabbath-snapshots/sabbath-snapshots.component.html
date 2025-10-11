@@ -1,0 +1,17 @@
+<h1 style="color: #0f3d81; margin-top: -10px">Sabbath Snapshots</h1>
+<div class="snapshots-container">
+  <div class="card-grid">
+    <div class="card" *ngFor="let event of events$ | async">
+      <div class="card-header">
+        <h3>{{ event.eventName }}</h3>
+        <p class="date">{{ event.eventDate  }}</p>
+      </div>
+
+      <p class="details">{{ event.eventDetails }}</p>
+
+      <div class="image-gallery">
+        <img *ngFor="let img of event.imagesBase64" [src]="img" alt="Sabbath Event Image" />
+      </div>
+    </div>
+  </div>
+</div>

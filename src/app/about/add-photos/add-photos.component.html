@@ -1,0 +1,30 @@
+<div class="event-form">
+  <h2>Add Photo For Sabbath Day</h2>
+  <form #photoForm="ngForm" (ngSubmit)="onSubmit(photoForm.value)">
+    <input type="text" name="eventName" placeholder="Event Name" ngModel required />
+    <input type="date" name="eventDate" ngModel required />
+    <textarea name="eventDetails" placeholder="Event Details" ngModel required></textarea>
+    <input type="file" (change)="onFilesSelected($event)" multiple required />
+
+    <div *ngIf="previewUrls.length > 0" class="preview-multiple">
+      <img *ngFor="let url of previewUrls" [src]="url" alt="Preview" width="100" />
+    </div>
+
+    <button type="submit">Upload Event</button>
+  </form>
+</div>
+
+<hr />
+
+<h2>Sabbath Moments 🌿</h2>
+<div class="event-cards">
+  <div class="card" *ngFor="let event of events$ | async">
+    <!-- Show first image of the event -->
+    <img *ngIf="event.imagesBase64?.length" [src]="event.imagesBase64[0]" alt="Event Image" width="200" />
+    <h3>{{ event.eventName }}</h3>
+<!--    <p>{{ event.eventDate }}</p>-->
+    <p>{{ event.eventDetails }}</p>
+    <!-- Delete button (visible only for admins) -->
+    <button  (click)="deleteEvent(event.id)" class="delete-btn">Delete</button>
+  </div>
+</div>

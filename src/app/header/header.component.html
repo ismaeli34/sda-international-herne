@@ -34,6 +34,8 @@
             <li routerLinkActive="current"><a routerLink="/about/history">History</a></li>
             <li routerLinkActive="current"><a routerLink="/about/church-staff">Church Staff</a></li>
             <li routerLinkActive="current"><a routerLink="/about/gallery">Gallery</a></li>
+            <li routerLinkActive="current"><a routerLink="/about/sabbath-snapshots">Sabbath Snapshots</a></li>
+            <li *ngIf="isLoggedIn" routerLinkActive="current"><a routerLink="/about/add-photos">Add Sabbath Photo</a></li>
           </ul>
         </li>
 

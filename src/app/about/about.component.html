@@ -19,6 +19,9 @@
           <li><a [routerLink]="['history']" [routerLinkActive]="['current']">Church History</a></li>
           <li><a [routerLink]="['church-staff']" [routerLinkActive]="['current']">Church Staff</a></li>
           <li><a [routerLink]="['gallery']" [routerLinkActive]="['current']">Gallery</a></li>
+          <li><a [routerLink]="['sabbath-snapshots']" [routerLinkActive]="['current']">Sabbath Snapshots</a></li>
+          <li><a  *ngIf="isLoggedIn"
+                  [routerLink]="['add-photos']" [routerLinkActive]="['current']">Add Sabbath Photos </a></li>
 
         </ul>
       </div>
