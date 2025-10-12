@@ -7,84 +7,84 @@
     "faith-statement": "Glaubensbekenntnis",
     "our-mission": "Unsere Mission",
     "history": "Geschichte",
-    "church-staff": "Kirchenpersonal",
-    "supporting-El Bethel AG church": "Unterstützung von Bethel",
+    "church-staff": "Kirchenmitarbeiter",
+    "supporting": "Unterstützung der SDA",
     "gallery": "Galerie",
     "welcome": {
       "subhead": "Willkommen in unserer Kirche",
-      "description": "In der El Bethel Assemblies of God Dortmund sind wir eine geistgeleitete Familie, die sich der Anbetung, dem Gebet und der Begegnung mit der Kraft Gottes im Alltag widmet. Wir glauben, dass derselbe Gott, der in der Bibel Wunder wirkte, auch heute Heilung, Befreiung und Hoffnung bringt und Leben durch Glauben und die Leitung des Heiligen Geistes verwandelt.",
-      "button": "Mehr über El Bethel Assemblies of God"
+      "description": "In der Siebenten-Tags-Adventisten-Gemeinde Herne sind wir eine geistgeleitete Familie, die sich der Anbetung, dem Gebet und dem Erleben der Kraft Gottes im Alltag widmet. Wir glauben, dass derselbe Gott, der in der Bibel Wunder vollbracht hat, auch heute Heilung, Befreiung und Hoffnung bringt und Leben durch Glauben und die Führung des Heiligen Geistes transformiert.",
+      "button": "Mehr über die Siebenten-Tags-Adventisten-Gemeinde Herne"
     },
     "schedule": {
       "main-church-service": {
         "title": "Hauptgottesdienst",
         "time": "Sonntag - 11:30 Uhr",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund, Deutschland"
+        "location": "Bochumer Str. 229, 44625 Herne, Deutschland"
       },
       "kids-church": {
         "title": "Kinderkirche",
         "time": "Sonntag - 11:30 Uhr",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
       },
       "prayer-meeting": {
         "title": "Gebetstreffen",
         "time": "Mittwoch - 18:00 bis 19:30 Uhr",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
       }
     }
   },
   "connect": {
     "main": "Verbinden",
     "bible-studies": "Bibelstudien",
-    "ministries": "Dienstbereiche",
+    "ministries": "Dienste",
     "prayer-meetings": "Gebetstreffen",
-    "service-teams": "Dienstteams"
+    "service-teams": "Serviceteams"
   },
   "events": {
     "main": "Veranstaltungen",
     "add-events": "Veranstaltungen hinzufügen",
-    "upcoming-events": "Bevorstehende Veranstaltungen",
+    "upcoming-events": "Kommende Veranstaltungen",
     "sunday-service": "Sonntagsgottesdienst",
     "holy-communion": "Heilige Kommunion",
     "baptism-service": "Taufgottesdienst",
     "midnight-prayer": "Mitternachtsgebet",
-    "dedication": "Weihe",
+    "dedication": "Einweihung",
     "membership": "Mitgliedschaft",
-    "subhead": "Bevorstehende Veranstaltungen",
+    "subhead": "Kommende Veranstaltungen",
     "sunday-worship": {
       "title": "Sonntagsgottesdienst",
-      "description": "Erleben Sie einen schönen Sonntag, indem Sie mit uns in der El Bethel AG Kirche als Familie Gott loben und anbeten. 'Anbetung', geprägt von der kraftvollen und unbestreitbaren Gegenwart des Heiligen Geistes und dem lebensverändernden 'Wort', ist ein wunderbarer Start in die Woche. Treffen und pflegen Sie Gemeinschaft mit anderen Mitgliedern unserer Kirche und entdecken Sie, wie sehr Sie hier dazugehören. Wenn Sie uns noch nie besucht haben, heißen wir Sie herzlich willkommen!",
+      "description": "Erleben Sie einen schönen Sonntag, indem Sie Gott bei der Siebenten-Tags-Adventisten-Gemeinde Herne mit Lobpreis und Anbetung als Familie preisen. Ein ‚Gottesdienst‘, gewürzt mit der mächtigen und unbestreitbaren Gegenwart des Heiligen Geistes und dem lebensverändernden ‚Wort‘, ist eine wunderbare Art, Ihre Woche zu beginnen. Treffen Sie andere Mitglieder unserer Kirche und staunen Sie, wie sehr Sie hier dazugehören. Wenn Sie uns noch nie besucht haben, laden wir Sie herzlich ein!",
       "meta": {
         "date": "Jeden Sonntag",
         "time": "11:30 Uhr",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
       }
     },
     "prayer-service": {
       "title": "Gebetsgottesdienst",
-      "description": "Erleben Sie die Kraft des Gebets in unserem Gebetsgottesdienst in der El Bethel AG Kirche. Als Familie kommen wir zusammen, um unsere Herzen zu Gott zu erheben und darauf zu vertrauen, dass Er in unserem Leben wirkt. In dieser geistgefüllten Atmosphäre wird Frieden wiederhergestellt, Lasten werden gelöst und Stärke erneuert. Gebet bringt uns nicht nur näher zu Gott, sondern auch zueinander. Egal, ob es Ihr erster Besuch ist oder Sie schon einmal da waren, wir heißen Sie herzlich willkommen, zu sehen, wie Gebet Ihr Leben verändern kann!",
+      "description": "Erleben Sie die Kraft des Gebets bei unserem Gebetsgottesdienst in der Siebenten-Tags-Adventisten-Gemeinde Herne. Als Familie kommen wir zusammen, um unsere Herzen zu Gott zu erheben, im Vertrauen darauf, dass Er in unserem Leben wirkt. In dieser vom Geist erfüllten Atmosphäre wird Frieden wiederhergestellt, Lasten werden gehoben und Kraft erneuert. Gebet bringt uns nicht nur näher zu Gott, sondern auch zueinander. Ob Sie zum ersten Mal hier sind oder schon zuvor, wir heißen Sie herzlich willkommen, zu sehen, wie Gebet Ihr Leben verändern kann!",
       "meta": {
         "date": "Jeden Freitag",
         "time": "18:00 - 20:00 Uhr",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
       }
     },
     "good-morning-jesus": {
       "title": "Guten Morgen Jesus",
-      "description": "Starten Sie Ihren Samstag schön mit 'Guten Morgen Jesus' in der El Bethel AG Kirche. Kommen Sie als Familie, um den Herrn durch aufrichtiges Gebet, erhebliche Anbetung und das lebensspendende Wort zu begrüßen. Gefüllt mit der Gegenwart des Heiligen Geistes, bringen die Morgenstunden mit Jesus Frieden, Freude und neue Kraft für die kommende Woche. Treffen und verbinden Sie sich mit anderen Mitgliedern unserer Kirche und entdecken Sie, wie sehr Sie hier dazugehören. Wenn es Ihr erster Besuch ist, heißen wir Sie herzlich willkommen!",
+      "description": "Starten Sie Ihren Samstag schön mit ‚Guten Morgen Jesus‘ in der Siebenten-Tags-Adventisten-Gemeinde Herne. Kommen Sie als Familie zusammen, um den Herrn durch aufrichtiges Gebet, erhebende Anbetung und das lebensspendende Wort zu begrüßen. Gefüllt mit der Gegenwart des Heiligen Geistes bringen die Morgenstunden mit Jesus Frieden, Freude und neue Kraft für die kommende Woche. Treffen und verbinden Sie sich mit anderen Mitgliedern unserer Kirche und staunen Sie, wie sehr Sie hier dazugehören. Wenn es Ihr erster Besuch ist, heißen wir Sie herzlich willkommen!",
       "meta": {
         "date": "Jeden Samstag",
-        "time": "09:00 - 10:00 Uhr",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "time": "9:00 - 10:00 Uhr",
+        "location": "Bochumer Str. 229, 44625 Herne"
       }
     },
     "midnight-service": {
       "title": "Mitternachtsgottesdienst",
-      "description": "Erleben Sie eine kraftvolle Begegnung mit Gott bei unserem Mitternachtsgottesdienst in der El Bethel AG Kirche, der am letzten Freitag jedes Monats stattfindet. Kommen Sie als Familie für Anbetung, Gebet und das lebensverändernde Wort in der Gegenwart des Heiligen Geistes. Diese heilige Zeit eignet sich perfekt für Reflexion, Erneuerung und Durchbrüche. Treffen und pflegen Sie Gemeinschaft mit anderen Mitgliedern und entdecken Sie, wie sehr Sie hier dazugehören. Wenn es Ihr erster Besuch ist, heißen wir Sie herzlich willkommen!",
+      "description": "Erleben Sie eine kraftvolle Begegnung mit Gott in unserem Mitternachtsgottesdienst in der Siebenten-Tags-Adventisten-Gemeinde Herne, der am letzten Freitag eines jeden Monats stattfindet. Kommen Sie als Familie zur Anbetung, zum Gebet und zum lebensverändernden Wort in der Gegenwart des Heiligen Geistes. Diese heilige Zeit ist ideal für Reflexion, Erneuerung und Durchbrüche. Treffen und feiern Sie mit anderen Mitgliedern und staunen Sie, wie sehr Sie hier dazugehören. Wenn es Ihr erster Besuch ist, heißen wir Sie herzlich willkommen!",
       "meta": {
-        "date": "Letzter Freitag des Monats",
-        "time": "22:00 - 02:00 Uhr",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "date": "Letzter Freitag im Monat",
+        "time": "22:00 - 2:00 Uhr",
+        "location": "Bochumer Str. 229, 44625 Herne"
       }
     }
   },
@@ -94,7 +94,7 @@
     "title": "Mehr als eine Kirche – wir sind eine Familie in Christus",
     "buttons": {
       "about": "Über uns",
-      "events": "Bevorstehende Veranstaltungen"
+      "events": "Kommende Veranstaltungen"
     },
     "social": {
       "title": "Folgen Sie uns",
@@ -102,18 +102,18 @@
       "youtube": "YouTube",
       "instagram": "Instagram"
     },
-    "scroll": "Mehr anzeigen"
+    "scroll": "Scrollen Sie für mehr"
   },
   "series": {
     "subhead": "Aktuelle Serie",
-    "title": "Gestalte dein Leben mit den Worten des Lebens",
+    "title": "Gestalte dein Leben mit dem Wort des Lebens",
     "description": "Aut sed amet et quis aliquid laborum minus consequatur. Animi repellendus quas. Est voluptates minima ut dolorum aliquid sint. Ratione et et molestias rerum quibusdam. Deserunt suscipit ut expedita. Non numquam aut eum perferendis molestiae praesentium aliquid voluptatum numquam dolorum aliquid sint minima.",
     "buttons": {
       "watch-video": "Video ansehen",
       "listen-message": "Botschaft anhören"
     },
     "subscribe": {
-      "text": "Verpassen Sie keine Botschaft. Abonnieren Sie unsere YouTube- und Podcast-Kanäle.",
+      "text": "Verpassen Sie nie eine Botschaft. Abonnieren Sie unsere YouTube- und Podcast-Kanäle.",
       "links": {
         "apple-podcast": "Apple Podcast",
         "spotify": "Spotify",
@@ -130,17 +130,17 @@
   },
   "footer": {
     "logo": {
-      "title": "El Bethel Assemblies of God Dortmund",
-      "subtitle": "Dortmund, Deutschland"
+      "title": "Lifeline Siebenten-Tags-Adventisten Herne",
+      "subtitle": "Herne, Deutschland"
     },
-    "description": "El Bethel AG ist eine Kirche, die an Jesus glaubt, eine Kirche, die Gott und Menschen liebt.",
+    "description": "Die Siebenten-Tags-Adventisten-Gemeinde Herne ist eine Kirche, die an Jesus glaubt, eine Kirche, die Gott und Menschen liebt.",
     "location": {
       "title": "Unser Standort",
-      "address": "Hannöversche Str. 22A, 44143 Dortmund",
+      "address": "Bochumer Str. 229, 44625 Herne",
       "button": "Wegbeschreibung"
     },
     "quick-links": {
-      "title": "Schnellzugriff",
+      "title": "Schnellzugriffe",
       "links": {
         "home": "Startseite",
         "about": "Über uns",

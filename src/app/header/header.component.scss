@@ -1,274 +1,274 @@
-.header-logo {
-  display: flex;
-  align-items: center;
-}
 
-.header-logo .logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none; /* remove underline from link */
-}
 
-//.header-logo .logo-img {
-//  width: 65px;   /* slightly bigger */
-//  height: 65px;  /* same as width */
-//  margin-right: 10px;
-//  margin-top: -20px; /* adjust if needed */
-//}
-
-.header-logo .logo-text {
-  color: white;              /* white text */
-  font-size: 20px;           /* adjust size */
-  font-weight: 600;          /* make it boldish */
-  line-height: 1.2;          /* spacing */
-  margin-left: 10px;         /* space between logo and text */
-  white-space: nowrap;       /* keep it in one line */
-  margin-top: -20px; /* adjust if needed */
-
-}
-/* ====== HEADER STYLES ====== */
 .s-header {
-  background-color: black; /* Black background */
-  padding: 5rem 0;
-  z-index: 1000;
-  position: sticky; /* make it sticky */
-
+  position: fixed;
   top: 0;
-}
-
-
-.container {
-  max-width: 1200px;
-  background-color: black;
-  margin: 0 auto;
-  padding: 0 1rem;
   left: 0;
-  top:-32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent ;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  color: white;
 }
 
-//.logo-img {
-//  max-height: 700px;
-//}
-
-/* ====== NAVIGATION ====== */
-.header-nav-wrap {
-  background-color: black;
-  display: flex;
-  margin-top: 0;
-  flex-direction: row;
-  align-items: center;
-
+.header-logo .logo-img {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  margin-top: 10px; /* adjust if needed */
 }
 
-.header-nav_new {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-
+/* When scrolled */
+.s-header.scrolled {
+  background-color: #fb8b24;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.header-nav_new li {
-  position: relative;
-  top: 0;
+/* Optional: change links color on scroll */
 
+.s-header a {
+  color: white;
 }
 
-.header-nav_new li a {
-  color: #fff;
-  padding: 0.75rem 1rem;
-  display: block;
-  font-weight: 500;
+.header-nav-wrap .header-nav > li > a {
+  font-family: 'Poppins', 'Arial', sans-serif; /* clean, modern font */
+  font-size: 11px;       /* bigger size for top-level items */
+  font-weight: 700;      /* bold */
+  color: white;        /* white text */
+  text-decoration: none;
+  padding: 10px 10px;    /* space around text */
   transition: color 0.3s ease;
 }
 
-.header-nav_new li a:hover {
-  color: #f1683b;
+
+
+.site-logo {
+  display: flex;
+  align-items: center; /* vertically center icon and text */
+  text-decoration: none;
 }
 
-.header-nav_new li.current > a {
-  color: #f1683b;
+.logo-icon {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
 }
 
-/* ====== SUBMENU STYLES ====== */
-/* ====== SUBMENU STYLES ====== */
-.has-submenu ul {
-  position: absolute;
-  top: calc(100% - 1px); /* Slight overlap to close the gap */
-  left: 0;
-  background-color: #111;
+.logo-text {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'waterfall', cursive;
+
+}
+
+.logo-text-2 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.logo-text-3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.logo-box {
+  color: white;
+  display: flex;
+  flex-direction: column; /* title & subtitle stacked */
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.logo-title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.logo-subtitle {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.header-nav-wrap {
   display: none;
-  list-style: none;
-  min-width: 200px;
-  border: 1px solid #333;
-  z-index: 999;
-  margin: 0;
-  padding: 0.5rem 0; /* Consistent padding, no top margin */
 }
 
-.has-submenu > a {
-  position: relative;
-  z-index: 1000; /* Ensure parent link stays above submenu border if needed */
-}
-
-/* On desktop hover */
-@media (min-width: 1025px) {
-  .has-submenu:hover > ul {
-    display: block;
-  }
-}
-
-/* Show submenu when Angular adds is-visible */
-.about-submenu.is-visible,
-.connect-submenu.is-visible,
-.events-submenu.is-visible {
-  display: block !important;
-}
-
-.has-submenu ul li a {
-  padding: 1rem 1rem ;
-  white-space: nowrap;
-  color: #fff;
-}
-
-.has-submenu ul li a:hover {
-  background-color: #222;
-}
-
-/* ====== HAMBURGER MENU ====== */
-/* ====== HAMBURGER MENU ====== */
-.header-menu-toggle {
-  display: none;
-  cursor: pointer;
-  position: absolute;
-  right: 1rem;
-  top: 1.2rem;
-  z-index: 1001;
-  /* Define a clear size for the clickable area */
-  width: 25px;
-  height: 21px;
-}
-
-/* This is the MIDDLE bar and acts as the positioning anchor */
-.header-menu-toggle span {
+.header-nav-wrap.is-open {
   display: block;
+}
+
+
+/* Submenu container */
+.has-submenu {
   position: relative;
-  /* Vertically center the middle bar inside the toggle area */
-  top: 9px;
-  height: 3px;
-  width: 100%;
-  background: #fff;
-  transition: all 0.3s ease-in-out;
 }
 
-/* These are the TOP and BOTTOM bars */
-.header-menu-toggle span::before,
-.header-menu-toggle span::after {
-  content: '';
+// ABOUT SUBMENU STYLES
+
+.about-submenu {
   position: absolute;
+  top: 100%; /* Position below the "About" link */
   left: 0;
-  height: 3px;
-  width: 100%;
-  background: #fff;
-  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 250px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: visibility 0s, opacity 0.3s, transform 0.3s;
+  z-index: 10; /* Ensure it's above other content */
 }
 
-/* Position the TOP bar 9px above the middle bar */
-.header-menu-toggle span::before {
-  top: -9px;
+/* Submenu when visible */
+.about-submenu.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Position the BOTTOM bar 9px below the middle bar */
-.header-menu-toggle span::after {
-  top: 9px;
+.about-submenu li {
+  padding: 0;
+  width: 95%;
+  border-bottom: 1px solid #eee;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 1024px) {
-  .header-nav-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    background-color: #000;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 1rem;
-    border-top: 1px solid #222;
+.about-submenu li:last-child {
+  border-bottom: none;
+}
+
+.about-submenu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.about-submenu a:hover {
+  background-color: lightgrey;
+}
+
+
+// CONNECT SUBMENU STYLES
+.connect-submenu {
+  position: absolute;
+  top: 100%; /* Position below the "About" link */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 250px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: visibility 0s, opacity 0.3s, transform 0.3s;
+  z-index: 10; /* Ensure it's above other content */
+}
+
+
+/* Submenu when visible */
+.connect-submenu.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.connect-submenu  li {
+  padding: 0;
+  width: 95%;
+  border-bottom: 1px solid #eee;
+}
+
+.connect-submenu  li:last-child {
+  border-bottom: none;
+}
+
+.connect-submenu  a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #000000;
+
+}
+
+.connect-submenu a:hover {
+  background-color: lightgrey;
+}
+
+
+
+//Events submenu styles
+
+.events-submenu {
+  position: absolute;
+  top: 100%; /* Position below the "About" link */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 250px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: visibility 0s, opacity 0.3s, transform 0.3s;
+  z-index: 10; /* Ensure it's above other content */
+}
+
+
+/* Submenu when visible */
+.events-submenu.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.events-submenu  li {
+  padding: 0;
+  width: 95%;
+  border-bottom: 1px solid #eee;
+}
+
+.events-submenu  li:last-child {
+  border-bottom: none;
+}
+
+.events-submenu  a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #000000;
+
+}
+
+.events-submenu a:hover {
+  background-color: lightgrey;
+}
+
+
+.logo-hide-mobile {
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .logo-hide-mobile {
     display: none;
   }
 
-  .header-nav-wrap.is-open {
-    display: flex;
-  }
 
-  .header-nav_new {
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
-  }
 
-  .header-nav_new li {
-    width: 100%;
-  }
-
-  .header-nav_new li a {
-    padding: 1rem;
-    border-bottom: 1px solid #111;
-  }
-
-  .has-submenu ul {
-    position: static;
-    background-color: #111;
-    border: none;
-    padding-left: 1rem;
-    display: none;
-    width: 100%;
-  }
-
-  .has-submenu ul li a {
-    padding: 0.75rem 1rem;
-  }
-
-  /* Submenus will show when Angular toggles `.is-visible` class */
-  .about-submenu.is-visible,
-  .connect-submenu.is-visible,
-  .events-submenu.is-visible {
-    display: block;
-  }
-
-  .header-menu-toggle {
-    display: block;
-  }
 }
 
 
-@media (max-width: 1024px) {
-  /* Make header content a flex container to align items vertically */
-  .s-header__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* vertical alignment for logo and hamburger */
-    flex-wrap: wrap;
-
-  }
-
-  /* Hamburger menu adjustments */
-  .header-menu-toggle {
-    top: 30px;
-    right: 20px;
-    position: absolute; /* remove absolute positioning */
-    margin-left: auto;  /* push it to the far right if needed */
-  }
-
-  /* Optionally adjust size for mobile */
-  .header-menu-toggle span,
-  .header-menu-toggle span::before,
-  .header-menu-toggle span::after {
-    height: 3px;
-    width: 25px;
-  }
-}

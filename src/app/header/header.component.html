@@ -1,86 +1,108 @@
-<header class="s-header">
-  <div class="container s-header__content">
-
-    <div class="s-header__block">
-      <div class="header-logo">
-        <a class="logo"  routerLink="" @fadeUp>
-          <img src="/sda_icon.svg" style="margin-bottom: 10px" alt="Homepage" class="logo-img">
-          <img src="/logo_text_2.png"  alt="Homepage" class="logo-img">
-<!--          <span class="logo-text">SDA-->
-<!--             <span *ngIf="!isMobile">International Church, Herne</span>-->
-<!--  <span *ngIf="isMobile">Church, Herne</span>-->
-<!--          </span>-->
-
-        </a>
+<header class="s-header" [class.scrolled]="isScrolled">
+  <div class="header-logo">
+    <a class="site-logo" routerLink="/">
+      <img src="/sda_icon.svg" style="margin-bottom: 10px" alt="Homepage" class="logo-img">
+      <div class="logo-text-group">
+        <span class="logo-text">Lifeline</span>
+        <span class="logo-text-2">Seventh Day Adventist Church, Herne</span>
       </div>
-    </div> <!-- end s-header__block -->
+
+    </a>
+  </div>
+
+  <nav class="header-nav-wrap" [class.is-open]="isMenuOpen">
+    <ul class="header-nav">
+      <li [class.current]="isActive('/')"><a routerLink="/" title="Home">{{'home'| translate}}</a></li>
+
+      <li
+        class="has-submenu"
+        [class.current]="isActive('/about')"
+        (mouseenter)="showAboutMenu = true"
+        (mouseleave)="showAboutMenu = false"
+      >
+        <a routerLink="/about/about-us" title="About">{{'about.main'| translate}}</a>
+        <ul class="about-submenu" [class.is-visible]="showAboutMenu">
+          <li><a routerLink="/about/about-us">{{'about.about-us'| translate}}</a></li>
+          <li><a routerLink="/about/our-pastor">{{'about.our-pastor'| translate}}</a></li>
+          <li><a routerLink="/about/faith-statement">{{'about.faith-statement'| translate }}</a></li>
+          <li><a routerLink="/about/purpose-and-mission">{{'about.our-mission'| translate}}</a></li>
+          <li><a routerLink="/about/history">{{'about.history'| translate}}</a></li>
+          <li><a routerLink="/about/church-staff">{{'about.church-staff'| translate}}</a></li>
+          <li><a routerLink="/about/supporting">{{'about.supporting'| translate}}</a></li>
+          <li><a routerLink="/about/gallery">{{'about.gallery'| translate}}</a></li>
+          <li routerLinkActive="current"><a routerLink="/about/sabbath-snapshots">Sabbath Snapshots</a></li>
+          <li *ngIf="isLoggedIn" routerLinkActive="current"><a routerLink="/about/add-photos">Add Sabbath Photo</a></li>
+
+        </ul>
+      </li>
+
+      <li
+        class="has-submenu"
+        [class.current]="isActive('/connect')"
+        (mouseenter)="showConnectMenu = true"
+        (mouseleave)="showConnectMenu = false"
+      >
+        <a routerLink="/connect" title="Connect">{{'connect.main'| translate}}</a>
+        <ul class="connect-submenu" [class.is-visible]="showConnectMenu">
+          <li><a routerLink="/connect">{{'connect.main'| translate}}</a></li>
+          <li><a routerLink="/connect/bible-studies">{{'connect.bible-studies'| translate}}</a></li>
+          <li><a routerLink="/connect/ministries">{{'connect.ministries'| translate}}</a></li>
+          <li><a routerLink="/connect/prayer-meetings">{{'connect.prayer-meetings'| translate}}</a></li>
+          <li><a routerLink="/connect/service-teams">{{'connect.service-teams'| translate}}</a></li>
+        </ul>
+      </li>
 
 
-    <nav class="header-nav-wrap" [class.is-open]="isMenuOpen">
-      <ul class="header-nav_new">
-        <!-- Home -->
-        <li routerLinkActive="current" [routerLinkActiveOptions]="{ exact: true }">
-          <a routerLink="/" title="Home">Home</a>
-        </li>
+      <li
+        class="has-submenu"
+        [class.current]="isActive('/events')"
+        (mouseenter)="showEventMenu = true"
+        (mouseleave)="showEventMenu = false"
+      >
+        <a routerLink="/events" title="Events">{{'events.main'| translate}}</a>
+        <ul class="events-submenu" [class.is-visible]="showEventMenu">
+          <li *ngIf="isLoggedIn" ><a routerLink="/events/add-events">{{'events.add-events'| translate}}</a></li>
+          <li><a routerLink="/events/upcoming-events">{{'events.upcoming-events'| translate}}</a></li>
+          <li><a routerLink="/events/sunday-worship-service">{{'events.sunday-service'| translate}}</a></li>
+          <li><a routerLink="/events/holy-communion-service">{{'events.holy-communion'| translate}}</a></li>
+          <li><a routerLink="/events/baptism-service">{{'events.baptism-service'| translate}}</a></li>
+          <li><a routerLink="/events/midnight-prayer">{{'events.midnight-prayer'| translate}}</a></li>
+          <li><a routerLink="/events/child-dedication">{{'events.dedication'| translate}}</a></li>
+          <li><a routerLink="/events/membership-class">{{'events.membership'| translate}}</a></li>
 
-        <!-- About -->
-        <li class="has-submenu" routerLinkActive="current">
-          <a routerLink="/about/about-us" title="About">About</a>
-          <ul class="about-submenu" [class.is-visible]="showAboutMenu">
-            <li routerLinkActive="current"><a routerLink="/about/about-us">About Us</a></li>
-            <li routerLinkActive="current"><a routerLink="/about/our-pastor">Our Pastor</a></li>
-            <li routerLinkActive="current"><a routerLink="/about/faith-statement">Faith Statement</a></li>
-            <li routerLinkActive="current"><a routerLink="/about/purpose-and-mission">Purpose and Mission</a></li>
-            <li routerLinkActive="current"><a routerLink="/about/history">History</a></li>
-            <li routerLinkActive="current"><a routerLink="/about/church-staff">Church Staff</a></li>
-            <li routerLinkActive="current"><a routerLink="/about/gallery">Gallery</a></li>
-            <li routerLinkActive="current"><a routerLink="/about/sabbath-snapshots">Sabbath Snapshots</a></li>
-            <li *ngIf="isLoggedIn" routerLinkActive="current"><a routerLink="/about/add-photos">Add Sabbath Photo</a></li>
-          </ul>
-        </li>
+        </ul>
+      </li>
+      <li [class.current]="isActive('/donation')"><a routerLink="/donation" title="Support us">{{'support-us'| translate}}</a></li>
+      <li [class.current]="isActive('/contact')"><a routerLink="/contact" title="Contact us">{{'contact'| translate}}</a></li>
+      <li *ngIf="!isLoggedIn" [class.current]="isActive('/login')">
+        <a routerLink="/login" title="Login">Login</a>
+      </li>
+      <li *ngIf="isLoggedIn" >
+        <a style="cursor:pointer;" (click)="logout()" title="Logout">Logout</a>
+      </li>
 
-        <!-- Connect -->
-        <li class="has-submenu" routerLinkActive="current">
-          <a routerLink="/connect" title="Connect">Connect</a>
-          <ul class="connect-submenu" [class.is-visible]="showConnectMenu">
-            <li routerLinkActive="current"><a routerLink="/connect">Connect</a></li>
-            <li routerLinkActive="current"><a routerLink="/connect/bible-studies">Bible Studies</a></li>
-            <li routerLinkActive="current"><a routerLink="/connect/ministries">Ministries</a></li>
-            <li routerLinkActive="current"><a routerLink="/connect/prayer-meetings">Prayer Meeting</a></li>
-            <li routerLinkActive="current"><a routerLink="/connect/service-teams">Service Teams</a></li>
-          </ul>
-        </li>
 
-        <!-- Events -->
-        <li class="has-submenu" routerLinkActive="current">
-          <a routerLink="/events" title="Events">Events</a>
-          <ul class="events-submenu" [class.is-visible]="showEventMenu">
-            <li *ngIf="isLoggedIn" routerLinkActive="current"><a routerLink="/events/add-events">Add Events</a></li>
-            <li routerLinkActive="current"><a routerLink="/events/upcoming-events">Upcoming Events</a></li>
-            <li routerLinkActive="current"><a routerLink="/events/saturday-worship-service">Saturday Worship Service</a></li>
-            <li routerLinkActive="current"><a routerLink="/events/holy-communion-service">Holy Communion Service</a></li>
-            <li routerLinkActive="current"><a routerLink="/events/baptism-service">Baptism Service</a></li>
-            <li routerLinkActive="current"><a routerLink="/events/midnight-prayer">Midnight Prayer</a></li>
-            <li routerLinkActive="current"><a routerLink="/events/child-dedication">Child Dedication</a></li>
-            <li routerLinkActive="current"><a routerLink="/events/membership-class">Membership Class</a></li>
-          </ul>
-        </li>
 
-        <!-- Support Us -->
-        <li routerLinkActive="current"><a routerLink="/donation" title="Support us">Support Us</a></li>
+      <!--    <li class="nav-item" (click)="toggleDropdown()" >-->
+      <!--      <mat-form-field>-->
+      <!--        <mat-label>Select Language</mat-label>-->
+      <!--        <mat-select (selectionChange)="changeLang($event.value)" [value]="lang">-->
+      <!--          <mat-option *ngFor="let language of languages" [value]="language.lang">-->
+      <!--            {{language.flag}}-->
+      <!--            {{language.name}}-->
+      <!--          </mat-option>-->
+      <!--        </mat-select>-->
+      <!--      </mat-form-field>-->
 
-        <!-- Contact -->
-        <li routerLinkActive="current"><a routerLink="/contact" title="Contact us">Contact Us</a></li>
+      <!--    </li>-->
 
-        <!-- Login / Logout -->
-        <li *ngIf="!isLoggedIn" routerLinkActive="current"><a routerLink="/login" title="Login">Login</a></li>
-        <li *ngIf="isLoggedIn">
-          <a style="cursor:pointer;" (click)="logout()" title="Logout">Logout</a>
-        </li>
-      </ul>
-    </nav>
 
-  </div> <!-- end s-header__content -->
-  <a class="header-menu-toggle" (click)="toggleMenu()" ><span></span></a>
 
+    </ul>
+
+  </nav>
+
+  <a class="header-menu-toggle"  [class.is-clicked]="isMenuOpen" (click)="toggleMenu()"><span>Menu</span></a>
 </header>
+
+

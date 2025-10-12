@@ -8,28 +8,28 @@
     "our-mission": "Our Mission",
     "history": "History",
     "church-staff": "Church Staff",
-    "supporting-El Bethel AG church": "Supporting Bethel ",
+    "supporting": "Supporting SDA ",
     "gallery": "Gallery",
     "welcome": {
       "subhead": "Welcome to our Church",
-      "description": "At El Bethel Assemblies of God Dortmund, we are a Spirit-led family devoted to worship, prayer, and encountering the power of God in everyday life. We believe the same God who performed miracles in the Bible continues to bring healing, deliverance, and hope today, transforming lives through faith and the guidance of the Holy Spirit.",
-      "button": "More About El Bethel Assemblies of God"
+      "description": "At Seventh day adventist Herne, we are a Spirit-led family devoted to worship, prayer, and encountering the power of God in everyday life. We believe the same God who performed miracles in the Bible continues to bring healing, deliverance, and hope today, transforming lives through faith and the guidance of the Holy Spirit.",
+      "button": "More About Seventh day adventist Herne"
     },
     "schedule": {
       "main-church-service": {
         "title": "Main Church Service",
         "time": "Sunday - 11:30 AM",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund, Germany"
+        "location": "Bochumer Str. 229, 44625 Herne, Germany"
       },
       "kids-church": {
         "title": "Kids Church",
         "time": "Sunday - 11:30 AM",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
       },
       "prayer-meeting": {
         "title": "Prayer Meeting",
         "time": "Wednesday - 6:00 PM to 7:30 PM",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
       }
     }
   },
@@ -53,38 +53,39 @@
     "subhead": "Upcoming Events",
     "sunday-worship": {
       "title": "Sunday Worship Service",
-      "description": "Experience a beautiful Sunday by praising and worshipping God with us at El Bethel AG church as a family. ‘Worship’ seasoned with the powerful and undeniable presence of the Holy Spirit and the life changing ‘Word’ is a wonderful way to begin your week. Meet and fellowship with other members of our Church and you will be amazed to find out how much you belong here. If you’ve never visited us before, we’d love to have you over!",
+      "description": "Experience a beautiful Sunday by praising and worshipping God with us at Seventh Day Adventist, Herne church as a family. ‘Worship’ seasoned with the powerful and undeniable presence of the Holy Spirit and the life changing ‘Word’ is a wonderful way to begin your week. Meet and fellowship with other members of our Church and you will be amazed to find out how much you belong here. If you’ve never visited us before, we’d love to have you over!",
       "meta": {
         "date": "Every Sunday",
         "time": "11:30 AM",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
       }
     },
     "prayer-service": {
       "title": "Prayer Service",
-      "description": "Experience the power of prayer at our Prayer Service at El Bethel AG church. As a family, we come together to lift our hearts to God, trusting Him to move in our lives. In this Spirit-filled atmosphere, peace is restored, burdens are lifted, and strength is renewed. Prayer not only draws us closer to God but also to one another. Whether it’s your first time or you’ve been before, we warmly welcome you come and see how prayer can transform your life!",
+      "description": "Experience the power of prayer at our Prayer Service at Seventh Day Adventist, Herne church. As a family, we come together to lift our hearts to God, trusting Him to move in our lives. In this Spirit-filled atmosphere, peace is restored, burdens are lifted, and strength is renewed. Prayer not only draws us closer to God but also to one another. Whether it’s your first time or you’ve been before, we warmly welcome you come and see how prayer can transform your life!",
       "meta": {
         "date": "Every Friday",
         "time": "6:00 PM - 8:00 PM",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
+
       }
     },
     "good-morning-jesus": {
       "title": "Good Morning Jesus",
-      "description": "Start your Saturday beautifully with Good Morning Jesus at El Bethel AG church. Join us as a family to greet the Lord through heartfelt prayer, uplifting worship, and the life giving Word. Filled with the presence of the Holy Spirit, mornings with Jesus bring peace, joy, and renewed strength for the week ahead. Meet and connect with other members of our Church you’ll be amazed at how much you belong here. If it’s your first time, we’d love to welcome you!",
+      "description": "Start your Saturday beautifully with Good Morning Jesus at Seventh Day Adventist, Herne church. Join us as a family to greet the Lord through heartfelt prayer, uplifting worship, and the life giving Word. Filled with the presence of the Holy Spirit, mornings with Jesus bring peace, joy, and renewed strength for the week ahead. Meet and connect with other members of our Church you’ll be amazed at how much you belong here. If it’s your first time, we’d love to welcome you!",
       "meta": {
         "date": "Every Saturday",
         "time": "9:00 AM - 10:00 AM",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
       }
     },
     "midnight-service": {
       "title": "Midnight Service",
-      "description": "Experience a powerful encounter with God at our Midnight Service at El Bethel AG church, held on the last Friday of every month. Join us as a family for worship, prayer, and the life changing Word in the presence of the Holy Spirit. This sacred time is perfect for reflection, renewal, and breakthroughs. Meet and fellowship with other members you’ll be amazed at how much you belong here. If it’s your first time, we’d love to welcome you!",
+      "description": "Experience a powerful encounter with God at our Midnight Service at Seventh Day Adventist, Herne church, held on the last Friday of every month. Join us as a family for worship, prayer, and the life changing Word in the presence of the Holy Spirit. This sacred time is perfect for reflection, renewal, and breakthroughs. Meet and fellowship with other members you’ll be amazed at how much you belong here. If it’s your first time, we’d love to welcome you!",
       "meta": {
         "date": "Last Friday of the Month",
         "time": "10:00 PM - 2:00 AM",
-        "location": "Hannöversche Str. 22A, 44143 Dortmund"
+        "location": "Bochumer Str. 229, 44625 Herne"
       }
     }
   },
@@ -130,13 +131,13 @@
   },
   "footer": {
     "logo": {
-      "title": "El Bethel Assemblies of God Dortmund",
-      "subtitle": "Dortmund, Germany"
+      "title": "Lifeline Seventh day adventist Herne",
+      "subtitle": "Herne, Germany"
     },
-    "description": "El Bethel AG is a church that believes in Jesus, a church that loves God and people.",
+    "description": "Seventh day adventist Herneis a church that believes in Jesus, a church that loves God and people.",
     "location": {
       "title": "Our Location",
-      "address": "Hannöversche Str. 22A, 44143 Dortmund",
+      "address": "Bochumer Str. 229, 44625 Herne",
       "button": "Get Direction"
     },
     "quick-links": {
