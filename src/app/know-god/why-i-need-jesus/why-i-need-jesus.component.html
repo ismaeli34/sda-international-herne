@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngFor="let step of steps" class="step-card">
+    <h2>{{ step.title }}</h2>
+    <img [src]="step.image" alt="{{ step.title }}" class="step-image" />
+    <p class="question">{{ step.question }}</p>
+    <p class="verse">{{ step.verse }}</p>
+  </div>
+</div>
