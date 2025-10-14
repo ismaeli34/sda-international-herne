@@ -44,15 +44,15 @@
     "main": "Veranstaltungen",
     "add-events": "Veranstaltungen hinzufügen",
     "upcoming-events": "Kommende Veranstaltungen",
-    "sunday-service": "Sonntagsgottesdienst",
+    "saturday-service": "Sabbath gottesdienst",
     "holy-communion": "Heilige Kommunion",
     "baptism-service": "Taufgottesdienst",
     "midnight-prayer": "Mitternachtsgebet",
     "dedication": "Einweihung",
     "membership": "Mitgliedschaft",
     "subhead": "Kommende Veranstaltungen",
-    "sunday-worship": {
-      "title": "Sonntagsgottesdienst",
+    "saturday-worship": {
+      "title": "Samstagsgottesdienst",
       "description": "Erleben Sie einen schönen Sonntag, indem Sie Gott bei der Siebenten-Tags-Adventisten-Gemeinde Herne mit Lobpreis und Anbetung als Familie preisen. Ein ‚Gottesdienst‘, gewürzt mit der mächtigen und unbestreitbaren Gegenwart des Heiligen Geistes und dem lebensverändernden ‚Wort‘, ist eine wunderbare Art, Ihre Woche zu beginnen. Treffen Sie andere Mitglieder unserer Kirche und staunen Sie, wie sehr Sie hier dazugehören. Wenn Sie uns noch nie besucht haben, laden wir Sie herzlich ein!",
       "meta": {
         "date": "Jeden Sonntag",

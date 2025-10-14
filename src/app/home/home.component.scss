@@ -28,10 +28,16 @@
 
 .carousel .item-inner {
   display: flex;
-  width: 100%;
-  height: 100%;
   flex-wrap: nowrap;
+  flex-direction: row-reverse; /* flips image & content */
 }
+
+//.carousel .item-inner {
+//  display: flex;
+//  width: 100%;
+//  height: 100%;
+//  flex-wrap: nowrap;
+//}
 
 .carousel .item-inner .content {
   width: 50%;
@@ -74,10 +80,10 @@
   color: #eee;
 }
 
-/* Arrows */
+/* === ARROWS === */
 .arrows {
   position: absolute;
-  bottom: 45px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -92,12 +98,14 @@
   background-color: rgba(255, 255, 255, 0.2);
   border: none;
   color: #fff;
+  font-size: 1.5rem;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
   cursor: pointer;
+  transition: all 0.3s ease;
+  display: grid;           /* <-- ensures perfect centering */
+  place-items: center;     /* <-- ensures perfect centering */
+  padding: 0;              /* <-- prevents padding from breaking the circle */
+  min-width: 0;            /* <-- avoids stretching on mobile */
 }
 
 .arrows button:hover {
@@ -105,14 +113,31 @@
   color: #000;
 }
 
-.arrows #next {
-  background-color: #000;
-  color: #fff;
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 768px) {
+  .arrows {
+    gap: 10px;
+    bottom: 15px;
+  }
+
+  .arrows button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
 }
 
-.arrows #next:hover {
-  background: #333;
-  color: #fff;
+@media (max-width: 480px) {
+  .arrows {
+    gap: 8px;
+    bottom: 10px;
+  }
+
+  .arrows button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 
 /* Thumbnails */
@@ -139,6 +164,12 @@
 .thumbnail .item img:hover {
   opacity: 1;
 }
+
+
+
+
+
+
 
 /* Responsive Styles */
 /* Mobile & Tablet Fix */
@@ -351,3 +382,11 @@
   align-items: center;
   text-align: center;
 }
+
+
+
+
+
+// ABOUT PASTOR
+
+

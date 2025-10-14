@@ -14,7 +14,7 @@ export class FloatingButtonComponent {
   }
 
   onClick() {
-    this.router.navigate(['know-god/who-jesus']);
+    this.router.navigate(['know-god']);
 
     // You can route or trigger any action here
   }

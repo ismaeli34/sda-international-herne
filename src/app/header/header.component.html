@@ -28,7 +28,6 @@
           <li><a routerLink="/about/purpose-and-mission">{{'about.our-mission'| translate}}</a></li>
           <li><a routerLink="/about/history">{{'about.history'| translate}}</a></li>
           <li><a routerLink="/about/church-staff">{{'about.church-staff'| translate}}</a></li>
-          <li><a routerLink="/about/supporting">{{'about.supporting'| translate}}</a></li>
           <li><a routerLink="/about/gallery">{{'about.gallery'| translate}}</a></li>
           <li routerLinkActive="current"><a routerLink="/about/sabbath-snapshots">Sabbath Snapshots</a></li>
           <li *ngIf="isLoggedIn" routerLinkActive="current"><a routerLink="/about/add-photos">Add Sabbath Photo</a></li>
@@ -63,7 +62,7 @@
         <ul class="events-submenu" [class.is-visible]="showEventMenu">
           <li *ngIf="isLoggedIn" ><a routerLink="/events/add-events">{{'events.add-events'| translate}}</a></li>
           <li><a routerLink="/events/upcoming-events">{{'events.upcoming-events'| translate}}</a></li>
-          <li><a routerLink="/events/sunday-worship-service">{{'events.sunday-service'| translate}}</a></li>
+          <li><a routerLink="/events/saturday-worship-service">{{'events.saturday-service'| translate}}</a></li>
           <li><a routerLink="/events/holy-communion-service">{{'events.holy-communion'| translate}}</a></li>
           <li><a routerLink="/events/baptism-service">{{'events.baptism-service'| translate}}</a></li>
           <li><a routerLink="/events/midnight-prayer">{{'events.midnight-prayer'| translate}}</a></li>

@@ -14,6 +14,7 @@ import {ForgotPasswordComponent} from './forgot-password/forgot-password.compone
 import {VerifyEmailComponent} from './verify-email/verify-email.component';
 import {PageNotFoundComponentComponent} from './page-not-found-component/page-not-found-component.component';
 import {ZoomComponent} from './zoom/zoom.component';
+import {KnowGodComponent} from './know-god/know-god.component';
 
 
 export const routes: Routes = [
@@ -35,5 +36,6 @@ export const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'forgot-password',component:ForgotPasswordComponent},
   {path:'verify-email',component:VerifyEmailComponent},
+  {path:'know-god', component:KnowGodComponent},
   { path: '**', component: PageNotFoundComponentComponent }
 ];

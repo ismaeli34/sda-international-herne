@@ -1,14 +1,17 @@
-import {AfterViewInit, Component, OnDestroy} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {WhatsappComponent} from '../whatsapp/whatsapp.component';
-
 import { trigger, style, animate, transition, query, group } from '@angular/animations';
 import {HomeGalleryComponent} from './home-gallery/home-gallery.component';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 @Component({
   selector: 'app-home',
   imports: [CommonModule, WhatsappComponent, HomeGalleryComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  styleUrls: ['./home.component.scss'],
   animations: [
     trigger('fadeUp', [
       transition(':enter', [ // when element enters DOM
@@ -49,9 +52,7 @@ import {HomeGalleryComponent} from './home-gallery/home-gallery.component';
 export class HomeComponent implements AfterViewInit, OnDestroy {
 
   private intervalId: any;
-   currentIndex = 0;
-
-
+  currentIndex = 0;
    slides = [
     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: '1 Corinthians 1:10 – "Let there be no divisions among you, but be perfectly united in mind and thought."', img: '/sda_17.jpeg' },
     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Romans 12:10 – "Be devoted to one another in love. Honor one another above yourselves."', img: '/sda_31.jpeg' },
@@ -72,19 +73,18 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   instagramLink ="https://www.instagram.com/internationalsdachurchinherne/"
   emailLink="kontakt@herne-international-sda.de";
 
+  @ViewChild('aboutSection', { static: true }) aboutSection!: ElementRef;
 
   constructor() {
   }
+
+
 
   goToSlide(index: number) {
     this.currentIndex = index;
   }
 
-  ngAfterViewInit(): void {
 
-
-    this.intervalId = setInterval(() => this.nextSlide(), 6000);
-  }
 
   ngOnDestroy(): void {
     // Clear interval when navigating away to prevent memory leaks
@@ -100,4 +100,13 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   prevSlide() {
     this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
   }
+
+
+
+
+  ngAfterViewInit(): void {
+    this.intervalId = setInterval(() => this.nextSlide(), 6000);
+
+  }
+
 }

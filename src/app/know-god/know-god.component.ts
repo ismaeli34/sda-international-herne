@@ -1,21 +1,19 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, ViewEncapsulation} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import { gsap } from 'gsap';
+import { Observer } from 'gsap/Observer';
+import { SplitText } from 'gsap/SplitText';
 
+gsap.registerPlugin(Observer, SplitText);
 @Component({
   selector: 'app-know-god',
   imports: [
-    RouterOutlet,
-    RouterLink,
-    RouterLinkActive
+
   ],
   templateUrl: './know-god.component.html',
-  styleUrl: './know-god.component.scss'
+  styleUrl: './know-god.component.scss',
+  encapsulation: ViewEncapsulation.Emulated // default, keeps styles local
+
 })
 export class KnowGodComponent {
-
-  youtubeLink =""
-  facebookLink = "https://www.facebook.com/p/Dortmund-Assemblies-100071161759271/";
-  instagramLink ="https://www.instagram.com/Dortmund%20Assemblies"
-  emailLink ="";
-
 }

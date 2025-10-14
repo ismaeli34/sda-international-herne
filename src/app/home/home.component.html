@@ -1,6 +1,8 @@
 
 <!-- carousel -->
 
+
+
 <div class="carousel">
   <!-- Slide Items -->
   <div class="carousel">
@@ -35,11 +37,22 @@
 
 
   <!-- Arrows -->
-  <div class="arrows">
-    <button  (click)="prevSlide()" >&lt;</button>
-    <button (click)="nextSlide()" id="next">&gt;</button>
-  </div>
 
+  <!-- Arrows -->
+  <div class="arrows">
+
+
+    <button (click)="prevSlide()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button (click)="nextSlide()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
 
 </div>
 
@@ -139,11 +152,11 @@
 <!--</section> &lt;!&ndash; end s-intro &ndash;&gt;-->
 
 
-<section id="about" class="container s-about target-section">
+<section #aboutSection id="about" class="container s-about target-section">
 
   <div class="row s-about__content">
 
-    <div class="column xl-5 lg-5 md-12 s-about__content-start">
+    <div class="column xl-5 lg-5 md-12 s-about__content-start" >
 
       <div class="section-header" data-num="01">
         <h2 class="text-display-title">Our Church</h2>
@@ -173,7 +186,7 @@
 
 
   </div> <!-- end s-about__content-end -->
-  <p> <i>Hebrews 13:17 – “Obey your leaders and submit to them, for they are keeping watch over your souls, as those who will have to give an account. Let them do this with joy and not with groaning, for that would be of no advantage to you.”</i></p>
+  <p data-animate="verse"> <i>Hebrews 13:17 – “Obey your leaders and submit to them, for they are keeping watch over your souls, as those who will have to give an account. Let them do this with joy and not with groaning, for that would be of no advantage to you.”</i></p>
 
 
 </section> <!-- end s-about -->
@@ -320,103 +333,39 @@
 
   <p> <i>John 13:34-35 – “A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another. By this all people will know that you are my disciples, if you have love for one another.</i></p>
 
-<!--  <div class="gallery-items grid-cols grid-cols&#45;&#45;wrap">-->
-
-
-<!--    <div class="gallery-items__item grid-cols__column">-->
-<!--      <a href="/sda_33.jpeg" class="gallery-items__item-thumb glightbox">-->
-<!--        <img src="/sda_33.jpeg"-->
-<!--             srcset="/sda_33.jpeg 1x,-->
-<!--                                    /sda_33.jpeg2x" alt="">-->
-<!--      </a>-->
-<!--    </div>-->
-
-
-<!--    <div class="gallery-items__item grid-cols__column">-->
-<!--      <a href="/sda_31.jpeg" class="gallery-items__item-thumb glightbox">-->
-<!--        <img src="/sda_31.jpeg"-->
-<!--             srcset="/sda_31.jpeg 1x,-->
-<!--                                    /sda_31.jpeg2x" alt="">-->
-<!--      </a>-->
-<!--    </div>-->
-
-<!--    <div class="gallery-items__item grid-cols__column">-->
-<!--      <a href="/sda_34.jpeg" class="gallery-items__item-thumb glightbox">-->
-<!--        <img src="/sda_34.jpeg"-->
-<!--             srcset="/sda_34.jpeg 1x,-->
-<!--                                    /sda_34.jpeg2x" alt="">-->
-<!--      </a>-->
-<!--    </div>-->
-
-
-<!--    <div class="gallery-items__item grid-cols__column">-->
-<!--      <a href="/sda_2.jpeg" class="gallery-items__item-thumb glightbox">-->
-<!--        <img src="/sda_2.jpeg"-->
-<!--             srcset="/sda_2.jpeg 1x,-->
-<!--                                    /sda_2.jpeg2x" alt="">-->
-<!--      </a>-->
-<!--    </div>-->
-
-
-<!--    <div class="gallery-items__item grid-cols__column">-->
-<!--      <a href="/sda_12.jpeg" class="gallery-items__item-thumb glightbox">-->
-<!--        <img src="/sda_12.jpeg"-->
-<!--             srcset="/sda_12.jpeg 1x,-->
-<!--                                    /sda_12.jpeg2x" alt="">-->
-<!--      </a>-->
-<!--    </div>-->
-
-<!--    <div class="gallery-items__item grid-cols__column">-->
-<!--      <a href="/sda_4.jpeg" class="gallery-items__item-thumb glightbox">-->
-<!--        <img src="/sda_4.jpeg"-->
-<!--             srcset="/sda_4.jpeg 1x,-->
-<!--                                    /sda_4.jpeg2x" alt="">-->
-<!--      </a>-->
-<!--    </div>-->
-
-
-
-
-
-
-
-<!--    <div class="gallery-items__item grid-cols__column">-->
-<!--      <a href="/sda_22.jpeg" class="gallery-items__item-thumb glightbox">-->
-<!--        <img src="/sda_22.jpeg"-->
-<!--             srcset="/sda_22.jpeg 1x,-->
-<!--                                    /sda_22.jpeg2x" alt="">-->
-<!--      </a>-->
-<!--    </div>-->
-<!--    <div class="gallery-items__item grid-cols__column">-->
-<!--      <a href="/sda_24.jpeg" class="gallery-items__item-thumb glightbox">-->
-<!--        <img src="/sda_24.jpeg"-->
-<!--             srcset="/sda_24.jpeg 1x,-->
-<!--                                    /sda_24.jpeg2x" alt="">-->
-<!--      </a>-->
-<!--    </div>-->
-
-
-
-
-
-
-
-
-
-
 
 
 </section> <!-- end s-gallery -->
 
 
-<section id="gallery" class="container s-gallery target-section">
+
+
+<!--<section id="whatsapp" class="container s-gallery target-section">-->
+
+<!--  <div class="row s-gallery__header">-->
+<!--    <div class="column xl-12 section-header-wrap">-->
+<!--      <div class="section-header" data-num="04">-->
+<!--        <h2 class="text-display-title">Fruits of the Spirit</h2>-->
+<!--      </div>-->
+<!--    </div> &lt;!&ndash; end section-header-wrap &ndash;&gt;-->
+<!--  </div> &lt;!&ndash; end s-gallery__header &ndash;&gt;-->
+
+<!--  <div class="gallery-items grid-cols grid-cols&#45;&#45;wrap">-->
+
+<!--<app-animation-deck></app-animation-deck>-->
+
+<!--  </div>-->
+<!--</section>-->
 
 
 
+
+
+<section id="whatsapp" class="container s-gallery target-section">
 
   <div class="row s-gallery__header">
     <div class="column xl-12 section-header-wrap">
-      <div class="section-header" data-num="04">
+      <div class="section-header" data-num="05">
         <h2 class="text-display-title">Join Us</h2>
       </div>
     </div> <!-- end section-header-wrap -->
