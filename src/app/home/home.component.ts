@@ -1,15 +1,29 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {WhatsappComponent} from '../whatsapp/whatsapp.component';
 import { trigger, style, animate, transition, query, group } from '@angular/animations';
 import {HomeGalleryComponent} from './home-gallery/home-gallery.component';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {FormsModule} from '@angular/forms';
+import {
+  Firestore,
+  collection,
+  collectionData,
+  addDoc,
+  getDoc,
+  doc,
+  runTransaction,
+  increment, setDoc,
+} from '@angular/fire/firestore';
+import {LanguageService} from '../services/language.service';
+import {AuthService} from '../services/auth.service';
+import {Subscription} from 'rxjs';
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, WhatsappComponent, HomeGalleryComponent],
+  imports: [CommonModule, WhatsappComponent, HomeGalleryComponent, FormsModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
@@ -49,8 +63,15 @@ gsap.registerPlugin(ScrollTrigger);
     ])
   ]
 })
-export class HomeComponent implements AfterViewInit, OnDestroy {
+export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
 
+  isLoggedIn = false;
+  showPreloader = false;
+  showForm = false;
+  newTime = '';
+  serviceTime = '10:00 AM';
+  // **New dynamic fields**
+  serviceAddress = 'Bochumer Str. 229, 44625 Herne';
   private intervalId: any;
   currentIndex = 0;
    slides = [
@@ -66,16 +87,42 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'James 2:17 – "Faith by itself, if it is not accompanied by action, is dead."', img: '/sda_35.jpeg' },
 
    ];
+  lang = '';
 
 
   youtubeLink ="https://www.youtube.com/@LIFELINE-Herne"
   facebookLink = "https://www.facebook.com/InternationalSDAChurchinHerne/";
   instagramLink ="https://www.instagram.com/internationalsdachurchinherne/"
   emailLink="kontakt@herne-international-sda.de";
+  private langSubscription!: Subscription;
 
   @ViewChild('aboutSection', { static: true }) aboutSection!: ElementRef;
 
-  constructor() {
+  constructor(     private languageService: LanguageService,        // Inject the service
+               private authService:AuthService,
+                   private cdr: ChangeDetectorRef,
+                   private fireStore: Firestore  // 🔑 inject Firestore
+
+
+  ) {
+  }
+
+  ngOnInit() {
+    this.lang = this.languageService.getCurrentLang();
+
+    this.langSubscription = this.languageService.currentLang$.subscribe(lang => {
+      this.lang = lang;
+      this.cdr.detectChanges(); // Trigger change detection
+      console.log("HOME LANG", this.lang);
+    });
+
+    // 🔑 subscribe to login state
+    this.authService.isLoggedIn().subscribe(status => {
+      this.isLoggedIn = status;
+      this.cdr.detectChanges();
+    });
+
+    this.loadServiceTimeAndAddress();
   }
 
 
@@ -84,6 +131,46 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     this.currentIndex = index;
   }
 
+  async loadServiceTimeAndAddress() {
+    try {
+      const docRef = doc(this.fireStore, 'churchTimingAddress', 'main');
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        this.serviceTime = data['time'] || this.serviceTime;
+        this.serviceAddress = data['address'] || this.serviceAddress;
+        this.cdr.detectChanges(); // Update UI
+      } else {
+        console.log('No church timing document found.');
+      }
+    } catch (error) {
+      console.error('Error loading service info:', error);
+    }
+  }
+
+  async updateTime() {
+    if (this.newTime.trim() && this.serviceAddress.trim()) {
+      this.serviceTime = this.newTime;
+      this.showForm = false;
+
+      try {
+        const docRef = doc(this.fireStore, 'churchTimingAddress', 'main');
+        await setDoc(docRef, {
+          time: this.serviceTime,
+          address: this.serviceAddress
+        });
+        console.log('Service time and address updated in Firestore');
+
+        // Immediately reload the values for UI
+        await this.loadServiceTimeAndAddress();
+      } catch (error) {
+        console.error('Error updating service info:', error);
+      }
+
+      this.newTime = '';
+    }
+  }
 
 
   ngOnDestroy(): void {
@@ -107,6 +194,11 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.intervalId = setInterval(() => this.nextSlide(), 6000);
 
+  }
+
+
+  toggleForm() {
+    this.showForm = !this.showForm;
   }
 
 }

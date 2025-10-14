@@ -14,7 +14,23 @@
             <div @fadeUp class="title">{{slide.title}}</div>
             <div @fadeUp class="topic">{{slide.topic}}</div>
             <div @fadeUp class="des">{{slide.des}}</div>
+            <br>
+            <!-- Curved card -->
+            <div class="curved-card">
+              <button *ngIf="isLoggedIn" class="update-btn" (click)="toggleForm()">⟳</button> <!-- small round update button -->
+              <!-- Bind the service time dynamically -->
+              <p class="service-time">Saturday Church Services: {{ serviceTime }}</p>
+              <p class="service-address">{{ serviceAddress }}</p>
+              <p class="mission">To reach the nations and make disciples</p>
 
+              <!-- Update form (hidden by default) -->
+              <form class="update-form" *ngIf="showForm" (ngSubmit)="updateTime()">
+                <input type="text" [(ngModel)]="newTime" name="time" placeholder="Enter new time" required />
+                <input type="text" [(ngModel)]="serviceAddress" name="serviceAddress" placeholder="Enter new address" required />
+
+                <button type="submit">Update</button>
+              </form>
+            </div>
           </div>
           <img [src]="slide.img" [alt]="slide.title" />
 
@@ -365,7 +381,7 @@
 
   <div class="row s-gallery__header">
     <div class="column xl-12 section-header-wrap">
-      <div class="section-header" data-num="05">
+      <div class="section-header" data-num="04">
         <h2 class="text-display-title">Join Us</h2>
       </div>
     </div> <!-- end section-header-wrap -->

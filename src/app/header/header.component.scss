@@ -61,20 +61,32 @@
 
 .logo-text {
   font-size: 25px;
-  font-weight: bold;
-  font-family: 'waterfall', cursive;
+  font-weight: 500;
+  font-family: "waterfall", cursive;
+  font-style: normal;
+
 
 }
 
 .logo-text-2 {
   font-size: 16px;
   font-weight: 500;
+  font-family: 'Poppins', 'Arial', sans-serif;
 }
 
 .logo-text-3 {
   font-size: 16px;
   font-weight: 500;
 }
+
+
+.logo-text,
+.logo-text-2 {
+  transition: color 0.3s ease;
+}
+
+
+
 
 .logo-box {
   color: white;
