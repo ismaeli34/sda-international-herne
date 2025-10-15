@@ -47,6 +47,12 @@ export class UpcomingEventCardComponent implements OnInit{
 
   }
 
+  openFlyer(flyer: any) {
+    const newTab = window.open();
+    if (newTab) {
+      newTab.document.write(`<img src="${flyer}" style="width:100%">`);
+    }
+  }
  async onDelete() {
     const eventDocRef = doc(this.fireStore, `events/${this.event.id}`);
     await deleteDoc(eventDocRef);
