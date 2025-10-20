@@ -119,12 +119,22 @@ export class AddChurchStaffComponent {
   }
 
   onFileSelected(event: any) {
-    const file = event.target.files[0];
+    const file: File = event.target.files[0];
+
     if (file) {
+      // Check file size (500 KB = 500 * 1024 bytes)
+      if (file.size > 500 * 1024) {
+        alert("Please upload an image smaller than 500 KB.");
+        this.staffImage = '';
+        this.previewUrl = null;
+        event.target.value = ''; // reset the file input
+        return;
+      }
+
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
-        this.previewUrl = reader.result;        // for showing preview
+        this.previewUrl = reader.result;        // show preview
         this.staffImage = reader.result as string; // store Base64 image
       };
     }

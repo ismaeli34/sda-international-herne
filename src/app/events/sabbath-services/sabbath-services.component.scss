@@ -1,0 +1,95 @@
+.heading-margin-top {
+  margin-top: -5px;
+  color: #0f3d81;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.container {
+  max-width: 800px;
+  background-color: #f9fafb;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  margin-top: 2rem;
+}
+
+::ng-deep .mat-mdc-table th.mat-mdc-header-cell {
+  color: #000 !important;
+  font-weight: 600 !important;
+  font-size: 1.7rem; /* increased header font size */
+
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+mat-expansion-panel {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+mat-expansion-panel-header {
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+mat-form-field {
+  font-size: 3rem;
+}
+
+.save-btn {
+  grid-column: 1 / -1;
+  font-size: 1.2rem;
+  padding: 0.75rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+
+/* Optional: Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .heading-margin-top {
+    font-size: 2rem;
+  }
+  mat-expansion-panel-header {
+    font-size: 1.3rem;
+  }
+  mat-form-field {
+    font-size: 1.1rem;
+  }
+  .save-btn {
+    font-size: 1.05rem;
+  }
+}
+
+/* Make tables scrollable horizontally */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
+}
+
+/* Optional: Ensure table min-width so scroll works */
+.table-responsive table {
+  min-width: 800px; /* or adjust based on your largest table */
+}
+
+
+.mt-4 {
+  margin-top: 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.space-x-2 > *:not(:last-child) {
+  margin-right: 0.5rem;
+}

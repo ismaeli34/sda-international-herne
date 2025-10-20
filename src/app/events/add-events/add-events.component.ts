@@ -111,15 +111,25 @@ export class AddEventsComponent implements OnInit {
 
 
   onFileSelected(event: any) {
-    const file = event.target.files[0];
+    const file: File = event.target.files[0];
     if (file) {
-      const reader = new FileReader();
+      // Check file size (500 KB = 500 * 1024 bytes)
+      if (file.size > 500 * 1024) {
+        alert("Please upload an image smaller than 500 KB.");
+        this.selectedFile = undefined;
+        this.previewUrl = null;
+        this.flyer = '';
+        event.target.value = ''; // reset file input
+        return;
+      }
 
-      // Convert to Base64
+      this.selectedFile = file;
+
+      const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.previewUrl = reader.result;       // for showing preview
-        this.flyer = reader.result as string; // save base64
+        this.flyer = reader.result as string;  // save base64
       };
     }
 

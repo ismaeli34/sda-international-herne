@@ -75,16 +75,25 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   private intervalId: any;
   currentIndex = 0;
    slides = [
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: '1 Corinthians 1:10 – "Let there be no divisions among you, but be perfectly united in mind and thought."', img: '/sda_17.jpeg' },
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Romans 12:10 – "Be devoted to one another in love. Honor one another above yourselves."', img: '/sda_31.jpeg' },
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Matthew 22:37–39 – "Love the Lord your God with all your heart, soul, & mind and love your neighbor as yourself."', img: '/sda_27.jpeg' },
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'John 13:34–35 – "Love one another as I have loved you. By this everyone will know you are My disciples."', img: '/sda_11.jpeg' },
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Joshua 24:15 – "As for me and my house, we will serve the Lord."', img: '/sda_28.jpeg' },
-     { author: 'Welcome to', title: 'SDA International', topic: 'Church',  des: 'Hebrews 13:16 – "Do not forget to do good and to share with others, for with such sacrifices God is pleased."', img: '/sda_36.jpeg' },
-     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Psalm 133:1 – "How good and pleasant it is when God’s people live together in unity!"', img: '/sda_2.jpeg' },
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Ephesians 4:2–3 – "Be humble, gentle, and patient. Keep the unity of the Spirit through the bond of peace."', img: '/sda_12.jpeg' },
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Colossians 3:14 – "Above all, put on love, which binds everything together in perfect unity."', img: '/sda_16.jpeg' },
-    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'James 2:17 – "Faith by itself, if it is not accompanied by action, is dead."', img: '/sda_35.jpeg' },
+    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: '1 Corinthians 1:10 – "Let there be no divisions among you, but be perfectly united in mind and thought."', img: '/sda_17.jpeg',
+    vision: 'Love God deeply, love people genuinely, and lead others to Jesus faithfully.'
+    },
+    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Romans 12:10 – "Be devoted to one another in love. Honor one another above yourselves."', img: '/sda_31.jpeg',
+      vision: 'Loving God, serving people, and making disciples for His glory.'
+
+    },
+    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Matthew 22:37–39 – "Love the Lord your God with all your heart, soul, & mind and love your neighbor as yourself."', img: '/sda_27.jpeg'
+    ,vision: 'Love God with all your heart, love others with grace, and share Christ with the world.'
+    },
+    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'John 13:34–35 – "Love one another as I have loved you. By this everyone will know you are My disciples."', img: '/sda_11.jpeg',
+    vision:'We honor God with our hearts, love people with grace, and share His love with all nations.'
+    },
+    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Joshua 24:15 – "As for me and my house, we will serve the Lord."', img: '/sda_28.jpeg', vision:'Faithful to God, compassionate to people, committed to the mission.' },
+     { author: 'Welcome to', title: 'SDA International', topic: 'Church',  des: 'Hebrews 13:16 – "Do not forget to do good and to share with others, for with such sacrifices God is pleased."', img: '/sda_36.jpeg', vision:'Love God. Cherish people. Help others walk with Jesus.' },
+     { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Psalm 133:1 – "How good and pleasant it is when God’s people live together in unity!"', img: '/sda_2.jpeg', vision:'Guided by love — for God, for people, and for the world He loves.' },
+    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Ephesians 4:2–3 – "Be humble, gentle, and patient. Keep the unity of the Spirit through the bond of peace."', img: '/sda_12.jpeg', vision:'Love God with joy, love people with kindness, and make disciples with grace.' },
+    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'Colossians 3:14 – "Above all, put on love, which binds everything together in perfect unity."', img: '/sda_16.jpeg',vision: 'Together, we love God, care for one another, and share the good news everywhere' },
+    { author: 'Welcome to', title: 'SDA International', topic: 'Church', des: 'James 2:17 – "Faith by itself, if it is not accompanied by action, is dead."', img: '/sda_35.jpeg', vision:'Adore God, embrace people, share His hope' },
 
    ];
   lang = '';

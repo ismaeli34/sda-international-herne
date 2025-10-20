@@ -68,3 +68,16 @@ h2,p{
   margin-top: -10px;
 }
 
+
+.delete-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}
+

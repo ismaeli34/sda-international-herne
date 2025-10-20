@@ -1,0 +1,342 @@
+<h2 class="heading-margin-top text-center">Sabbath Services Management</h2>
+
+<div class="container mx-auto p-6 space-y-6">
+
+  <mat-accordion multi>
+
+    <!-- Sabbath School Accordion -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Sabbath School Service</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathService()" class="form-grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Song Service</mat-label>
+          <input matInput formControlName="songService">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Welcome</mat-label>
+          <input matInput formControlName="welcome">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Opening Song</mat-label>
+          <input matInput formControlName="openingSong">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Opening Prayer</mat-label>
+          <input matInput formControlName="openingPrayer">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Special Song</mat-label>
+          <input matInput formControlName="specialSong">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Lesson Review</mat-label>
+          <input matInput formControlName="lessonReview">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Children Care</mat-label>
+          <input matInput formControlName="childrenCare">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Closing Prayer</mat-label>
+          <input matInput formControlName="closingPrayer">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Closing Song</mat-label>
+          <input matInput formControlName="closingSong">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Announcements</mat-label>
+          <input matInput formControlName="announcements">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+      <!-- Sabbath School Table -->
+      <div class="table-responsive" *ngIf="(sabbathServices$ | async)?.length; else noSabbathData">
+        <table mat-table [dataSource]="(sabbathServices$ | async) || []" class="mat-elevation-z2 full-width mt-4">
+
+          <ng-container matColumnDef="songService">
+            <th mat-header-cell *matHeaderCellDef>Song Service</th>
+            <td mat-cell *matCellDef="let element">{{ element.songService }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="welcome">
+            <th mat-header-cell *matHeaderCellDef>Welcome</th>
+            <td mat-cell *matCellDef="let element">{{ element.welcome }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="openingSong">
+            <th mat-header-cell *matHeaderCellDef>Opening Song</th>
+            <td mat-cell *matCellDef="let element">{{ element.openingSong }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="openingPrayer">
+            <th mat-header-cell *matHeaderCellDef>Opening Prayer</th>
+            <td mat-cell *matCellDef="let element">{{ element.openingPrayer }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="specialSong">
+            <th mat-header-cell *matHeaderCellDef>Special Song</th>
+            <td mat-cell *matCellDef="let element">{{ element.specialSong }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="lessonReview">
+            <th mat-header-cell *matHeaderCellDef>Lesson Review</th>
+            <td mat-cell *matCellDef="let element">{{ element.lessonReview }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="childrenCare">
+            <th mat-header-cell *matHeaderCellDef>Children Care</th>
+            <td mat-cell *matCellDef="let element">{{ element.childrenCare }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="closingPrayer">
+            <th mat-header-cell *matHeaderCellDef>Closing Prayer</th>
+            <td mat-cell *matCellDef="let element">{{ element.closingPrayer }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="closingSong">
+            <th mat-header-cell *matHeaderCellDef>Closing Song</th>
+            <td mat-cell *matCellDef="let element">{{ element.closingSong }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="announcements">
+            <th mat-header-cell *matHeaderCellDef>Announcements</th>
+            <td mat-cell *matCellDef="let element">{{ element.announcements }}</td>
+          </ng-container>
+
+          <!-- Delete Action Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-raised-button style="background-color: orangered; color:white"  (click)="deleteSabbathService(element.id)">Delete</button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+
+
+        <!-- Generate Button for this section -->
+        <div class="mt-4 text-center">
+          <button mat-raised-button color="accent" (click)="generatePDF('sabbath')">
+            Generate PDF
+          </button>
+        </div>
+      </div>
+
+
+      <ng-template #noSabbathData>
+        <p class="text-center text-gray-500 mt-2">No Sabbath School data available yet.</p>
+      </ng-template>
+
+
+
+
+
+    </mat-expansion-panel>
+
+    <!-- Divine Service Accordion -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Divine Service</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="divineForm" (ngSubmit)="addDivineService()" class="form-grid">
+        <mat-form-field appearance="outline" *ngFor="let field of ['songService','prelude','welcomeCall','openingSong','invocation','offering','scriptureReading','pastoralPrayer','specialSong','message','closingSong','benediction','responseHymn']">
+          <mat-label>{{ field | titlecase }}</mat-label>
+          <input matInput [formControlName]="field">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+      <!-- Divine Service Table -->
+      <div class="table-responsive" *ngIf="(divineServices$ | async)?.length; else noDivineData">
+
+        <table mat-table [dataSource]="(divineServices$ | async) || []" class="mat-elevation-z2 full-width mt-4">
+
+          <!-- existing columns -->
+          <ng-container matColumnDef="songService">
+            <th mat-header-cell *matHeaderCellDef>Song Service</th>
+            <td mat-cell *matCellDef="let element">{{ element.songService }}</td>
+          </ng-container>
+          <ng-container matColumnDef="prelude">
+            <th mat-header-cell *matHeaderCellDef>Prelude</th>
+            <td mat-cell *matCellDef="let element">{{ element.prelude }}</td>
+          </ng-container>
+          <ng-container matColumnDef="welcomeCall">
+            <th mat-header-cell *matHeaderCellDef>Welcome Call</th>
+            <td mat-cell *matCellDef="let element">{{ element.welcomeCall }}</td>
+          </ng-container>
+          <ng-container matColumnDef="openingSong">
+            <th mat-header-cell *matHeaderCellDef>Opening Song</th>
+            <td mat-cell *matCellDef="let element">{{ element.openingSong }}</td>
+          </ng-container>
+          <ng-container matColumnDef="invocation">
+            <th mat-header-cell *matHeaderCellDef>Invocation</th>
+            <td mat-cell *matCellDef="let element">{{ element.invocation }}</td>
+          </ng-container>
+          <ng-container matColumnDef="offering">
+            <th mat-header-cell *matHeaderCellDef>Offering</th>
+            <td mat-cell *matCellDef="let element">{{ element.offering }}</td>
+          </ng-container>
+          <ng-container matColumnDef="scriptureReading">
+            <th mat-header-cell *matHeaderCellDef>Scripture Reading</th>
+            <td mat-cell *matCellDef="let element">{{ element.scriptureReading }}</td>
+          </ng-container>
+          <ng-container matColumnDef="pastoralPrayer">
+            <th mat-header-cell *matHeaderCellDef>Pastoral Prayer</th>
+            <td mat-cell *matCellDef="let element">{{ element.pastoralPrayer }}</td>
+          </ng-container>
+          <ng-container matColumnDef="specialSong">
+            <th mat-header-cell *matHeaderCellDef>Special Song</th>
+            <td mat-cell *matCellDef="let element">{{ element.specialSong }}</td>
+          </ng-container>
+          <ng-container matColumnDef="message">
+            <th mat-header-cell *matHeaderCellDef>Message</th>
+            <td mat-cell *matCellDef="let element">{{ element.message }}</td>
+          </ng-container>
+          <ng-container matColumnDef="closingSong">
+            <th mat-header-cell *matHeaderCellDef>Closing Song</th>
+            <td mat-cell *matCellDef="let element">{{ element.closingSong }}</td>
+          </ng-container>
+          <ng-container matColumnDef="benediction">
+            <th mat-header-cell *matHeaderCellDef>Benediction</th>
+            <td mat-cell *matCellDef="let element">{{ element.benediction }}</td>
+          </ng-container>
+          <ng-container matColumnDef="responseHymn">
+            <th mat-header-cell *matHeaderCellDef>Response Hymn</th>
+            <td mat-cell *matCellDef="let element">{{ element.responseHymn }}</td>
+          </ng-container>
+
+          <!-- Delete Action Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-raised-button style="background-color: orangered; color:white"
+                      (click)="deleteDivineService(element.id)">
+                Delete
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="divineDisplayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: divineDisplayedColumns;"></tr>
+
+        </table>
+
+        <!-- Generate Button for this section -->
+        <div class="mt-4 text-center">
+          <button mat-raised-button color="accent" (click)="generatePDF('divine')">
+            Generate PDF
+          </button>
+        </div>
+      </div>
+
+
+      <ng-template #noDivineData>
+        <p class="text-center text-gray-500 mt-2">No Divine Service data available yet.</p>
+      </ng-template>
+
+    </mat-expansion-panel>
+
+    <!-- Happy Sabbath Accordion -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Happy Sabbath Invitation</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="happySabbathForm" (ngSubmit)="addInvitation()" class="form-grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Church Name</mat-label>
+          <input matInput formControlName="churchName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Location</mat-label>
+          <input matInput formControlName="location">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Date</mat-label>
+          <input matInput formControlName="date">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Time</mat-label>
+          <input matInput formControlName="time">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+
+      <!-- Happy Sabbath Table -->
+      <div class="table-responsive" *ngIf="(invitations$ | async)?.length; else noInvitationData">
+
+        <table mat-table [dataSource]="(invitations$ | async) || []" class="mat-elevation-z2 full-width mt-4">
+
+          <ng-container matColumnDef="churchName">
+            <th mat-header-cell *matHeaderCellDef>Church Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.churchName }}</td>
+          </ng-container>
+          <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef>Location</th>
+            <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+          </ng-container>
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+          </ng-container>
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef>Time</th>
+            <td mat-cell *matCellDef="let element">{{ element.time }}</td>
+          </ng-container>
+
+          <!-- Delete Action Column -->
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-raised-button style="background-color: orangered; color:white"
+                      (click)="deleteInvitation(element.id)">
+                Delete
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="happySabbathDisplayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: happySabbathDisplayedColumns;"></tr>
+
+        </table>
+
+        <!-- Generate Button for this section -->
+        <div class="mt-4 text-center">
+          <button mat-raised-button color="accent" (click)="generatePDF('happy')">
+            Generate PDF
+          </button>
+        </div>
+      </div>
+
+      <ng-template #noInvitationData>
+        <p class="text-center text-gray-500 mt-2">No Happy Sabbath invitations available yet.</p>
+      </ng-template>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div>

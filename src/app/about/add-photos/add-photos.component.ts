@@ -49,11 +49,20 @@ export class AddPhotosComponent {
 
 
   onFilesSelected(event: any) {
-    this.selectedFiles = Array.from(event.target.files);
+    const files: File[] = Array.from(event.target.files);
+    this.selectedFiles = [];
     this.previewUrls = [];
     this.imagesBase64 = [];
 
-    this.selectedFiles.forEach(file => {
+    for (let file of files) {
+      // Check if file size exceeds 500 KB
+      if (file.size > 500 * 1024) {
+        alert(`File "${file.name}" exceeds 500 KB. Please select smaller images.`);
+        continue; // skip this file
+      }
+
+      this.selectedFiles.push(file);
+
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
@@ -61,7 +70,12 @@ export class AddPhotosComponent {
         this.imagesBase64.push(reader.result as string);
         this.cdr.detectChanges();
       };
-    });
+    }
+
+    // Reset the input if all files were too large
+    if (this.selectedFiles.length === 0) {
+      event.target.value = '';
+    }
   }
 
   async deleteEvent(eventId: string) {
