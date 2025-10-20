@@ -1,0 +1,38 @@
+<h3 class="heading-margin-top" style="color: #0f3d81">Add Church Staff Member</h3>
+
+<div class="add-staff-member">
+  <div class="form-container">
+    <form #addStaffForm="ngForm" (ngSubmit)="onSubmit()">
+      <!-- Staff Member Name -->
+      <div class="form-group">
+        <label>Staff Member Name</label>
+        <input type="text" name="name" [(ngModel)]="staff.name" required />
+      </div>
+
+      <!-- Staff Member Email -->
+      <div class="form-group">
+        <label>Staff Member Email</label>
+        <input type="email" name="email" [(ngModel)]="staff.email" required />
+      </div>
+
+      <!-- Staff Member Designation -->
+      <div class="form-group">
+        <label>Staff Member Designation</label>
+        <input type="text" name="designation" [(ngModel)]="staff.designation" required />
+      </div>
+
+      <!-- Upload Image -->
+      <div class="form-group">
+        <label>Upload Profile Image (file should be less than 500 KB)</label>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*" required />
+      </div>
+
+      <button type="submit">Add Staff Member</button>
+    </form>
+  </div>
+
+  <!-- Image Preview -->
+  <div class="image-preview" *ngIf="previewUrl">
+    <img [src]="previewUrl" alt="Staff Member Image Preview" />
+  </div>
+</div>

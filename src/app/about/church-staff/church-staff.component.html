@@ -1,11 +1,38 @@
+<h2 class="heading-margin-top">Church Team Members</h2>
+<p>Matthew 5:16 (NIV) “Let your light shine before others.”</p>
 
-<div class="staff-container heading-margin-top ">
-  <div class="staff-card" *ngFor="let member of staffMembers">
-    <img [src]="member.photo" alt="{{ member.name }}" class="profile-pic" />
-    <h4 style="color: black">{{ member.name }}</h4>
-    <p class="designation">{{ member.title }}</p>
-    <a [href]="'mailto:' + member.email" class="email">{{ member.email }}</a>
+<section id="team" class="team section py-5">
+  <div class="container">
+    <div class="row gy-4 justify-content-center">
+      <div
+        class="col-lg-6 col-md-6 d-flex align-items-stretch"
+        *ngFor="let staff of staffMembers; let i = index"
+        [attr.data-aos-delay]="(i + 1) * 100"
+        data-aos="fade-up"
+      >
+        <div class="staff-card">
+          <div class="member-img">
+            <img
+              [src]="staff.safePhoto"
+              class="profile-pic"
+              [alt]="staff.name"
+              (click)="openPhoto(staff.image)"
+              style="cursor: pointer;"
+            />
+          </div>
+          <div class="member-info">
+            <h4>{{ staff.name }}</h4>
+            <span class="designation">{{ staff.designation }}</span>
+            <p class="text-muted small mt-2">{{ staff.email }}</p>
+
+            <div class="staff-actions" *ngIf="isLoggedIn">
+              <button (click)="onDelete(staff.id!)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Team Member -->
+    </div>
   </div>
-</div>
-
+</section>
 

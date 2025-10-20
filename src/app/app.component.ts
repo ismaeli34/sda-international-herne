@@ -5,12 +5,12 @@ import {CookiesConsentComponent} from './cookies-consent/cookies-consent.compone
 import {FooterComponent} from './footer/footer.component';
 import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
-import {NgForOf} from '@angular/common';
+import {CommonModule, NgForOf} from '@angular/common';
 gsap.registerPlugin(CustomEase);
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, CookiesConsentComponent, FooterComponent, NgForOf],
+  imports: [RouterOutlet, HeaderComponent, CookiesConsentComponent, FooterComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
