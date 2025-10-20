@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { addDoc, collection, collectionData, deleteDoc, doc, Firestore } from '@angular/fire/firestore';
+import {Component, OnInit} from '@angular/core';
+import {addDoc, collection, collectionData, deleteDoc, doc, docData, Firestore, setDoc} from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Observable, firstValueFrom } from 'rxjs';
+import {Observable, firstValueFrom, combineLatest} from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,6 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 
 import { jsPDF } from 'jspdf';
 import autoTable, { UserOptions } from 'jspdf-autotable';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-sabbath-services',
@@ -26,7 +27,7 @@ import autoTable, { UserOptions } from 'jspdf-autotable';
   templateUrl: './sabbath-services.component.html',
   styleUrls: ['./sabbath-services.component.scss']
 })
-export class SabbathServicesComponent {
+export class SabbathServicesComponent implements OnInit{
   sabbathForm: FormGroup;
   divineForm: FormGroup;
   happySabbathForm: FormGroup;
@@ -40,10 +41,26 @@ export class SabbathServicesComponent {
     'lessonReview','childrenCare','closingPrayer','closingSong','announcements','actions'
   ];
 
+  coverForm: FormGroup;
+
+
+  showCombinedPDF$: Observable<boolean>;
+
+
   divineDisplayedColumns: string[] = [
     'songService','prelude','welcomeCall','openingSong','invocation','offering',
-    'scriptureReading','pastoralPrayer','specialSong','message','closingSong','benediction','responseHymn','actions'
+    'scriptureReading','pastoralPrayer','specialSong','message','closingSong','benediction','responseHymn','pictureTakings','actions'
   ];
+
+  ngOnInit() {
+    const coverDocRef = doc(this.firestore, 'churchBulletinCover', 'currentCover');
+    docData(coverDocRef).subscribe((data: any) => {
+      if (data) {
+        this.coverForm.patchValue(data);
+      }
+    });
+  }
+
 
   happySabbathDisplayedColumns: string[] = ['churchName','location','date','time','actions'];
 
@@ -59,32 +76,79 @@ export class SabbathServicesComponent {
       songService: [''], prelude: [''], welcomeCall: [''], openingSong: [''],
       invocation: [''], offering: [''], scriptureReading: [''],
       pastoralPrayer: [''], specialSong: [''], message: [''],
-      closingSong: [''], benediction: [''], responseHymn: ['']
+      closingSong: [''], benediction: [''], responseHymn: [''],
+      pictureTakings: ['']  // ← Added field
+
     });
 
     this.happySabbathForm = this.fb.group({
       churchName: [''], location: [''], date: [''], time: ['']
     });
 
+
+    this.coverForm = this.fb.group({
+      theme: [''],
+      date: ['']
+    });
+
     // Firestore streams
     this.sabbathServices$ = collectionData(collection(this.firestore, 'sabbathSchoolServices'), { idField: 'id' });
     this.divineServices$ = collectionData(collection(this.firestore, 'divineServices'), { idField: 'id' });
     this.invitations$ = collectionData(collection(this.firestore, 'happySabbathInvitations'), { idField: 'id' });
+
+    this.showCombinedPDF$ = combineLatest([
+      this.sabbathServices$,
+      this.divineServices$,
+      this.invitations$
+    ]).pipe(
+      map(([sabbath, divine, happy]) =>
+        (sabbath && sabbath.length > 0) &&
+        (divine && divine.length > 0) &&
+        (happy && happy.length > 0)
+      )
+    );
+
+  }
+
+  // Add this method inside your component
+  async saveCover() {
+    const coverData = this.coverForm.value;
+
+    // Use a fixed doc ID if you only want a single cover
+    const docRef = doc(this.firestore, 'churchBulletinCover', 'currentCover');
+
+    try {
+      await setDoc(docRef, coverData);
+      alert('Church Bulletin cover saved successfully!');
+    } catch (error) {
+      console.error('Error saving cover:', error);
+      alert('Failed to save cover.');
+    }
   }
 
   // Add documents
-  async addSabbathService() { await addDoc(collection(this.firestore, 'sabbathSchoolServices'), this.sabbathForm.value); this.sabbathForm.reset(); }
-  async addDivineService() { await addDoc(collection(this.firestore, 'divineServices'), this.divineForm.value); this.divineForm.reset(); }
-  async addInvitation() { await addDoc(collection(this.firestore, 'happySabbathInvitations'), this.happySabbathForm.value); this.happySabbathForm.reset(); }
+  async addSabbathService() {
+    const docRef = doc(this.firestore, 'sabbathSchoolServices', 'singleRecord'); // fixed ID
+    await setDoc(docRef, this.sabbathForm.value);
+    this.sabbathForm.reset();
+  }
+  async addDivineService() {
+    const docRef = doc(this.firestore, 'divineServices', 'singleRecord'); // fixed ID
+    await setDoc(docRef, this.divineForm.value);
+    this.divineForm.reset();
+  }
 
+  async addInvitation() {
+    const docRef = doc(this.firestore, 'happySabbathInvitations', 'singleRecord'); // fixed ID
+    await setDoc(docRef, this.happySabbathForm.value);
+    this.happySabbathForm.reset();
+  }
   // Delete documents
   async deleteSabbathService(id: string) { if(confirm('Delete this Sabbath School Service?')) await deleteDoc(doc(this.firestore, 'sabbathSchoolServices', id)); }
   async deleteDivineService(id: string) { if(confirm('Delete this Divine Service?')) await deleteDoc(doc(this.firestore, 'divineServices', id)); }
   async deleteInvitation(id: string) { if(confirm('Delete this Happy Sabbath Invitation?')) await deleteDoc(doc(this.firestore, 'happySabbathInvitations', id)); }
 
   // Generate PDF
-
-
 
   async generatePDF(section: 'sabbath' | 'divine' | 'happy') {
     const doc = new jsPDF();
@@ -208,6 +272,272 @@ export class SabbathServicesComponent {
     });
 
     doc.save(`${title}.pdf`);
+  }
+
+
+
+  async generateCombinedPDF() {
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const marginX = 20;
+    const lineHeight = 8;
+
+    // ======== COVER PAGE ========
+    const theme = this.coverForm.get('theme')?.value || '';
+    const date = this.coverForm.get('date')?.value || '';
+
+    // === Load cover image ===
+    const coverPath = '/church_bulletin_main.jpeg';
+    try {
+      const coverData = await fetch(coverPath)
+        .then(res => res.blob())
+        .then(blob => new Promise<string>((resolve) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result as string);
+          reader.readAsDataURL(blob);
+        }));
+      doc.addImage(coverData, 'JPEG', 0, 0, pageWidth, pageHeight);
+    } catch (e) {
+      console.warn('Cover image not found:', e);
+    }
+
+    // === Overlay theme and date ===
+    const bottomY = pageHeight - 30;
+    doc.setFont('times', 'bold');
+    doc.setFontSize(30);
+    doc.setTextColor(0);
+    doc.text(theme, pageWidth / 2, bottomY, { align: 'center' });
+
+    doc.setFont('times', 'normal');
+    doc.setFontSize(24);
+    doc.text(date.toUpperCase(), pageWidth / 2, bottomY + 15, { align: 'center' });
+
+    // ======== FETCH DATA ========
+    const [sabbathData, divineData, invitationsData] = await Promise.all([
+      firstValueFrom(this.sabbathServices$),
+      firstValueFrom(this.divineServices$),
+      firstValueFrom(this.invitations$)
+    ]);
+
+    // ======== LOAD SECTION BACKGROUND IMAGE ========
+    const bulletinPath = '/bulletin_page.jpeg';
+    let bulletinImageData: string | null = null;
+
+    try {
+      bulletinImageData = await fetch(bulletinPath)
+        .then(res => res.blob())
+        .then(blob => new Promise<string>((resolve) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result as string);
+          reader.readAsDataURL(blob);
+        }));
+    } catch (e) {
+      console.warn('Bulletin page image not found:', e);
+    }
+
+    // ======== HELPER FUNCTION ========
+    let yPos = 30;
+
+    const addSection = (title: string, items: any[], fields: string[]) => {
+      if (!items || items.length === 0) return;
+
+      // Add a new page with background image
+      doc.addPage();
+      if (bulletinImageData) {
+        doc.addImage(bulletinImageData, 'JPEG', 0, 0, pageWidth, pageHeight);
+      }
+
+      yPos = 40;
+
+      // Section Header
+      doc.setFont('times', 'bold');
+      doc.setFontSize(20);
+      doc.setTextColor(0, 0, 102);
+      doc.text(title, pageWidth / 2, yPos, { align: 'center' });
+
+      yPos += lineHeight * 2;
+
+      const labelX = 25; // left column for labels
+      const valueX = 90; // aligned column for values
+      const lineGap = 8; // line spacing
+
+      items.forEach(item => {
+        fields.forEach(field => {
+          const label = field
+            .replace(/([A-Z])/g, ' $1')
+            .replace(/^./, str => str.toUpperCase());
+          const value = item[field] || '';
+
+          doc.setFont('times', 'bold');
+          doc.setFontSize(12);
+          doc.setTextColor(0);
+          doc.text(`${label}:`, labelX, yPos);
+
+          doc.setFont('times', 'normal');
+          doc.text(String(value), valueX, yPos);
+
+          yPos += lineGap;
+        });
+
+        // Extra space between records
+        yPos += lineGap;
+
+        // Page break if needed
+        if (yPos > pageHeight - 30) {
+          doc.addPage();
+          if (bulletinImageData) {
+            doc.addImage(bulletinImageData, 'JPEG', 0, 0, pageWidth, pageHeight);
+          }
+          yPos = 40;
+        }
+      });
+    };
+
+    // ======== ADD SECTIONS (each with same background) ========
+    const happyFields = this.happySabbathDisplayedColumns.filter(c => c !== 'actions');
+    addSection('Happy Sabbath Invitation', invitationsData, happyFields);
+
+    const sabbathFields = this.displayedColumns.filter(c => c !== 'actions');
+    addSection('Sabbath School Services', sabbathData, sabbathFields);
+
+    const divineFields = this.divineDisplayedColumns.filter(c => c !== 'actions');
+    addSection('Divine Services', divineData, divineFields);
+
+    // ======== OPEN PDF IN NEW TAB ========
+    const pdfBlobUrl = doc.output('bloburl');
+    window.open(pdfBlobUrl, '_blank');
+  }
+
+
+
+  async previewCover() {
+    const theme = this.coverForm.get('theme')?.value || '';
+    const date = this.coverForm.get('date')?.value || '';
+
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+
+    // === 1️⃣ Add church bulletin image from public folder ===
+    const imagePath = '/church_bulletin_main.jpeg'; // served from public folder
+    try {
+      doc.addImage(imagePath, 'JPEG', 0, 0, pageWidth, pageHeight);
+    } catch (e) {
+      console.warn('Church bulletin image not found or invalid path:', e);
+    }
+
+    // === 2️⃣ Overlay theme and date ===
+    const bottomY = pageHeight - 30;
+
+    doc.setFont('Helvetica', );
+    doc.setFontSize(30);
+    doc.setTextColor(0);
+    doc.text(theme, pageWidth / 2, bottomY, { align: 'center' });
+
+    doc.setFont('Helvetica', );
+    doc.setFontSize(30);
+    doc.text(date.toUpperCase(), pageWidth / 2, bottomY + 15, { align: 'center' });
+
+    // === 3️⃣ Preview PDF in new tab ===
+    const pdfBlobUrl = doc.output('bloburl');
+    window.open(pdfBlobUrl, '_blank');
+  }
+
+
+
+  // === PREVIEW HAPPY SABBATH INVITATION ===
+  async previewHappySabbath() {
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+
+    // ✅ Fetch latest invitation from Firestore
+    const invitations = await firstValueFrom(this.invitations$);
+    const latest = invitations[invitations.length - 1] || {};
+
+    // Logo
+    const logo = '/adventist_blue_logo.png';
+    try {
+      doc.addImage(logo, 'PNG', pageWidth - 50, 10, 30, 30);
+    } catch {
+      console.warn('Logo not found');
+    }
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(26);
+    doc.setTextColor(0, 102, 204);
+    doc.text('Happy Sabbath Invitation', pageWidth / 2, 40, { align: 'center' });
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(14);
+    doc.setTextColor(50);
+
+    let yPos = 70;
+    doc.text(`Church Name: ${latest.churchName || ''}`, 20, yPos);
+    doc.text(`Location: ${latest.location || ''}`, 20, (yPos += 10));
+    doc.text(`Date: ${latest.date || ''}`, 20, (yPos += 10));
+    doc.text(`Time: ${latest.time || ''}`, 20, (yPos += 10));
+
+    const pdfBlobUrl = doc.output('bloburl');
+    window.open(pdfBlobUrl, '_blank');
+  }
+
+// === PREVIEW SABBATH SCHOOL SERVICE ===
+  async previewSabbathService() {
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+
+    doc.setFont('times', 'bold');
+    doc.setFontSize(20);
+    doc.text('Sabbath School Service Preview', pageWidth / 2, 20, { align: 'center' });
+
+    // ✅ Fetch from Firestore
+    const sabbathData = await firstValueFrom(this.sabbathServices$);
+    const data = sabbathData[sabbathData.length - 1] || {};
+
+    const fields = Object.keys(data);
+    let yPos = 40;
+
+    doc.setFont('times', 'normal');
+    doc.setFontSize(12);
+
+    fields.forEach(field => {
+      const label = field.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+      doc.text(`${label}: ${data[field] || ''}`, 20, yPos);
+      yPos += 10;
+    });
+
+    const pdfBlobUrl = doc.output('bloburl');
+    window.open(pdfBlobUrl, '_blank');
+  }
+
+// === PREVIEW DIVINE SERVICE ===
+  async previewDivineService() {
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+
+    doc.setFont('times', 'bold');
+    doc.setFontSize(20);
+    doc.text('Divine Service Preview', pageWidth / 2, 20, { align: 'center' });
+
+    // ✅ Fetch from Firestore
+    const divineData = await firstValueFrom(this.divineServices$);
+    const data = divineData[divineData.length - 1] || {};
+
+    const fields = Object.keys(data);
+    let yPos = 40;
+
+    doc.setFont('times', 'normal');
+    doc.setFontSize(12);
+
+    fields.forEach(field => {
+      const label = field.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+      doc.text(`${label}: ${data[field] || ''}`, 20, yPos);
+      yPos += 10;
+    });
+
+    const pdfBlobUrl = doc.output('bloburl');
+    window.open(pdfBlobUrl, '_blank');
   }
 
 

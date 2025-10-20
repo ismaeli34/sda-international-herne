@@ -28,7 +28,7 @@ const routes: Routes = [
       {path:'membership-class',component: MembershipClassComponent},
       {path:'upcoming-events',component: UpcomingEventsComponent},
       {path:'update-upcoming-events/:id',component: UpdateUpcomingEventCardComponent},
-      {path:'happy-sabbath',component: SabbathServicesComponent},
+      {path:'sabbath-management',component: SabbathServicesComponent},
       {path:'add-events',component: AddEventsComponent, canActivate: [AuthGuard]}
 
 
