@@ -123,3 +123,55 @@
 .justify-text {
   text-align: justify;
 }
+
+
+/* 🌟 Event Passed Banner */
+.event-passed-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, #ffe6e6, #ffcccc);
+  border-left: 6px solid #e74c3c;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  box-shadow: 0 3px 10px rgba(231, 76, 60, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+
+  .icon {
+    font-size: 1.6rem;
+  }
+
+  .banner-text {
+    h4 {
+      margin: 0;
+      color: #c0392b;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 2px 0 0 0;
+      color: #7b0000;
+      font-size: 14px;
+    }
+  }
+}
+
+/* Slightly dim card when event passed */
+.event-card.event-passed {
+  opacity: 0.9;
+  background-color: #fafafa;
+}
+
+/* ✨ Smooth fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

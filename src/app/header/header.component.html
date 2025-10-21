@@ -69,7 +69,7 @@
           <li><a routerLink="/events/midnight-prayer">{{'events.midnight-prayer'| translate}}</a></li>
           <li><a routerLink="/events/child-dedication">{{'events.dedication'| translate}}</a></li>
           <li><a routerLink="/events/membership-class">{{'events.membership'| translate}}</a></li>
-          <li><a routerLink="/events/sabbath-management">{{'events.sabbath-services'| translate}}</a></li>
+          <li *ngIf="isLoggedIn"><a routerLink="/events/sabbath-management">{{'events.sabbath-services'| translate}}</a></li>
 
 
         </ul>

@@ -29,7 +29,7 @@
           <li><a [routerLink]="['midnight-prayer']" [routerLinkActive]="['current']">Midnight Prayer</a></li>
           <li><a [routerLink]="['child-dedication']" [routerLinkActive]="['current']">Child Dedication</a></li>
           <li><a [routerLink]="['membership-class']" [routerLinkActive]="['current']">Membership Class</a></li>
-          <li><a [routerLink]="['sabbath-management']" [routerLinkActive]="['current']">Sabbath Management</a></li>
+          <li><a *ngIf="isLoggedIn" [routerLink]="['sabbath-management']" [routerLinkActive]="['current']">Sabbath Management</a></li>
         </ul>
       </div>
     </div>

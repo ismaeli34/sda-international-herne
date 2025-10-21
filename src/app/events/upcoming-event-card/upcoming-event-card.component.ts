@@ -60,6 +60,12 @@ export class UpcomingEventCardComponent implements OnInit{
     console.log(`Event ${this.event.id} deleted`);
   }
 
+  isEventPassed(): boolean {
+    if (!this.event?.date) return false;
+    const eventDate = new Date(this.event.date);
+    const today = new Date();
+    return eventDate < today;
+  }
 
 
 }

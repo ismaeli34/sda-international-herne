@@ -8,6 +8,16 @@
       <p> <strong>Time : </strong>{{event.time}} hrs</p>
       <p> <strong>Location : </strong>  {{event.location}}</p>
       <p> <strong>Contact Person : </strong>{{event.contact_person}}</p>
+
+      <!-- ✅ Show message if event is passed -->
+      <div *ngIf="isEventPassed()" class="passed-banner">
+        <div class="banner-content">
+          <div class="text">
+            <h4 style="color: #dc3545">⏰ Event Completed</h4>
+            <p style="color: #dc3545">This event has already taken place.</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="event-actions">
