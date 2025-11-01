@@ -6,16 +6,18 @@ import {
     MatExpansionPanelTitle
 } from "@angular/material/expansion";
 import {MatIconModule} from '@angular/material/icon';
+import {CalenderComponent} from '../calender/calender.component';
 
 @Component({
   selector: 'app-membership-class',
-    imports: [
-        MatAccordion,
-        MatExpansionPanel,
-        MatExpansionPanelHeader,
-        MatExpansionPanelTitle,
-        MatIconModule
-    ],
+  imports: [
+    MatAccordion,
+    MatExpansionPanel,
+    MatExpansionPanelHeader,
+    MatExpansionPanelTitle,
+    MatIconModule,
+
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './membership-class.component.html',
   styleUrl: './membership-class.component.scss'

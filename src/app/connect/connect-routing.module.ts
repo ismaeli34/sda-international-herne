@@ -6,6 +6,7 @@ import {BibleStudiesComponent} from './bible-studies/bible-studies.component';
 import {MinistriesComponent} from './ministries/ministries.component';
 import {PrayerMeetingsComponent} from './prayer-meetings/prayer-meetings.component';
 import {ServiceTeamsComponent} from './service-teams/service-teams.component';
+import {ChurchDateInformationComponent} from './church-date-information/church-date-information.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
       {path:'bible-studies', component: BibleStudiesComponent},
       {path:'ministries',component: MinistriesComponent},
       {path:'prayer-meetings',component: PrayerMeetingsComponent},
-      {path:'service-teams',component: ServiceTeamsComponent}
+      {path:'service-teams',component: ServiceTeamsComponent},
+      {path:'church-info',component:ChurchDateInformationComponent}
     ]
   }
 ];

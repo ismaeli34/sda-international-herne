@@ -1,0 +1,48 @@
+<h3 class="heading-margin-top font-bold ">International SDA Church Herne</h3>
+<!-- church.component.html -->
+<div class="row ">
+  <p style="color: black">
+    We are a vibrant international community in Herne, meeting every two weeks
+    on Saturdays at 10:00 am. You are warmly welcome!
+  </p>
+
+  <h2 style="color: black" class="text-xl font-semibold">Upcoming Service Dates</h2>
+
+  <!-- Add new date -->
+  <div *ngIf="isLoggedIn">
+    <input
+      type="date"
+      [(ngModel)]="newDate"
+      class="border p-2 rounded"
+      placeholder="Select date"
+    />
+    <button
+      (click)="addDate()"
+      class="bg-blue-600 text-white px-4 py-2 rounded ml-2"
+    >
+      ➕ Add Date
+    </button>
+  </div>
+
+  <!-- Display all service dates -->
+  <ul class="text-left max-w-md mx-auto">
+    <li
+      *ngFor="let service of serviceDates"
+      class="flex justify-between items-center border-b py-2"
+    >
+
+      <!-- Display Mode -->
+      <div *ngIf="editModeId !== service.id">
+        <span style="color: black">{{ service.date | date: 'dd.MM.yyyy' }}</span>
+        <div *ngIf="isLoggedIn">
+          <button
+            (click)="deleteDate(service.id)"
+            class="bg-red-500 text-white px-2 py-1 rounded"
+          >
+            🗑️ Delete
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

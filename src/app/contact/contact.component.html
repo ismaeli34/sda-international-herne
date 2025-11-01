@@ -19,39 +19,42 @@
     <div class="column">
 
       <p class="lead drop-cap justify-text">
-        If you have any questions, comments, ideas, or would just like to get in touch with us, you can easily reach us by using the form on the right.We have lots of activities for anyone looking to get involved in a Christian Church.
+        If you have any questions, comments, ideas, or would just like to get in touch with us, you can easily reach us by our contact information . We have lots of activities for anyone looking to get involved in a Christian Bible based Church.
         To get involved, let us know who you are and what your areas of interest are.
-        You are also very welcome to come and join our Saturday Worship Services at 10:00 am , and find out more details about us there. Please, note that Kid’s Program are only offered at the 10:00 am service.
+
         Our address is:
       </p>
 
-      <p>
-
-
-
-      </p>
-
-      <div class="row">
-
-        <div class="column large-12 tab-full">
-
-          <div class="contact-details">
-            <h3>Contact Info.</h3>
-            <br>
-
-            <p><strong>Email Id:</strong> {{email}}</p>
-            <p><strong>Mobile Phone:</strong> {{phone1}}</p>
-            <p><strong>Address: </strong>{{address}}</p>
-          </div>
-
-
-
+      <!-- Grid for main cards -->
+      <div class="contact-cards">
+        <div class="contact-card">
+          <h3>Church Main Office</h3>
+          <p>
+            {{serviceAddress}}
+          </p>
         </div>
+
+        <div class="contact-card">
+          <h3>Contact Info</h3>
+          <p>
+            <strong>Email Id: </strong> {{email}}<br>
+            <strong>Mobile Phone: </strong> {{phone1}}<br>
+            <strong>Office Phone: </strong> {{phone2}}
+          </p>
+        </div>
+      </div>
+
+      <!-- Prayer Card Below -->
+      <div class="prayer-card-large">
+        <h3>Prayer Requests</h3>
+        <p>
+          If you have a prayer request, kindly contact us via email at <strong>{{email}}</strong> or call us at <strong>{{phone1}}</strong>, <strong>{{phone2}}</strong>
+        </p>
       </div>
 
     </div>
   </div>
 
-</section> <!-- end page-content -->
+</section>
 
 
