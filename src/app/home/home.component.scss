@@ -6,8 +6,9 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #090A0A;
+  background-color: #388087;
 }
+
 
 .carousel .list {
   position: relative;
@@ -559,4 +560,70 @@
   .curved-card .mission {
     font-size: 0.9em;
   }
+}
+
+
+.tab-nav__list li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Default state (you can adjust text color if needed) */
+.tab-nav__list li a span {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.tab-nav__list li a:hover {
+  background-color: #388087;
+}
+
+.tab-nav__list li a:hover span {
+  color: white;
+}
+
+.tab-nav__list li a:hover svg path {
+  fill: white;
+}
+
+
+/* Change background color of the entire menu list */
+.menu-list {
+  background-color: #388087;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Each list item inside the menu */
+.menu-list__item {
+  background-color: #388087; /* same color for uniform look */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  transition: background-color 0.3s ease;
+}
+
+/* Optional hover effect for list items */
+.menu-list__item:hover {
+  background-color: #2e6d74; /* slightly darker shade on hover */
+}
+
+/* Text color for better contrast */
+.menu-list__item h4,
+.menu-list__item p,
+.menu-list__item-price span {
+  color: white;
+}
+
+/* If you want links or other inline text white too */
+.menu-list__item a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-list__item a:hover {
+  text-decoration: underline;
 }

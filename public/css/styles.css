@@ -4141,7 +4141,7 @@ td:last-child {
 }
 
 .tab-nav__list li[data-tab-active] {
-    border-bottom: 1px solid var(--color-bg-accent);
+  border-bottom: 1px solid var(--color-bg-accent);
 }
 
 .tab-nav__list li[data-tab-active] a {
@@ -4284,7 +4284,7 @@ td:last-child {
 }
 
 .menu-list__item:nth-child(odd) {
-    background-color: var(--color-bg-neutral-dark);
+    /*background-color: var(--color-bg-neutral-dark);*/
 }
 
 .menu-list__item h4 {

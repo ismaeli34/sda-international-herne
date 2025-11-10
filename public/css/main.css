@@ -106,10 +106,12 @@ html {
 html,
 body {
   height: 100%;
+  background: #ffffff;
+
 }
 
 body {
-  background: #121212;
+  background: #388087;
   font-family: "Lora", serif;
   font-size: 2rem;
   font-style: normal;
@@ -3140,13 +3142,11 @@ html.no-csstransitions .hero-content {
  *
  * ------------------------------------------------------------------- */
 .s-footer {
-  padding-top: 12rem;
   padding-bottom: 8rem;
-  background-color: #090a0a;
+  background-color: #2e6d74;
   font-family: "Open Sans", sans-serif;
   font-size: 1.7rem;
-  line-height: 1.882;
-  color: rgba(255, 255, 255, 0.5);
+  margin-top: 180px;
 }
 
 .s-footer a {
