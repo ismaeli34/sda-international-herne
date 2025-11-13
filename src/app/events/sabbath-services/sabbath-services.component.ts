@@ -67,16 +67,37 @@ export class SabbathServicesComponent implements OnInit{
   constructor(private fb: FormBuilder, private firestore: Firestore) {
     // Forms
     this.sabbathForm = this.fb.group({
-      songService: [''], welcome: [''], openingSong: [''], openingPrayer: [''],
-      specialSong: [''], lessonReview: [''], childrenCare: [''],
-      closingPrayer: [''], closingSong: [''], announcements: ['']
+      songService: [''],
+      welcome: [''],
+      openingSong: [''],
+      openingPrayer: [''],
+      specialSong: [''],
+      lessonReview: [''],
+      childrenCare: [''],
+      closingPrayer: [''],
+      closingSong: [''],
+      announcements: [''],
+      divineSongService: [''],
+      divinePreludeSong: [''],
+      divineOpeningSong: [''],
+      divineClosingSong: [''],
+      divineResponseSong: ['']
     });
 
     this.divineForm = this.fb.group({
-      songService: [''], prelude: [''], welcomeCall: [''], openingSong: [''],
-      invocation: [''], offering: [''], scriptureReading: [''],
-      pastoralPrayer: [''], specialSong: [''], message: [''],
-      closingSong: [''], benediction: [''], responseHymn: [''],
+      songService: [''],
+      prelude: [''],
+      welcomeCall: [''],
+      openingSong: [''],
+      invocation: [''],
+      offering: [''],
+      scriptureReading: [''],
+      pastoralPrayer: [''],
+      specialSong: [''],
+      message: [''],
+      closingSong: [''],
+      benediction: [''],
+      responseHymn: [''],
       pictureTakings: ['']  // ← Added field
 
     });
@@ -95,6 +116,8 @@ export class SabbathServicesComponent implements OnInit{
     this.sabbathServices$ = collectionData(collection(this.firestore, 'sabbathSchoolServices'), { idField: 'id' });
     this.divineServices$ = collectionData(collection(this.firestore, 'divineServices'), { idField: 'id' });
     this.invitations$ = collectionData(collection(this.firestore, 'happySabbathInvitations'), { idField: 'id' });
+
+
 
     this.showCombinedPDF$ = combineLatest([
       this.sabbathServices$,
@@ -550,47 +573,258 @@ export class SabbathServicesComponent implements OnInit{
   };
 
 
-  addSabbathSongService(){
+// ==================== SABBATH SCHOOL SONG SERVICE ====================
 
+  async addSabbathSongService() {
+    const song = this.sabbathForm.get('songService')?.value?.trim();
+    if (!song) return alert('Please enter the Sabbath School Song Service.');
+
+    try {
+      const docRef = doc(this.firestore, 'sabbathSchoolSongService', 'singleRecord');
+      await setDoc(docRef, { songService: song, updatedAt: new Date() }, { merge: true });
+      alert('✅ Sabbath School Song Service saved successfully!');
+      this.sabbathForm.get('songService')?.reset();
+    } catch (error) {
+      console.error('Error saving Sabbath song:', error);
+    }
   }
 
-  generateCombinedSongPDF(){
+  async addSabbathSchoolOpeningSong() {
+    const song = this.sabbathForm.get('openingSong')?.value?.trim();
+    if (!song) return alert('Please enter the Opening Song.');
 
+    try {
+      const docRef = doc(this.firestore, 'sabbathSchoolSongService', 'singleRecord');
+      await setDoc(docRef, { openingSong: song, updatedAt: new Date() }, { merge: true });
+      alert('✅ Opening Song saved!');
+      this.sabbathForm.get('openingSong')?.reset();
+    } catch (error) {
+      console.error('Error saving Opening Song:', error);
+    }
   }
 
-  addSabbathSchoolOpeningSong(){
+  async addSabbathSchoolClosingSong() {
+    const song = this.sabbathForm.get('closingSong')?.value?.trim();
+    if (!song) return alert('Please enter the Closing Song.');
 
+    try {
+      const docRef = doc(this.firestore, 'sabbathSchoolSongService', 'singleRecord');
+      await setDoc(docRef, { closingSong: song, updatedAt: new Date() }, { merge: true });
+      alert('✅ Closing Song saved!');
+      this.sabbathForm.get('closingSong')?.reset();
+    } catch (error) {
+      console.error('Error saving Closing Song:', error);
+    }
   }
 
-  addSabbathSchoolClosingSong(){
+  async addSabbathSchoolAnnouncements() {
+    const text = this.sabbathForm.get('announcements')?.value?.trim();
+    if (!text) return alert('Please enter the Announcements.');
 
+    try {
+      const docRef = doc(this.firestore, 'sabbathSchoolSongService', 'singleRecord');
+      await setDoc(docRef, { announcements: text, updatedAt: new Date() }, { merge: true });
+      alert('✅ Announcements saved!');
+      this.sabbathForm.get('announcements')?.reset();
+    } catch (error) {
+      console.error('Error saving Announcements:', error);
+    }
   }
 
-  addSabbathSchoolAnnouncements(){
+// ==================== DIVINE SONG SERVICE ====================
 
+  async addDivineSongService() {
+    const song = this.sabbathForm.get('divineSongService')?.value?.trim();
+    if (!song) return alert('Please enter the Divine Song Service.');
+
+    try {
+      const docRef = doc(this.firestore, 'divineSongService', 'singleRecord');
+      await setDoc(docRef, { songService: song, updatedAt: new Date() }, { merge: true });
+      alert('✅ Divine Song Service saved!');
+      this.sabbathForm.get('divineSongService')?.reset();
+    } catch (error) {
+      console.error('Error saving Divine Song:', error);
+    }
   }
 
+  async addDivinePreludeSong() {
+    const song = this.sabbathForm.get('divinePreludeSong')?.value?.trim();
+    if (!song) return alert('Please enter the Divine Prelude Song.');
 
-  addDivineSongService(){
-
+    try {
+      const docRef = doc(this.firestore, 'divineSongService', 'singleRecord');
+      await setDoc(docRef, { preludeSong: song, updatedAt: new Date() }, { merge: true });
+      alert('✅ Divine Prelude Song saved!');
+      this.sabbathForm.get('divinePreludeSong')?.reset();
+    } catch (error) {
+      console.error('Error saving Divine Prelude Song:', error);
+    }
   }
 
+  async addDivineOpeningSong() {
+    const song = this.sabbathForm.get('divineOpeningSong')?.value?.trim();
+    if (!song) return alert('Please enter the Divine Opening Song.');
 
-  addDivinePreludeSong(){
-
+    try {
+      const docRef = doc(this.firestore, 'divineSongService', 'singleRecord');
+      await setDoc(docRef, { openingSong: song, updatedAt: new Date() }, { merge: true });
+      alert('✅ Divine Opening Song saved!');
+      this.sabbathForm.get('divineOpeningSong')?.reset();
+    } catch (error) {
+      console.error('Error saving Divine Opening Song:', error);
+    }
   }
 
+  async addDivineClosingSong() {
+    const song = this.sabbathForm.get('divineClosingSong')?.value?.trim();
+    if (!song) return alert('Please enter the Divine Closing Song.');
 
-  addDivineOpeningSong(){
-
+    try {
+      const docRef = doc(this.firestore, 'divineSongService', 'singleRecord');
+      await setDoc(docRef, { closingSong: song, updatedAt: new Date() }, { merge: true });
+      alert('✅ Divine Closing Song saved!');
+      this.sabbathForm.get('divineClosingSong')?.reset();
+    } catch (error) {
+      console.error('Error saving Divine Closing Song:', error);
+    }
   }
 
-  addResponseSong(){
+  async addResponseSong() {
+    const song = this.sabbathForm.get('divineResponseSong')?.value?.trim();
+    if (!song) return alert('Please enter the Divine Response Song.');
 
+    try {
+      const docRef = doc(this.firestore, 'divineSongService', 'singleRecord');
+      await setDoc(docRef, { responseSong: song, updatedAt: new Date() }, { merge: true });
+      alert('✅ Divine Response Song saved!');
+      this.sabbathForm.get('divineResponseSong')?.reset();
+    } catch (error) {
+      console.error('Error saving Divine Response Song:', error);
+    }
   }
 
-  addDivineClosingSong(){
+  // ================================
+  // 🔹 GENERATE COMBINED SONG PDF
+  // ================================
 
+  async generateCombinedSongPDF() {
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const margin = 20;
+    const labelX = margin;
+    const valueX = 60;
+    const maxTextWidth = pageWidth - valueX - margin;
+    const lineHeight = 8;
+    let yPos = 40;
+
+    // ======== LOAD COVER & BULLETIN IMAGES ========
+    const coverPath = '/cover_page_song.jpg';
+    const bulletinPath = '/bulletin_page.jpeg';
+
+    let coverData: string | null = null;
+    let bulletinData: string | null = null;
+
+    try {
+      coverData = await fetch(coverPath)
+        .then(res => res.blob())
+        .then(blob => new Promise<string>((resolve) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result as string);
+          reader.readAsDataURL(blob);
+        }));
+    } catch (e) {
+      console.warn('Cover image not found:', e);
+    }
+
+    try {
+      bulletinData = await fetch(bulletinPath)
+        .then(res => res.blob())
+        .then(blob => new Promise<string>((resolve) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result as string);
+          reader.readAsDataURL(blob);
+        }));
+    } catch (e) {
+      console.warn('Bulletin page image not found:', e);
+    }
+
+    // ======== FETCH DATA ========
+    const sabbathSongs = await firstValueFrom(
+      collectionData(collection(this.firestore, 'sabbathSchoolSongService'), { idField: 'id' })
+    );
+    const divineSongs = await firstValueFrom(
+      collectionData(collection(this.firestore, 'divineSongService'), { idField: 'id' })
+    );
+
+    // ======== ADD COVER PAGE ========
+    if (coverData) {
+      doc.addImage(coverData, 'JPEG', 0, 0, pageWidth, pageHeight);
+      doc.addPage(); // move to next page
+    }
+
+    // ======== HELPER FUNCTION TO RENDER SECTIONS ========
+    const renderSection = (title: string, data: any[], color: [number, number, number]) => {
+      if (!data || data.length === 0) return;
+
+      // Add new page with bulletin background
+      doc.addPage();
+      if (bulletinData) {
+        doc.addImage(bulletinData, 'JPEG', 0, 0, pageWidth, pageHeight);
+      }
+
+      yPos = 40;
+
+      // Section title
+      doc.setFont('times', 'bold');
+      doc.setFontSize(16);
+      doc.setTextColor(...color);
+      doc.text(title, pageWidth / 2, yPos, { align: 'center' });
+
+      yPos += 10;
+      doc.setFont('times', 'normal');
+      doc.setFontSize(12);
+      doc.setTextColor(0, 0, 0);
+
+      data.forEach((item, index) => {
+        Object.keys(item)
+          .filter(field => field !== 'id' && field !== 'createdAt' && field !== 'updatedAt') // hide timestamps
+          .forEach(field => {
+            const label = field.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+            const value = String(item[field] || '');
+            const wrappedText = doc.splitTextToSize(value, maxTextWidth);
+            const textHeight = wrappedText.length * lineHeight + 5;
+
+            if (yPos + textHeight > pageHeight - 20) {
+              doc.addPage();
+              if (bulletinData) doc.addImage(bulletinData, 'JPEG', 0, 0, pageWidth, pageHeight);
+              yPos = 40;
+            }
+
+            doc.setFont('times', 'bold');
+            doc.text(`${label}:`, labelX, yPos);
+            doc.setFont('times', 'normal');
+            doc.text(wrappedText, valueX, yPos);
+
+            yPos += textHeight;
+          });
+
+        yPos += 10;
+        if (index < data.length - 1 && yPos > pageHeight - 30) {
+          doc.addPage();
+          if (bulletinData) doc.addImage(bulletinData, 'JPEG', 0, 0, pageWidth, pageHeight);
+          yPos = 40;
+        }
+      });
+    };
+
+    // ======== RENDER SECTIONS ========
+    renderSection('Sabbath School Song Service', sabbathSongs, [0, 102, 204]);
+    renderSection('Divine Song Service', divineSongs, [102, 0, 153]);
+
+    // ======== OPEN PDF IN NEW TAB ========
+    const pdfBlobUrl = doc.output('bloburl');
+    window.open(pdfBlobUrl, '_blank');
   }
 
 

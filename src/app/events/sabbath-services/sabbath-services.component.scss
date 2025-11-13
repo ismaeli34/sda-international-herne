@@ -94,21 +94,79 @@ mat-form-field {
   margin-right: 0.5rem;
 }
 
+//.example-form {
+//  max-width: 1200px; /* increased from 600px */
+//  width: 100%;
+//  margin: 0 auto; /* center the form */
+//}
+//
+//.example-full-width {
+//  width: 100%;
+//}
+//
+//
+//.full-width-textarea {
+//  width: 100%;
+//  background-color: #fb8b23;
+//  color: white; /* optional: for better readability */
+//  padding: 10px; /* optional: add some inner spacing */
+//  box-sizing: border-box; /* ensures padding doesn't break width */
+//}
+//
+///* Optional: make textarea taller and look better */
+//textarea[matInput] {
+//  min-height: 250px;
+//  resize: vertical;
+//  font-size: 14px;
+//  line-height: 1.6;
+//  padding: 12px;
+//}
+//
+
+
 
 .example-form {
-  min-width: 150px;
-  max-width: 600px;
+  max-width: 100vw;   /* Full viewport width */
   width: 100%;
+  margin: 0 auto;
+  padding: 0; /* ensure no padding prevents width */
 }
 
-.example-full-width {
-  width: 100%;
+.form-grid {
+  display: block; /* change from grid to block for no column constraint */
+  padding: 0;
+  margin: 0;
 }
 
-/* Optional: make textarea taller even if rows is not enough */
-textarea[matInput] {
-  min-height: 200px;
-  resize: vertical; /* allows user to resize */
-  font-size: 12px;  /* smaller font */
-  line-height: 1.4;
+.example-full-width,
+mat-form-field.example-full-width {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+/* Remove box-shadow, border, and padding on mat-form-field */
+mat-form-field, .mat-form-field-wrapper, .mat-form-field-flex {
+  width: 100% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Apply background directly to textarea, and set border-radius 0 for flush edges */
+.full-width-textarea, textarea[matInput] {
+  width: 100%;
+  color: white;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  border: none !important;
+  min-height: 150px;
+  font-size: 26px;
+  font-family: monospace;
+  line-height: 1.6;
+  display: block;
+  resize: vertical;
 }

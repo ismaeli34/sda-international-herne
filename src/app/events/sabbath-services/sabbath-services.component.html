@@ -406,396 +406,436 @@
 
 
 
-<!--Sabbath Services Song Management-->
 
-
-
-<h2 class="heading-margin-top text-center mt-5">Sabbath Services Song Management</h2>
-
-<div class="container mx-auto p-6">
-
-  <div class="accordion" id="sabbathAccordion">
-
-    <!-- Step 1 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Step 1: Sabbath School Song Service
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#sabbathAccordion">
-        <div class="accordion-body">
-          <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSongService()">
-            <div class="mb-3">
-              <label for="sabbathSong" class="form-label">Add song</label>
-              <textarea class="form-control" id="sabbathSong" rows="10" placeholder="Ex. What a friend we have in Jesus..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 2 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Step 2: Sabbath School Opening Song
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#sabbathAccordion">
-        <div class="accordion-body">
-          <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolOpeningSong()">
-            <div class="mb-3">
-              <label for="openingSong" class="form-label">Add Opening Song</label>
-              <textarea class="form-control" id="openingSong" rows="10" placeholder="Ex. What a friend we have in Jesus..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 3 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Step 3: Sabbath School Closing Song
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#sabbathAccordion">
-        <div class="accordion-body">
-          <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolClosingSong()">
-            <div class="mb-3">
-              <label for="closingSong" class="form-label">Add Closing Song</label>
-              <textarea class="form-control" id="closingSong" rows="10" placeholder="Ex. What a friend we have in Jesus..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 4 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingFour">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          Step 4: Announcement
-        </button>
-      </h2>
-      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#sabbathAccordion">
-        <div class="accordion-body">
-          <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolAnnouncements()">
-            <div class="mb-3">
-              <label for="announcement" class="form-label">Add Announcement</label>
-              <textarea class="form-control" id="announcement" rows="10" placeholder="Ex...."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 5 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingFive">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-          Step 5: Divine Song Service
-        </button>
-      </h2>
-      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#sabbathAccordion">
-        <div class="accordion-body">
-          <form [formGroup]="sabbathForm" (ngSubmit)="addDivineSongService()">
-            <div class="mb-3">
-              <label for="divineSong" class="form-label">Add Divine Song</label>
-              <textarea class="form-control" id="divineSong" rows="10" placeholder="Ex...."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 6 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingSix">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-          Step 6: Divine Prelude Song
-        </button>
-      </h2>
-      <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#sabbathAccordion">
-        <div class="accordion-body">
-          <form [formGroup]="sabbathForm" (ngSubmit)="addDivinePreludeSong()">
-            <div class="mb-3">
-              <label for="preludeSong" class="form-label">Add Prelude Song</label>
-              <textarea class="form-control" id="preludeSong" rows="10" placeholder="Ex...."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 7 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingSeven">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-          Step 7: Divine Opening Song Service
-        </button>
-      </h2>
-      <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#sabbathAccordion">
-        <div class="accordion-body">
-          <form [formGroup]="sabbathForm" (ngSubmit)="addDivineOpeningSong()">
-            <div class="mb-3">
-              <label for="divineOpening" class="form-label">Add Divine Opening Song</label>
-              <textarea class="form-control" id="divineOpening" rows="10" placeholder="Ex...."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 8 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingEight">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-          Step 8: Divine Closing Song Service
-        </button>
-      </h2>
-      <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#sabbathAccordion">
-        <div class="accordion-body">
-          <form [formGroup]="sabbathForm" (ngSubmit)="addDivineClosingSong()">
-            <div class="mb-3">
-              <label for="divineClosing" class="form-label">Add Divine Closing Song</label>
-              <textarea class="form-control" id="divineClosing" rows="10" placeholder="Ex...."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 9 -->
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingNine">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-          Step 9: Divine Response Song
-        </button>
-      </h2>
-      <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#sabbathAccordion">
-        <div class="accordion-body">
-          <form [formGroup]="sabbathForm" (ngSubmit)="addResponseSong()">
-            <div class="mb-3">
-              <label for="responseSong" class="form-label">Add Response Song</label>
-              <textarea class="form-control" id="responseSong" rows="10" placeholder="Ex...."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-  </div>
-
-  <div class="mt-6 text-center" *ngIf="showCombinedPDF$ | async">
-    <button class="btn btn-danger" style="margin-top: 20px" (click)="generateCombinedSongPDF()">
-      Generate Combined PDF
-    </button>
-  </div>
-
-</div>
 
 
 
 <!--<h2 class="heading-margin-top text-center mt-5">Sabbath Services Song Management</h2>-->
 
-<!--<div class="container mx-auto p-6 space-y-6">-->
-
-<!--  <mat-accordion multi>-->
-
-<!--    &lt;!&ndash; Sabbath School Accordion &ndash;&gt;-->
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header>-->
-<!--        <mat-panel-title>Step 1 : Sabbath School  Song Service</mat-panel-title>-->
-<!--      </mat-expansion-panel-header>-->
-
-<!--      <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSongService()" class="form-grid">-->
-
-<!--        <mat-form-field class="example-full-width">-->
-<!--          <mat-label>Add song</mat-label>-->
-<!--          <textarea matInput placeholder="Ex. What a friend we have in Jesus..." rows="10"></textarea>-->
-<!--        </mat-form-field>-->
-
-<!--        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>-->
-<!--      </form>-->
-
-<!--    </mat-expansion-panel>-->
-
-
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header>-->
-<!--        <mat-panel-title>Step 2 : Sabbath School  Opening Song </mat-panel-title>-->
-<!--      </mat-expansion-panel-header>-->
-
-<!--      <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolOpeningSong()" class="form-grid">-->
-
-<!--        <mat-form-field class="example-full-width">-->
-<!--          <mat-label>Add Opening song</mat-label>-->
-<!--          <textarea matInput placeholder="Ex. What a friend we have in Jesus..." rows="10"></textarea>-->
-<!--        </mat-form-field>-->
-
-<!--        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>-->
-<!--      </form>-->
-
-<!--    </mat-expansion-panel>-->
-
-
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header>-->
-<!--        <mat-panel-title>Step 3 : Sabbath School  Closing Song </mat-panel-title>-->
-<!--      </mat-expansion-panel-header>-->
-
-<!--      <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolClosingSong()" class="form-grid">-->
-
-<!--        <mat-form-field class="example-full-width">-->
-<!--          <mat-label>Add Closing song</mat-label>-->
-<!--          <textarea matInput placeholder="Ex. What a friend we have in Jesus..." rows="10"></textarea>-->
-<!--        </mat-form-field>-->
-
-<!--        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>-->
-<!--      </form>-->
-
-<!--    </mat-expansion-panel>-->
-
-
-
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header>-->
-<!--        <mat-panel-title>Step 4 : Announcement </mat-panel-title>-->
-<!--      </mat-expansion-panel-header>-->
-
-<!--      <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolAnnouncements()" class="form-grid">-->
-
-<!--        <mat-form-field class="example-full-width">-->
-<!--          <mat-label>Add Announcement </mat-label>-->
-<!--          <textarea matInput placeholder="Ex...." rows="10"></textarea>-->
-<!--        </mat-form-field>-->
-
-<!--        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>-->
-<!--      </form>-->
-
-<!--    </mat-expansion-panel>-->
-
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header>-->
-<!--        <mat-panel-title>Step 5 : Divine Song Service </mat-panel-title>-->
-<!--      </mat-expansion-panel-header>-->
-
-<!--      <form [formGroup]="sabbathForm" (ngSubmit)="addDivineSongService()" class="form-grid">-->
-
-<!--        <mat-form-field class="example-full-width">-->
-<!--          <mat-label>Add Divine Song </mat-label>-->
-<!--          <textarea matInput placeholder="Ex...." rows="10"></textarea>-->
-<!--        </mat-form-field>-->
-
-<!--        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>-->
-<!--      </form>-->
-
-<!--    </mat-expansion-panel>-->
-
-
-
-
-
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header>-->
-<!--        <mat-panel-title>Step 6 : Divine Prelude Song </mat-panel-title>-->
-<!--      </mat-expansion-panel-header>-->
-
-<!--      <form [formGroup]="sabbathForm" (ngSubmit)="addDivinePreludeSong()" class="form-grid">-->
-
-<!--        <mat-form-field class="example-full-width">-->
-<!--          <mat-label>Add Prelude Song </mat-label>-->
-<!--          <textarea matInput placeholder="Ex...." rows="10"></textarea>-->
-<!--        </mat-form-field>-->
-
-<!--        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>-->
-<!--      </form>-->
-
-<!--    </mat-expansion-panel>-->
-
-
-
-
-
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header>-->
-<!--        <mat-panel-title>Step 7 : Divine Opening Song Service </mat-panel-title>-->
-<!--      </mat-expansion-panel-header>-->
-
-<!--      <form [formGroup]="sabbathForm" (ngSubmit)="addDivineOpeningSong()" class="form-grid">-->
-
-<!--        <mat-form-field class="example-full-width">-->
-<!--          <mat-label>Add Divine opening Song </mat-label>-->
-<!--          <textarea matInput placeholder="Ex...." rows="10"></textarea>-->
-<!--        </mat-form-field>-->
-
-<!--        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>-->
-<!--      </form>-->
-
-<!--    </mat-expansion-panel>-->
-
-
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header>-->
-<!--        <mat-panel-title>Step 8 : Divine Closing Song Service </mat-panel-title>-->
-<!--      </mat-expansion-panel-header>-->
-
-<!--      <form [formGroup]="sabbathForm" (ngSubmit)="addDivineClosingSong()" class="form-grid">-->
-
-<!--        <mat-form-field class="example-full-width">-->
-<!--          <mat-label>Add Divine closing Song </mat-label>-->
-<!--          <textarea matInput placeholder="Ex...." rows="10"></textarea>-->
-<!--        </mat-form-field>-->
-
-<!--        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>-->
-<!--      </form>-->
-
-<!--    </mat-expansion-panel>-->
-
-
-
-<!--    <mat-expansion-panel>-->
-<!--      <mat-expansion-panel-header>-->
-<!--        <mat-panel-title>Step 9 : Divine Response Song  </mat-panel-title>-->
-<!--      </mat-expansion-panel-header>-->
-
-<!--      <form [formGroup]="sabbathForm" (ngSubmit)="addResponseSong()" class="form-grid">-->
-
-<!--        <mat-form-field class="example-full-width">-->
-<!--          <mat-label>Add Response  Song </mat-label>-->
-<!--          <textarea matInput placeholder="Ex...." rows="10"></textarea>-->
-<!--        </mat-form-field>-->
-
-<!--        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>-->
-<!--      </form>-->
-
-<!--    </mat-expansion-panel>-->
-
-
-
-<!--  </mat-accordion>-->
-
+<!--<div class="container mx-auto p-6">-->
+
+<!--  <div class="accordion" id="sabbathAccordion">-->
+
+<!--    &lt;!&ndash; Step 1 &ndash;&gt;-->
+<!--    <div class="accordion-item">-->
+<!--      <h2 class="accordion-header" id="headingOne">-->
+<!--        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--          Step 1: Sabbath School Song Service-->
+<!--        </button>-->
+<!--      </h2>-->
+<!--      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#sabbathAccordion">-->
+<!--        <div class="accordion-body">-->
+<!--          <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSongService()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="sabbathSong" class="form-label">Add song</label>-->
+<!--              <textarea class="form-control" id="sabbathSong" rows="10" placeholder="Ex. What a friend we have in Jesus..."></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Step 2 &ndash;&gt;-->
+<!--    <div class="accordion-item">-->
+<!--      <h2 class="accordion-header" id="headingTwo">-->
+<!--        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--          Step 2: Sabbath School Opening Song-->
+<!--        </button>-->
+<!--      </h2>-->
+<!--      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#sabbathAccordion">-->
+<!--        <div class="accordion-body">-->
+<!--          <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolOpeningSong()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="openingSong" class="form-label">Add Opening Song</label>-->
+<!--              <textarea class="form-control" id="openingSong" rows="10" placeholder="Ex. What a friend we have in Jesus..."></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Step 3 &ndash;&gt;-->
+<!--    <div class="accordion-item">-->
+<!--      <h2 class="accordion-header" id="headingThree">-->
+<!--        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--          Step 3: Sabbath School Closing Song-->
+<!--        </button>-->
+<!--      </h2>-->
+<!--      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#sabbathAccordion">-->
+<!--        <div class="accordion-body">-->
+<!--          <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolClosingSong()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="closingSong" class="form-label">Add Closing Song</label>-->
+<!--              <textarea class="form-control" id="closingSong" rows="10" placeholder="Ex. What a friend we have in Jesus..."></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Step 4 &ndash;&gt;-->
+<!--    <div class="accordion-item">-->
+<!--      <h2 class="accordion-header" id="headingFour">-->
+<!--        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">-->
+<!--          Step 4: Announcement-->
+<!--        </button>-->
+<!--      </h2>-->
+<!--      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#sabbathAccordion">-->
+<!--        <div class="accordion-body">-->
+<!--          <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolAnnouncements()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="announcement" class="form-label">Add Announcement</label>-->
+<!--              <textarea class="form-control" id="announcement" rows="10" placeholder="Ex...."></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Step 5 &ndash;&gt;-->
+<!--    <div class="accordion-item">-->
+<!--      <h2 class="accordion-header" id="headingFive">-->
+<!--        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">-->
+<!--          Step 5: Divine Song Service-->
+<!--        </button>-->
+<!--      </h2>-->
+<!--      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#sabbathAccordion">-->
+<!--        <div class="accordion-body">-->
+<!--          <form [formGroup]="sabbathForm" (ngSubmit)="addDivineSongService()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="divineSong" class="form-label">Add Divine Song</label>-->
+<!--              <textarea class="form-control" id="divineSong" rows="10" placeholder="Ex...."></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Step 6 &ndash;&gt;-->
+<!--    <div class="accordion-item">-->
+<!--      <h2 class="accordion-header" id="headingSix">-->
+<!--        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">-->
+<!--          Step 6: Divine Prelude Song-->
+<!--        </button>-->
+<!--      </h2>-->
+<!--      <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#sabbathAccordion">-->
+<!--        <div class="accordion-body">-->
+<!--          <form [formGroup]="sabbathForm" (ngSubmit)="addDivinePreludeSong()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="preludeSong" class="form-label">Add Prelude Song</label>-->
+<!--              <textarea class="form-control" id="preludeSong" rows="10" placeholder="Ex...."></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Step 7 &ndash;&gt;-->
+<!--    <div class="accordion-item">-->
+<!--      <h2 class="accordion-header" id="headingSeven">-->
+<!--        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">-->
+<!--          Step 7: Divine Opening Song Service-->
+<!--        </button>-->
+<!--      </h2>-->
+<!--      <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#sabbathAccordion">-->
+<!--        <div class="accordion-body">-->
+<!--          <form [formGroup]="sabbathForm" (ngSubmit)="addDivineOpeningSong()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="divineOpening" class="form-label">Add Divine Opening Song</label>-->
+<!--              <textarea class="form-control" id="divineOpening" rows="10" placeholder="Ex...."></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Step 8 &ndash;&gt;-->
+<!--    <div class="accordion-item">-->
+<!--      <h2 class="accordion-header" id="headingEight">-->
+<!--        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">-->
+<!--          Step 8: Divine Closing Song Service-->
+<!--        </button>-->
+<!--      </h2>-->
+<!--      <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#sabbathAccordion">-->
+<!--        <div class="accordion-body">-->
+<!--          <form [formGroup]="sabbathForm" (ngSubmit)="addDivineClosingSong()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="divineClosing" class="form-label">Add Divine Closing Song</label>-->
+<!--              <textarea class="form-control" id="divineClosing" rows="10" placeholder="Ex...."></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Step 9 &ndash;&gt;-->
+<!--    <div class="accordion-item">-->
+<!--      <h2 class="accordion-header" id="headingNine">-->
+<!--        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">-->
+<!--          Step 9: Divine Response Song-->
+<!--        </button>-->
+<!--      </h2>-->
+<!--      <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#sabbathAccordion">-->
+<!--        <div class="accordion-body">-->
+<!--          <form [formGroup]="sabbathForm" (ngSubmit)="addResponseSong()">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="responseSong" class="form-label">Add Response Song</label>-->
+<!--              <textarea class="form-control" id="responseSong" rows="10" placeholder="Ex...."></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+
+
+
+<!--  </div>-->
 
 <!--  <div class="mt-6 text-center" *ngIf="showCombinedPDF$ | async">-->
-<!--    <button style="margin-top: 20px" mat-raised-button color="warn" (click)="generateCombinedSongPDF()">-->
+<!--    <button class="btn btn-danger" style="margin-top: 20px" (click)="generateCombinedSongPDF()">-->
 <!--      Generate Combined PDF-->
 <!--    </button>-->
 <!--  </div>-->
 
 <!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="heading-margin-top text-center mt-5">Sabbath Services Song Management</h2>
+
+<div class="container mx-auto p-6 space-y-6">
+
+  <mat-accordion multi>
+
+    <!-- Sabbath School Accordion -->
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Step 1 : Sabbath School  Song Service</mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSongService()" class="form-grid example-form">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Add song</mat-label>
+          <textarea formControlName="songService" class="full-width-textarea" matInput placeholder="Ex. What a friend we have in Jesus..." rows="10"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Step 2 : Sabbath School  Opening Song </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolOpeningSong()" class="form-grid">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Add Opening song</mat-label>
+          <textarea matInput formControlName="openingSong"  placeholder="Ex. What a friend we have in Jesus..." rows="10"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Step 3 : Sabbath School  Closing Song </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolClosingSong()" class="form-grid">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Add Closing song</mat-label>
+          <textarea formControlName="closingSong"  matInput placeholder="Ex. What a friend we have in Jesus..." rows="10"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+    </mat-expansion-panel>
+
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Step 4 : Announcement </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addSabbathSchoolAnnouncements()" class="form-grid">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Add Announcement </mat-label>
+          <textarea  formControlName="announcements" matInput placeholder="Ex...." rows="10"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Step 5 : Divine Song Service </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addDivineSongService()" class="form-grid">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Add Divine Song </mat-label>
+          <textarea formControlName="divineSongService" matInput placeholder="Ex. Divine song..."  rows="10"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+    </mat-expansion-panel>
+
+
+
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Step 6 : Divine Prelude Song </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addDivinePreludeSong()" class="form-grid">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Add Prelude Song </mat-label>
+          <textarea matInput formControlName="divinePreludeSong" placeholder="Ex...." rows="10"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+    </mat-expansion-panel>
+
+
+
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Step 7 : Divine Opening Song Service </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addDivineOpeningSong()" class="form-grid">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Add Divine opening Song </mat-label>
+          <textarea formControlName="divineOpeningSong" matInput placeholder="Ex...." rows="10"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Step 8 : Divine Closing Song Service </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addDivineClosingSong()" class="form-grid">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Add Divine closing Song </mat-label>
+          <textarea formControlName="divineClosingSong"  matInput placeholder="Ex...." rows="10"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+    </mat-expansion-panel>
+
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Step 9 : Divine Response Song  </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="sabbathForm" (ngSubmit)="addResponseSong()" class="form-grid">
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Add Response  Song </mat-label>
+          <textarea formControlName="divineResponseSong" matInput placeholder="Ex...." rows="10"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="save-btn">Save</button>
+      </form>
+
+    </mat-expansion-panel>
+
+
+
+  </mat-accordion>
+
+
+  <div class="mt-6 text-center" *ngIf="showCombinedPDF$ | async">
+    <button style="margin-top: 20px" mat-raised-button color="warn" (click)="generateCombinedSongPDF()">
+      Generate Combined PDF
+    </button>
+  </div>
+
+</div>
