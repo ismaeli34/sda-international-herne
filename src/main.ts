@@ -11,6 +11,7 @@ import {importProvidersFrom} from '@angular/core';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import {getStorage, provideStorage} from '@angular/fire/storage';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDPyscZYlf4gkPD77LeGoR1ZphrRNo8tjE",

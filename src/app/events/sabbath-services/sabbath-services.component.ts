@@ -540,6 +540,58 @@ export class SabbathServicesComponent implements OnInit{
     window.open(pdfBlobUrl, '_blank');
   }
 
+  panelExpanded = {
+    cover: false,
+    happySabbath: false,
+    sabbath: false,
+    divine: false,
+    song1: false,
+    song2: false
+  };
+
+
+  addSabbathSongService(){
+
+  }
+
+  generateCombinedSongPDF(){
+
+  }
+
+  addSabbathSchoolOpeningSong(){
+
+  }
+
+  addSabbathSchoolClosingSong(){
+
+  }
+
+  addSabbathSchoolAnnouncements(){
+
+  }
+
+
+  addDivineSongService(){
+
+  }
+
+
+  addDivinePreludeSong(){
+
+  }
+
+
+  addDivineOpeningSong(){
+
+  }
+
+  addResponseSong(){
+
+  }
+
+  addDivineClosingSong(){
+
+  }
 
 
 }

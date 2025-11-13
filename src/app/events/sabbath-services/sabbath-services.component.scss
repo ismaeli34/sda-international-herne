@@ -93,3 +93,22 @@ mat-form-field {
 .space-x-2 > *:not(:last-child) {
   margin-right: 0.5rem;
 }
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+/* Optional: make textarea taller even if rows is not enough */
+textarea[matInput] {
+  min-height: 200px;
+  resize: vertical; /* allows user to resize */
+  font-size: 12px;  /* smaller font */
+  line-height: 1.4;
+}
