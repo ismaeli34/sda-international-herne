@@ -13,6 +13,7 @@ import {UpdateUpcomingEventCardComponent} from './update-upcoming-event-card/upd
 import {SaturdayWorshipServiceComponent} from './saturday-worship-service/saturday-worship-service.component';
 import {AuthGuard} from '../auth.guard';
 import {SabbathServicesComponent} from './sabbath-services/sabbath-services.component';
+import {FootWashingComponent} from './foot-washing/foot-washing.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
       {path:'upcoming-events',component: UpcomingEventsComponent},
       {path:'update-upcoming-events/:id',component: UpdateUpcomingEventCardComponent},
       {path:'sabbath-management',component: SabbathServicesComponent},
+      {path:'foot-washing',component: FootWashingComponent},
       {path:'add-events',component: AddEventsComponent, canActivate: [AuthGuard]}
 
 

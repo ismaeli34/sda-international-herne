@@ -1,6 +1,5 @@
-<h3 class="heading-margin-top font-bold ">International SDA Church Herne</h3>
-<!-- church.component.html -->
-<div class="row ">
+<h3 class="heading-margin-top font-bold">International SDA Church Herne</h3>
+<div class="row">
   <p style="color: black">
     We are a vibrant international community in Herne, meeting every two weeks
     on Saturdays at 10:00 am. You are warmly welcome!
@@ -8,13 +7,19 @@
 
   <h2 style="color: black" class="text-xl font-semibold">Upcoming Service Dates</h2>
 
-  <!-- Add new date -->
-  <div *ngIf="isLoggedIn">
+  <!-- Add new date and description -->
+  <div *ngIf="isLoggedIn" class="mb-4">
     <input
       type="date"
       [(ngModel)]="newDate"
-      class="border p-2 rounded"
+      class="border p-2 rounded mr-2"
       placeholder="Select date"
+    />
+    <input
+      type="text"
+      [(ngModel)]="newDescription"
+      class="border p-2 rounded"
+      placeholder="Enter description (e.g., Church service or Zoom)"
     />
     <button
       (click)="addDate()"
@@ -30,11 +35,12 @@
       *ngFor="let service of serviceDates"
       class="flex justify-between items-center border-b py-2"
     >
-
       <!-- Display Mode -->
       <div *ngIf="editModeId !== service.id">
-        <span style="color: black">{{ service.date | date: 'dd.MM.yyyy' }}</span>
-        <div *ngIf="isLoggedIn">
+        <span style="color: black">
+          {{ service.date | date: 'dd.MM.yyyy' }} - {{ service.description }}
+        </span>
+        <div *ngIf="isLoggedIn" class="flex gap-2">
           <button
             (click)="deleteDate(service.id)"
             class="bg-red-500 text-white px-2 py-1 rounded"

@@ -1,0 +1,48 @@
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 16px;
+
+  /* responsive width */
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.card-title {
+  margin-top: 0;
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+
+  /* Responsive heading */
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+/* Map container always full width */
+.map {
+  width: 100%;
+
+  /* responsive height */
+  height: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .card {
+    padding: 12px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .map {
+    height: 250px;
+  }
+}

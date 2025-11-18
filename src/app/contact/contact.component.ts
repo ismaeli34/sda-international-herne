@@ -10,7 +10,9 @@ import {ChurchInfoService} from '../services/church-info.service';
 })
 export class ContactComponent {
 
-  email ="kontakt@herne-international-sda.de";
+  email1 ="kontakt@herne-international-sda.de";
+  email2 ="lifeline.herne@gmail.com";
+
   phone1="+49-1621948601";
   phone2="+49-1621948601";
 

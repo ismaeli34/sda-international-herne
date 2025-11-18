@@ -51,6 +51,7 @@
     "midnight-prayer": "Midnight Prayer",
     "dedication": "Dedication",
     "membership": "Membership",
+    "foot_washing": "Foot Washing",
     "sabbath-services": "Sabbath Management",
     "subhead": "Upcoming Events",
     "sunday-worship": {
@@ -69,7 +70,6 @@
         "date": "Every Friday",
         "time": "6:00 PM - 8:00 PM",
         "location": "Bochumer Str. 229, 44625 Herne"
-
       }
     },
     "good-morning-jesus": {

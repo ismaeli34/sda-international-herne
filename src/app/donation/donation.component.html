@@ -47,6 +47,31 @@
           </p>
         </mat-expansion-panel>
 
+        <!-- Panel 2: Online Donation -->
+        <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+          <mat-expansion-panel-header>
+            <mat-panel-title>2. Online Donation</mat-panel-title>
+            <mat-icon class="expand-icon">
+              {{ panelOpenState() ? 'expand_less' : 'expand_more' }}
+            </mat-icon>
+          </mat-expansion-panel-header>
+
+          <p>You can donate online using the following bank details:</p>
+
+          <div *ngIf="bankDetailsImage; else loading">
+            <img
+              [src]="bankDetailsImage"
+              alt="Bank Details"
+              style="max-width: 100%; cursor: pointer; border:1px solid #ccc; padding: 10px;"
+              (click)="openBankDetails()"
+            />
+          </div>
+          <ng-template #loading>
+            <p>Loading bank details...</p>
+          </ng-template>
+
+        </mat-expansion-panel>
+
 
 
       </mat-accordion>

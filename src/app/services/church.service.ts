@@ -20,8 +20,17 @@ export class ChurchService {
   }
 
   // Add a new date
-  addService(date: string) {
-    return addDoc(this.collectionRef, { date, active: true });
+  // addService(date: string) {
+  //   return addDoc(this.collectionRef, { date, active: true });
+  // }
+
+  // Add a new service with date and description
+  addService(service: { date: string, description: string }) {
+    return addDoc(this.collectionRef, {
+      date: service.date,
+      description: service.description,
+      active: true
+    });
   }
 
   // Update an existing date

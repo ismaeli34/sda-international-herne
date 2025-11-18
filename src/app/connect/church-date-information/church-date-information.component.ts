@@ -34,6 +34,8 @@ export class ChurchDateInformationComponent implements OnInit{
   newDate: Date | null = null;
   editModeId: string | null = null;
   editDateValue: Date | null = null;
+  newDescription: string = '';
+  editDescription: string = '';
 
   constructor(private churchService: ChurchService,
               private authService: AuthService,
@@ -49,6 +51,11 @@ export class ChurchDateInformationComponent implements OnInit{
       this.cdr.detectChanges();
     });
 
+    this.loadServiceDates();
+
+  }
+
+  loadServiceDates() {
     this.churchService.getServices().subscribe((data) => {
       this.serviceDates = data.sort(
         (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
@@ -56,28 +63,35 @@ export class ChurchDateInformationComponent implements OnInit{
     });
   }
 
-
-
   addDate() {
-    if (this.newDate) {
-      const dateToSave = new Date(this.newDate); // convert string to Date
-      this.churchService.addService(dateToSave.toISOString()) // save ISO string
+    if (this.newDate && this.newDescription.trim()) {
+      const dateToSave = new Date(this.newDate);
+      const descriptionToSave = this.newDescription.trim();
+
+      this.churchService.addService({
+        date: dateToSave.toISOString(),
+        description: descriptionToSave
+      })
         .then(() => {
           this.snackBar.open('Service date added successfully!', 'Close', { duration: 3000 });
           this.newDate = null;
+          this.newDescription = '';
+          this.loadServiceDates();
         })
         .catch(() => {
           this.snackBar.open('Failed to add service date.', 'Close', { duration: 3000 });
         });
+    } else {
+      this.snackBar.open('Please enter both date and description.', 'Close', { duration: 3000 });
     }
   }
-
 
   deleteDate(id: string) {
     if (confirm('Are you sure you want to delete this date?')) {
       this.churchService.deleteService(id)
         .then(() => {
           this.snackBar.open('Service date deleted.', 'Close', { duration: 3000 });
+          this.loadServiceDates();
         })
         .catch(() => {
           this.snackBar.open('Failed to delete the date.', 'Close', { duration: 3000 });
@@ -94,6 +108,7 @@ export class ChurchDateInformationComponent implements OnInit{
     this.editModeId = null;
     this.editDateValue = null;
   }
+
 
 
 

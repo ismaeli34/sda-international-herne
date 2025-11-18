@@ -1,0 +1,41 @@
+.heading-margin-top {
+  margin-top: -5px;
+  color: #0f3d81;
+}
+
+.justify-text, b, h2, ul, li {
+  text-align: justify;
+  color: black;
+}
+
+h3 {
+  color: #0f3d81;
+}
+
+mat-expansion-panel {
+  margin-bottom: 10px;
+}
+
+mat-panel-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+mat-expansion-panel p,
+mat-expansion-panel li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #333;
+  text-align: justify;
+}
+
+mat-expansion-panel ul li {
+  margin-bottom: 8px;
+}
+
+.expand-icon {
+  font-size: 28px;
+  margin-left: auto;
+  color: rgba(0, 0, 0, 0.54);
+}
