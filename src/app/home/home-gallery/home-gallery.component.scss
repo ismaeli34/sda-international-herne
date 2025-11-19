@@ -93,7 +93,39 @@ a:hover {
 .checkbox.ten + label{
   background-image: url("/sda_24.jpeg");
 }
+.checkbox.eleven + label{
+  background-image: url("/sda_37.jpeg");
+}
+.checkbox.twelve + label{
+  background-image: url("/sda_38.jpeg");
+}
+.checkbox.thirteen + label{
+  background-image: url("/sda_39.jpeg");
+}
 
+.checkbox.fourteen + label{
+  background-image: url("/sda_40.jpeg");
+}
+
+.checkbox.fifteen + label{
+  background-image: url("/sda_41.jpeg");
+}
+
+.checkbox.sixteen + label{
+  background-image: url("/sda_42.jpeg");
+}
+.checkbox.seventeen + label{
+  background-image: url("/sda_43.jpeg");
+}
+.checkbox.eighteen + label{
+  background-image: url("/sda_44.jpeg");
+}
+.checkbox.nineteen + label{
+  background-image: url("/sda_52.jpeg");
+}
+.checkbox.twenty + label{
+  background-image: url("/sda_49.jpeg");
+}
 .checkbox:checked + label{
   box-shadow: 0 8px 25px 0 rgba(16,39,112,.3);
   transform: scale(1.3);
@@ -186,6 +218,37 @@ ul li:nth-child(9) {
 ul li:nth-child(10) {
   background-image: url("/sda_24.jpeg");
 }
+ul li:nth-child(11) {
+  background-image: url("/sda_37.jpeg");
+}
+ul li:nth-child(12) {
+  background-image: url("/sda_38.jpeg");
+}
+ul li:nth-child(13) {
+  background-image: url("/sda_39.jpeg");
+}
+ul li:nth-child(14) {
+  background-image: url("/sda_40.jpeg");
+}
+ul li:nth-child(15) {
+  background-image: url("/sda_41.jpeg");
+}
+ul li:nth-child(16) {
+  background-image: url("/sda_42.jpeg");
+}
+ul li:nth-child(17) {
+  background-image: url("/sda_43.jpeg");
+}
+ul li:nth-child(18) {
+  background-image: url("/sda_44.jpeg");
+}
+ul li:nth-child(19) {
+  background-image: url("/sda_52.jpeg");
+}
+ul li:nth-child(20) {
+  background-image: url("/sda_49.jpeg");
+
+}
 
 
 
@@ -201,6 +264,16 @@ ul li:nth-child(10) {
 .checkbox.eight:checked ~ ul li:nth-child(8),
 .checkbox.nine:checked ~ ul li:nth-child(9),
 .checkbox.ten:checked ~ ul li:nth-child(10),
+.checkbox.eleven:checked ~ ul li:nth-child(11),
+.checkbox.twelve:checked ~ ul li:nth-child(12),
+.checkbox.thirteen:checked ~ ul li:nth-child(13),
+.checkbox.fourteen:checked ~ ul li:nth-child(14),
+.checkbox.fifteen:checked ~ ul li:nth-child(15),
+.checkbox.sixteen:checked ~ ul li:nth-child(16),
+.checkbox.seventeen:checked ~ ul li:nth-child(17),
+.checkbox.eighteen:checked ~ ul li:nth-child(18),
+.checkbox.nineteen:checked ~ ul li:nth-child(19),
+.checkbox.twenty:checked ~ ul li:nth-child(20),
 
 {
   opacity: 1;
@@ -227,6 +300,7 @@ ul li:nth-child(10) {
 @media (max-width: 767px) {
   .slider-height-padding {
     padding-top: 340px;
+    padding-left:40px
   }
   ul li {
     height: 300px;
