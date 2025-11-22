@@ -20,6 +20,8 @@ import {LanguageService} from '../services/language.service';
 import {AuthService} from '../services/auth.service';
 import {Subscription} from 'rxjs';
 import {ChurchLeadersComponent} from '../about/church-leaders/church-leaders.component';
+import {ZoomComponent} from '../zoom/zoom.component';
+import {ZoomCardComponent} from '../zoom-card/zoom-card.component';
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
