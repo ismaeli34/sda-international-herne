@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://seventh-day-adventist-international.vercel.app/sitemap.xml
