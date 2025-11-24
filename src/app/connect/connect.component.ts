@@ -18,30 +18,40 @@ export class ConnectComponent implements OnInit{
   constructor(private seo: SeoServiceService) {}
 
   ngOnInit(): void {
+// connect.component.ts
+    const connectPage = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": "https://seventh-day-adventist-international.vercel.app/connect",
+      "name": "Connect with Lifeline SDA International Church - Herne",
+      "description": "Join our community groups, Bible studies, and fellowship opportunities at Lifeline SDA International Church."
+    };
+
+    const breadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://seventh-day-adventist-international.vercel.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Connect",
+          "item": "https://seventh-day-adventist-international.vercel.app/connect"
+        }
+      ]
+    };
+
     this.seo.setMeta(
-      'Connect - Lifeline SDA International Church, Herne',
-      'Connect with our church community, join Bible studies, ministries, prayer meetings, and service teams.',
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://seventh-day-adventist-international.vercel.app/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Connect",
-            "item": "https://seventh-day-adventist-international.vercel.app/connect"
-          }
-        ]
-      }
+      'Connect with Lifeline SDA International Church',
+      'Join community groups, Bible studies, and fellowship opportunities at Lifeline SDA International Church.',
+      [connectPage, breadcrumb],
+      'https://seventh-day-adventist-international.vercel.app/connect'
     );
-
-
-    }
+  }
 
 }
