@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://seventh-day-adventist-international.vercel.app/</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://seventh-day-adventist-international.vercel.app/about/about-us</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://seventh-day-adventist-international.vercel.app/connect</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://seventh-day-adventist-international.vercel.app/events</loc>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://seventh-day-adventist-international.vercel.app/donation</loc>
-    <priority>0.8</priority>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://seventh-day-adventist-international.vercel.app/contact</loc>
-    <priority>0.8</priority>
+    <lastmod>2025-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+
 </urlset>

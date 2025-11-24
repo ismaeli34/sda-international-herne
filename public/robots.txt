@@ -1,3 +1,11 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://seventh-day-adventist-international.vercel.app/sitemap.xml
+
+# Improve crawl efficiency
+Clean-param: ref /
+Clean-param: utm_source /
+Clean-param: utm_medium /
+Clean-param: utm_campaign /
+Clean-param: fbclid /

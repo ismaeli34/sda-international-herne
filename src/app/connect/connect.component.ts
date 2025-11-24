@@ -25,11 +25,22 @@ export class ConnectComponent implements OnInit{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app" },
-          { "@type": "ListItem", "position": 2, "name": "Connect", "item": "https://seventh-day-adventist-international.vercel.app/connect" }
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://seventh-day-adventist-international.vercel.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Connect",
+            "item": "https://seventh-day-adventist-international.vercel.app/connect"
+          }
         ]
       }
     );
+
 
     }
 

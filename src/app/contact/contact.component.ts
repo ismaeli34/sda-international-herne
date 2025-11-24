@@ -30,18 +30,35 @@ export class ContactComponent {
 
   ngOnInit(): void {
 
-    this.seo.setMeta(
-      'Contact Us - Lifeline SDA Church, Herne',
-      'Get in touch with Lifeline SDA Church, Herne. Find our address, phone number, email, and service timings.',
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app" },
-          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://seventh-day-adventist-international.vercel.app/contact" }
+    const contactPage = {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "url": "https://seventh-day-adventist-international.vercel.app/contact",
+      "name": "Contact - Lifeline SDA International Church, Herne",
+      "description": "Contact Lifeline SDA International Church Herne for questions, prayer requests, and service info.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Lifeline SDA International Church Herne",
+        "url": "https://seventh-day-adventist-international.vercel.app/",
+        "logo": "https://seventh-day-adventist-international.vercel.app/sda_icon.svg",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+49-xxxx-xxxxxx",
+            "contactType": "General inquiries",
+            "availableLanguage": ["English","German"]
+          }
         ]
       }
+    };
+
+    this.seo.setMeta(
+      'Contact - Lifeline SDA International Church, Herne',
+      'Get in touch with Lifeline SDA International Church in Herne.',
+      contactPage,
+      'https://seventh-day-adventist-international.vercel.app/contact'
     );
+
 
     this.churchInfoService.churchInfo$.subscribe(info => {
       this.serviceTime = info.englishServiceTime;

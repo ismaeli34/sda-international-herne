@@ -163,17 +163,78 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
     });
 
 
+
+// inside HomeComponent.ngOnInit() after you set this.serviceTime & this.serviceAddress
+    const homeWebPage = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": "https://seventh-day-adventist-international.vercel.app/",
+      "name": "Lifeline SDA International Church - Home",
+      "description": "Welcome to Lifeline SDA International Church, Herne. Join us for worship, Bible study, and community events."
+    };
+
+    const homeBreadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app/" }
+      ]
+    };
+
+    const churchPlace = {
+      "@context": "https://schema.org",
+      "@type": "Place",
+      "name": "Lifeline SDA International Church Herne",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bochumer Str. 229",
+        "addressLocality": "Herne",
+        "postalCode": "44625",
+        "addressCountry": "DE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.5,    // replace with real coords
+        "longitude": 7.2     // replace with real coords
+      }
+    };
+
+// an example Event for the next service — if you have recurring weekly services, mark startDate accordingly
+    const nextServiceEvent = {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Sunday Worship Service",
+      "startDate": "2025-11-30T10:00:00+01:00", // replace/compute dynamically using this.serviceTime
+      "endDate": "2025-11-30T11:30:00+01:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "Place",
+        "name": "Lifeline SDA International Church Herne",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bochumer Str. 229",
+          "addressLocality": "Herne",
+          "postalCode": "44625",
+          "addressCountry": "DE"
+        }
+      },
+      "url": "https://seventh-day-adventist-international.vercel.app/",
+      "description": "Weekly worship service",
+      "performer": {
+        "@type": "Organization",
+        "name": "Lifeline SDA International Church Herne"
+      }
+    };
+
+// set meta with array of schemas
     this.seo.setMeta(
       'Lifeline SDA International Church - Herne | Home',
-      'Welcome to Lifeline Seventh Day Adventist International Church, Herne. Join us for worship, Bible study, and community events.',
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app/" }
-        ]
-      }
+      'Welcome to Lifeline SDA International Church, Herne. Join us for worship, Bible study, and community events.',
+      [homeWebPage, homeBreadcrumb, churchPlace, nextServiceEvent],
+      'https://seventh-day-adventist-international.vercel.app/'
     );
+
+
 
 
     this.loadServiceTimeAndAddress();

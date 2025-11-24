@@ -3,12 +3,15 @@
 <head>
   <base href="/">
 
-  <!-- Organization structured data (add to <head>) -->
+  <!-- Canonical -->
+  <link rel="canonical" href="https://seventh-day-adventist-international.vercel.app/" />
+
+  <!-- ORGANIZATION SCHEMA -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Lifeline SDA Internation Church, Herne",
+      "name": "Lifeline SDA International Church Herne",
       "url": "https://seventh-day-adventist-international.vercel.app",
       "logo": "https://seventh-day-adventist-international.vercel.app/sda_icon.svg",
       "sameAs": [
@@ -18,57 +21,85 @@
     }
   </script>
 
-  <!-- script
-  ================================================== -->
-  <title>SDA International Herne</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <!-- WEBSITE SCHEMA (HOMEPAGE) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://seventh-day-adventist-international.vercel.app/",
+      "name": "Lifeline SDA International Church Herne",
+      "description": "Seventh Day Adventist International Church in Herne. Worship services, Bible study, youth programs & community outreach.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://seventh-day-adventist-international.vercel.app/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <!-- HOMEPAGE WEBPAGE SCHEMA -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": "https://seventh-day-adventist-international.vercel.app/",
+      "name": "Lifeline SDA International Church Herne - Home",
+      "description": "Welcome to Lifeline SDA International Church in Herne. Multicultural Christian community offering worship services, Bible study, and fellowship."
+    }
+  </script>
+
+  <!-- SITE NAVIGATION -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": ["Home", "About Us", "Connect", "Events", "Donation", "Contact"],
+      "url": [
+        "https://seventh-day-adventist-international.vercel.app/",
+        "https://seventh-day-adventist-international.vercel.app/about/about-us",
+        "https://seventh-day-adventist-international.vercel.app/connect",
+        "https://seventh-day-adventist-international.vercel.app/events",
+        "https://seventh-day-adventist-international.vercel.app/donation",
+        "https://seventh-day-adventist-international.vercel.app/contact"
+      ]
+    }
+  </script>
+
+  <!-- GENERAL META -->
+  <title>SDA International Herne | Lifeline SDA Church</title>
+  <meta name="description" content="Lifeline Seventh Day Adventist International Church, Herne. Join us for worship, Bible study, and community fellowship." />
+  <meta name="author" content="Lifeline SDA International Church Herne" />
   <meta name="google-site-verification" content="vfxDeV5BAZjEwLM2hZesLI3Grd-Ht9PvyOVm7ijNvvs" />
 
-  <!-- mobile specific metas
-  ================================================== -->
+  <!-- VIEWPORT -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- CSS
-  ================================================== -->
+  <!-- CSS -->
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/vendor.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 
-
-  <!-- script
-  ================================================== -->
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<!--  <script src="/js/main.js"></script>-->
-<!--  <script src="/js/modernizr.js"></script>-->
-<!--  <script defer src="/js/plugins.js"></script>-->
   <script>
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
   </script>
 
-
-  <!-- favicons
-  ================================================== -->
+  <!-- ICONS & FONTS -->
   <link rel="apple-touch-icon" sizes="180x180" href="/sda_logo.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/sda_logo.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/sda_logo.png">
   <link rel="manifest" href="/site.webmanifest">
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Waterfall&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome CDN -->
-<!--  <link-->
-<!--    rel="stylesheet"-->
-<!--    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"-->
-<!--  />-->
-
-
 </head>
+
 <body>
-  <app-root></app-root>
+<app-root></app-root>
 </body>
 </html>
