@@ -29,9 +29,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "public/robots.txt",
-              "public/sitemap.xml"
+              }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
