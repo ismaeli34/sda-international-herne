@@ -5,7 +5,7 @@
 
   "rewrites": [
     {
-      "source": "/((?!sitemap\\.xml|robots\\.txt|assets|.*\\.(png|jpg|jpeg|svg|gif|webp|json|css|js|ico)).*)",
+      "source": "/((?!sitemap\\.xml|robots\\.txt|css|js|img|images|public|assets|.*\\.(png|jpg|jpeg|svg|gif|webp|json|css|js|ico|txt|xml)).*)",
       "destination": "/"
     }
   ],
