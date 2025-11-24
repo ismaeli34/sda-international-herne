@@ -1,24 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "dist/lifeline-herne-international/**", "use": "@vercel/static" }
-  ],
-  "routes": [
-    {
-      "src": "/sitemap.xml",
-      "headers": { "Content-Type": "application/xml" },
-      "dest": "/sitemap.xml"
-    },
-    {
-      "src": "/robots.txt",
-      "headers": { "Content-Type": "text/plain" },
-      "dest": "/robots.txt"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
+  "public": "dist/lifeline-herne-international",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
