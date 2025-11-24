@@ -22,6 +22,7 @@ import {Subscription} from 'rxjs';
 import {ChurchLeadersComponent} from '../about/church-leaders/church-leaders.component';
 import {ZoomComponent} from '../zoom/zoom.component';
 import {ZoomCardComponent} from '../zoom-card/zoom-card.component';
+import {SeoServiceService} from '../services/seo-service.service';
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
@@ -139,7 +140,8 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
   constructor(     private languageService: LanguageService,        // Inject the service
                private authService:AuthService,
                    private cdr: ChangeDetectorRef,
-                   private fireStore: Firestore  // 🔑 inject Firestore
+                   private fireStore: Firestore,  // 🔑 inject Firestore
+  private seo: SeoServiceService
 
 
   ) {
@@ -159,6 +161,20 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
       this.isLoggedIn = status;
       this.cdr.detectChanges();
     });
+
+
+    this.seo.setMeta(
+      'Lifeline SDA International Church - Herne | Home',
+      'Welcome to Lifeline Seventh Day Adventist International Church, Herne. Join us for worship, Bible study, and community events.',
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app/" }
+        ]
+      }
+    );
+
 
     this.loadServiceTimeAndAddress();
   }

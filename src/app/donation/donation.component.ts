@@ -8,6 +8,7 @@ import {
 import {MatIconModule} from '@angular/material/icon';
 import {CommonModule} from '@angular/common';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
+import {SeoServiceService} from '../services/seo-service.service';
 
 @Component({
   selector: 'app-donation',
@@ -31,10 +32,24 @@ emailAddress ="kontakt@herne-international-sda.de";
 
   bankDetailsImage: string | null = null;
 
-  constructor(private firestore: Firestore, private cdr: ChangeDetectorRef) {}
+  constructor(private firestore: Firestore, private cdr: ChangeDetectorRef,
+              private seo: SeoServiceService
+  ) {}
 
   async ngOnInit() {
     await this.loadBankDetails();
+    this.seo.setMeta(
+      'Support Us - Lifeline SDA International Church, Herne',
+      'Support our church and community programs by donating online. Your contribution makes a difference.',
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app" },
+          { "@type": "ListItem", "position": 2, "name": "Support Us", "item": "https://seventh-day-adventist-international.vercel.app/donation" }
+        ]
+      }
+    );
   }
 
   // Load bank details image from Firestore

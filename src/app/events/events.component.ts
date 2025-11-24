@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RouterModule} from '@angular/router';
 import {AuthService} from '../services/auth.service';
+import {SeoServiceService} from '../services/seo-service.service';
 
 interface Event {
   id: number;
@@ -38,6 +39,7 @@ export class EventsComponent implements  OnInit{
 
   constructor( private authService:AuthService,
                private cdr: ChangeDetectorRef,
+               private seo: SeoServiceService
   ) { }
 
   ngOnInit(): void {
@@ -47,6 +49,19 @@ export class EventsComponent implements  OnInit{
       this.isLoggedIn = status;
       this.cdr.detectChanges();
     });
+
+    this.seo.setMeta(
+      'Events - Lifeline SDA International Church, Herne',
+      'Stay updated with upcoming church events, Sabbath services, baptisms, communion, and special programs.',
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yoursite.com" },
+          { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://www.yoursite.com/events" }
+        ]
+      }
+    );
   }
 
 }
