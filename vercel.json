@@ -5,19 +5,16 @@
 
   "rewrites": [
     {
-      "source": "/((?!sitemap\\.xml|robots\\.txt|css|js|img|images|public|assets|.*\\.(png|jpg|jpeg|svg|gif|webp|json|css|js|ico|txt|xml)).*)",
-      "destination": "/"
-    }
-  ],
-
-  "routes": [
-    {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
     },
     {
-      "src": "/robots.txt",
-      "dest": "/robots.txt"
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
+    },
+    {
+      "source": "/((?!sitemap\\.xml|robots\\.txt|css|js|img|images|public|assets|.*\\.(png|jpg|jpeg|svg|gif|webp|json|css|js|ico|txt|xml)).*)",
+      "destination": "/index.html"
     }
   ],
 
