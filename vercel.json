@@ -4,18 +4,9 @@
   "trailingSlash": false,
 
   "rewrites": [
-    {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
-    },
-    {
-      "source": "/robots.txt",
-      "destination": "/robots.txt"
-    },
-    {
-      "source": "/((?!sitemap\\.xml|robots\\.txt|css|js|img|images|public|assets|.*\\.(png|jpg|jpeg|svg|gif|webp|json|css|js|ico|txt|xml)).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/robots.txt",  "destination": "/robots.txt" },
+    { "source": "/(.*)",        "destination": "/index.html" }
   ],
 
   "headers": [
