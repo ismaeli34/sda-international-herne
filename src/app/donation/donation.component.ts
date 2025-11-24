@@ -38,17 +38,28 @@ emailAddress ="kontakt@herne-international-sda.de";
 
   async ngOnInit() {
     await this.loadBankDetails();
+    const donationWebPage = {
+      "@context": "https://schema.org",
+      "@type": "DonateAction",
+      "url": "https://seventh-day-adventist-international.vercel.app/donation",
+      "name": "Support & Donation - Lifeline SDA International Church",
+      "description": "Support the mission and community work of Lifeline SDA International Church, Herne through donations."
+    };
+
+    const donationBreadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Donation", "item": "https://seventh-day-adventist-international.vercel.app/donation" }
+      ]
+    };
+
     this.seo.setMeta(
-      'Support Us - Lifeline SDA International Church, Herne',
-      'Support our church and community programs by donating online. Your contribution makes a difference.',
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app" },
-          { "@type": "ListItem", "position": 2, "name": "Support Us", "item": "https://seventh-day-adventist-international.vercel.app/donation" }
-        ]
-      }
+      'Donation | Lifeline SDA International Church',
+      'Support the mission and community activities of Lifeline SDA International Church, Herne through donations.',
+      [donationWebPage, donationBreadcrumb],
+      'https://seventh-day-adventist-international.vercel.app/donation'
     );
   }
 

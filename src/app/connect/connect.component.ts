@@ -17,39 +17,28 @@ export class ConnectComponent implements OnInit{
 
   constructor(private seo: SeoServiceService) {}
 
-  ngOnInit(): void {
-// connect.component.ts
-    const connectPage = {
+  ngOnInit() {
+    const connectWebPage = {
       "@context": "https://schema.org",
-      "@type": "WebPage",
+      "@type": "ContactPage",
       "url": "https://seventh-day-adventist-international.vercel.app/connect",
-      "name": "Connect with Lifeline SDA International Church - Herne",
-      "description": "Join our community groups, Bible studies, and fellowship opportunities at Lifeline SDA International Church."
+      "name": "Connect with Us - Lifeline SDA International Church",
+      "description": "Get in touch with Lifeline SDA International Church, Herne. Reach out for spiritual guidance, prayer, or community support."
     };
 
-    const breadcrumb = {
+    const connectBreadcrumb = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://seventh-day-adventist-international.vercel.app/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Connect",
-          "item": "https://seventh-day-adventist-international.vercel.app/connect"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Connect", "item": "https://seventh-day-adventist-international.vercel.app/connect" }
       ]
     };
 
     this.seo.setMeta(
-      'Connect with Lifeline SDA International Church',
-      'Join community groups, Bible studies, and fellowship opportunities at Lifeline SDA International Church.',
-      [connectPage, breadcrumb],
+      'Connect | Lifeline SDA International Church',
+      'Reach out to Lifeline SDA International Church, Herne for prayer, spiritual guidance, or community support.',
+      [connectWebPage, connectBreadcrumb],
       'https://seventh-day-adventist-international.vercel.app/connect'
     );
   }

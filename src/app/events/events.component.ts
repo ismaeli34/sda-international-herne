@@ -50,17 +50,28 @@ export class EventsComponent implements  OnInit{
       this.cdr.detectChanges();
     });
 
+    const eventsWebPage = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "url": "https://seventh-day-adventist-international.vercel.app/events",
+      "name": "Events - Lifeline SDA International Church",
+      "description": "Check out upcoming worship services, Bible studies, and community events at Lifeline SDA International Church, Herne."
+    };
+
+    const eventsBreadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://seventh-day-adventist-international.vercel.app/events" }
+      ]
+    };
+
     this.seo.setMeta(
-      'Events - Lifeline SDA International Church, Herne',
-      'Stay updated with upcoming church events, Sabbath services, baptisms, communion, and special programs.',
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yoursite.com" },
-          { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://www.yoursite.com/events" }
-        ]
-      }
+      'Events | Lifeline SDA International Church',
+      'Discover upcoming worship services, Bible studies, and community events at Lifeline SDA International Church, Herne.',
+      [eventsWebPage, eventsBreadcrumb],
+      'https://seventh-day-adventist-international.vercel.app/events'
     );
   }
 

@@ -28,42 +28,31 @@ export class ContactComponent {
               private seo: SeoServiceService
               ) {}
 
-  ngOnInit(): void {
-
-    const contactPage = {
+  ngOnInit() {
+    const contactWebPage = {
       "@context": "https://schema.org",
       "@type": "ContactPage",
       "url": "https://seventh-day-adventist-international.vercel.app/contact",
-      "name": "Contact - Lifeline SDA International Church, Herne",
-      "description": "Contact Lifeline SDA International Church Herne for questions, prayer requests, and service info.",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "Lifeline SDA International Church Herne",
-        "url": "https://seventh-day-adventist-international.vercel.app/",
-        "logo": "https://seventh-day-adventist-international.vercel.app/sda_icon.svg",
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+49-xxxx-xxxxxx",
-            "contactType": "General inquiries",
-            "availableLanguage": ["English","German"]
-          }
-        ]
-      }
+      "name": "Contact Us - Lifeline SDA International Church",
+      "description": "Contact Lifeline SDA International Church, Herne via email, phone, or visit us at our location."
+    };
+
+    const contactBreadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://seventh-day-adventist-international.vercel.app/contact" }
+      ]
     };
 
     this.seo.setMeta(
-      'Contact - Lifeline SDA International Church, Herne',
-      'Get in touch with Lifeline SDA International Church in Herne.',
-      contactPage,
+      'Contact | Lifeline SDA International Church',
+      'Contact Lifeline SDA International Church, Herne via email, phone, or visit us at our location.',
+      [contactWebPage, contactBreadcrumb],
       'https://seventh-day-adventist-international.vercel.app/contact'
     );
-
-
-    this.churchInfoService.churchInfo$.subscribe(info => {
-      this.serviceTime = info.englishServiceTime;
-      this.serviceAddress = info.address;
-    });
-
   }
+
+
 }

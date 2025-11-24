@@ -15,32 +15,33 @@ export class AboutUsComponent implements OnInit{
   constructor( private seo: SeoServiceService,
   ) {
   }
-    ngOnInit(): void {
 
-      const aboutPage = {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "url": "https://seventh-day-adventist-international.vercel.app/about/about-us",
-        "name": "About Lifeline SDA International Church - Herne",
-        "description": "Learn about Lifeline SDA International Church in Herne, our mission, vision, and multicultural Christian community."
-      };
 
-      const breadcrumb = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app/" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://seventh-day-adventist-international.vercel.app/about/about-us" }
-        ]
-      };
 
-      this.seo.setMeta(
-        'About Lifeline SDA International Church - Herne',
-        'Learn about our church mission, vision, and community in Herne.',
-        [aboutPage, breadcrumb],
-        'https://seventh-day-adventist-international.vercel.app/about/about-us'
-      );
+  ngOnInit() {
+    const aboutWebPage = {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "url": "https://seventh-day-adventist-international.vercel.app/about/about-us",
+      "name": "About Us - Lifeline SDA International Church",
+      "description": "Learn about our church mission, vision, and community initiatives at Lifeline SDA International Church, Herne."
+    };
 
-    }
+    const aboutBreadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://seventh-day-adventist-international.vercel.app/" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://seventh-day-adventist-international.vercel.app/about/about-us" }
+      ]
+    };
+
+    this.seo.setMeta(
+      'About Us | Lifeline SDA International Church',
+      'Learn about our mission, vision, and community activities at Lifeline SDA International Church, Herne.',
+      [aboutWebPage, aboutBreadcrumb],
+      'https://seventh-day-adventist-international.vercel.app/about/about-us'
+    );
+  }
 
 }
