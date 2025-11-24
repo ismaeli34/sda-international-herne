@@ -229,7 +229,11 @@ export class HomeComponent implements AfterViewInit, OnInit, OnDestroy {
 // set meta with array of schemas
     this.seo.setMeta(
       'Lifeline SDA International Church - Herne | Home',
-      'Welcome to Lifeline SDA International Church, Herne. Join us for worship, Bible study, and community events.',
+      'We are a colorful, lively community of people from all over the world who have set out to get to know God better - with each other, for each other and in genuine solidarity. We bring together different languages, cultures and life stories – and that is precisely what makes us strong.\n' +
+      '\n' +
+      'We believe that true community knows no boundaries. No matter where you come from or what you believe: you are very welcome here.\n' +
+      '\n' +
+      'Our church service takes place every fortnight on Saturdays at 10:00 am – in English, open, joyful and spiritually deep.',
       [homeWebPage, homeBreadcrumb, churchPlace, nextServiceEvent],
       'https://seventh-day-adventist-international.vercel.app/'
     );
