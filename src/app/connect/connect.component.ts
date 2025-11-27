@@ -14,9 +14,7 @@ import {SeoServiceService} from '../services/seo-service.service';
   styleUrl: './connect.component.scss'
 })
 export class ConnectComponent implements OnInit{
-
   constructor(private seo: SeoServiceService) {}
-
   ngOnInit() {
     const connectWebPage = {
       "@context": "https://schema.org",

@@ -24,8 +24,6 @@ export class ContactComponent {
   serviceTime = '10:00 AM';
   churchName = "Lifeline Seventh Day Adventist International Church, "
   serviceAddress = 'Bochumer Str. 229 , Herne , Germany';
-
-
   constructor(private churchInfoService: ChurchInfoService,
               private seo: SeoServiceService
               ) {}

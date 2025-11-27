@@ -28,8 +28,6 @@ export class DonationComponent {
   readonly panelOpenState = signal(false);
  // bankdetails = environment.bankDetails;
 emailAddress ="kontakt@herne-international-sda.de";
-
-
   bankDetailsImage: string | null = null;
 
   constructor(private firestore: Firestore, private cdr: ChangeDetectorRef,

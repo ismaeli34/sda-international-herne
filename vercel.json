@@ -2,15 +2,6 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "outputDirectory": "dist/lifeline-herne-international"
-      }
-    }
-  ],
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/robots.txt",  "destination": "/robots.txt" },

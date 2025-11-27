@@ -13,7 +13,6 @@ interface Event {
   time: string;
   location: string;
 }
-
 @Component({
   selector: 'app-events',
   imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
@@ -36,14 +35,12 @@ export class EventsComponent implements  OnInit{
     },
     // Add more events from the HTML content
   ];
-
   constructor( private authService:AuthService,
                private cdr: ChangeDetectorRef,
                private seo: SeoServiceService
   ) { }
 
   ngOnInit(): void {
-
     // 🔑 subscribe to login state
     this.authService.isLoggedIn().subscribe(status => {
       this.isLoggedIn = status;
