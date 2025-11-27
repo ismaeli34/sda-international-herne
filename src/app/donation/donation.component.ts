@@ -35,7 +35,6 @@ emailAddress ="kontakt@herne-international-sda.de";
   ) {}
 
   async ngOnInit() {
-    await this.loadBankDetails();
     const donationWebPage = {
       "@context": "https://schema.org",
       "@type": "DonateAction",
@@ -59,25 +58,11 @@ emailAddress ="kontakt@herne-international-sda.de";
       [donationWebPage, donationBreadcrumb],
       'https://seventh-day-adventist-international.vercel.app/donation'
     );
+    this.bankDetailsImage = "./d.png"
   }
 
   // Load bank details image from Firestore
-  async loadBankDetails() {
-    try {
-      // Assuming the bankdetails collection has a single document with id "main"
-      const docRef = doc(this.firestore, 'bankdetails', '1');
-      const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        this.bankDetailsImage = docSnap.data()['bank_details'];
-        this.cdr.detectChanges(); // manually trigger change detection
-      } else {
-        console.warn('No bank details found!');
-      }
-    } catch (error) {
-      console.error('Error loading bank details:', error);
-    }
-  }
 
   // Open image in a new tab (optional)
   openBankDetails() {
