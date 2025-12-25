@@ -237,6 +237,11 @@ section,
 ================================= */
 
 /* Tablet and below */
+/* ================================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Tablet and below */
 @media (max-width: 1024px) {
   .carousel {
     height: auto;
@@ -313,14 +318,14 @@ section,
 @media (max-width: 768px) {
   .carousel {
     height: 90vh;
-    margin-top: 70px; /* ensures carousel starts below header */
+    margin-top: 70px;
   }
 
   .carousel .item-inner {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 80px; /* pushes content below header area */
+    padding-top: 80px;
   }
 
   .carousel .item-inner .content {
@@ -351,6 +356,19 @@ section,
     width: 90%;
     border-radius: 20px;
     padding: 15px;
+  }
+
+  .arrows {
+    bottom: 15px;
+    gap: 8px;
+  }
+  .arrows button {
+    width: 40px;
+    height: 40px;
+  }
+  .arrows svg {
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -393,7 +411,184 @@ section,
     width: 35px;
     height: 35px;
   }
+
+  .arrows {
+    bottom: 10px;
+    gap: 6px;
+  }
+  .arrows button {
+    width: 35px;
+    height: 35px;
+  }
+  .arrows svg {
+    width: 16px;
+    height: 16px;
+  }
 }
+
+/* Responsive curved card */
+@media (max-width: 768px) {
+  .curved-card {
+    width: 90%;
+    max-width: 400px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .update-form input {
+    width: 120px;
+  }
+
+  .update-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9em;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .curved-card {
+    width: 95%;
+    max-width: 350px;
+    padding: 12px 15px;
+    border-radius: 18px;
+    margin: 15px auto;
+    text-align: center;
+  }
+
+  .update-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .update-form input {
+    width: 100%;
+  }
+
+  .update-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85em;
+    top: 6px;
+    right: 6px;
+  }
+
+  .curved-card .service-time,
+  .curved-card .service-address,
+  .curved-card .mission {
+    font-size: 0.9em;
+  }
+}
+
+/* iPhone 14 Pro Max (430px - 430px width) */
+@media (min-width: 430px) and (max-width: 430px) {
+  .carousel {
+    height: 90vh;
+  }
+  .carousel .item-inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+  }
+  .carousel .item-inner .content {
+    width: 95%;
+    padding: 20px;
+    text-align: center;
+  }
+  .carousel .item-inner img {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+  }
+  .arrows {
+    bottom: 15px;
+    gap: 8px;
+  }
+  .arrows button {
+    width: 38px;
+    height: 38px;
+  }
+  .arrows svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* iPhone 12 (390px width) */
+@media (min-width: 390px) and (max-width: 390px) {
+  .carousel {
+    height: 90vh;
+  }
+  .carousel .item-inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+  }
+  .carousel .item-inner .content {
+    width: 95%;
+    padding: 18px;
+    text-align: center;
+  }
+  .carousel .item-inner img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  .arrows {
+    bottom: 12px;
+    gap: 6px;
+  }
+  .arrows button {
+    width: 35px;
+    height: 35px;
+  }
+  .arrows svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* iPhone XR (414px width) */
+@media (min-width: 414px) and (max-width: 414px) {
+  .carousel {
+    height: 92vh;
+  }
+  .carousel .item-inner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 75px;
+  }
+  .carousel .item-inner .content {
+    width: 95%;
+    padding: 20px;
+    text-align: center;
+  }
+  .carousel .item-inner img {
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+  }
+  .arrows {
+    bottom: 14px;
+    gap: 7px;
+  }
+  .arrows button {
+    width: 36px;
+    height: 36px;
+  }
+  .arrows svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
 
 /* ================================
    SOCIAL ICONS
