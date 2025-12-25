@@ -7,12 +7,27 @@
 
 html, body {
   width: 100%;
+  max-width: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden !important;
   background-color: #388087;
 }
 
+.home-container,
+.carousel-container,
+.carousel,
+.carousel .list,
+.carousel .item,
+.carousel .item-inner,
+section,
+.container {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+}
 
 /* ✅ Force carousel and images to fit the viewport width */
 .carousel,
@@ -179,6 +194,43 @@ html, body {
 .thumbnail .item img:hover {
   opacity: 1;
 }
+
+
+/* ================================
+   FORCE WHITE BACKGROUND FOR SECTIONS
+================================= */
+
+/* Church Program */
+#menu,
+#menu.container,
+.our-church-section,
+.s-menu {
+  background-color: #ffffff !important;
+}
+
+/* Bible Study section (second menu block) */
+.s-menu.target-section {
+  background-color: #ffffff !important;
+}
+
+/* Gallery section */
+#gallery,
+.s-gallery {
+  background-color: #ffffff !important;
+}
+
+/* Join Us section */
+#whatsapp {
+  background-color: #ffffff !important;
+}
+
+/* Ensure text stays readable */
+#menu *,
+#gallery *,
+#whatsapp * {
+  color: #ffffff;
+}
+
 
 /* ================================
    RESPONSIVE DESIGN
@@ -670,3 +722,11 @@ html, body {
 
 
 
+@media (max-width: 430px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  * {
+    max-width: 100%;
+  }
+}
