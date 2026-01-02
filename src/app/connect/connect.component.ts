@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import {SeoServiceService} from '../services/seo-service.service';
+import {NgIf} from '@angular/common';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-connect',
@@ -8,14 +10,28 @@ import {SeoServiceService} from '../services/seo-service.service';
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
+    NgIf,
 
   ],
   templateUrl: './connect.component.html',
   styleUrl: './connect.component.scss'
 })
 export class ConnectComponent implements OnInit{
-  constructor(private seo: SeoServiceService) {}
+
+  isLoggedIn= false;
+
+  constructor(private seo: SeoServiceService, private authService:AuthService,    private cdr: ChangeDetectorRef) {}
   ngOnInit() {
+
+
+
+    // 🔑 subscribe to login state
+    this.authService.isLoggedIn().subscribe(status => {
+      this.isLoggedIn = status;
+      this.cdr.detectChanges();
+    });
+
+
     const connectWebPage = {
       "@context": "https://schema.org",
       "@type": "ContactPage",

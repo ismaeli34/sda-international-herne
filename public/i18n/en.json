@@ -39,7 +39,9 @@
     "bible-studies": "Bible Studies",
     "ministries": "Ministries",
     "prayer-meetings": "Prayer Meetings",
-    "service-teams": "Service Teams"
+    "service-teams": "Service Teams",
+    "add-church-member": "Add Church Member",
+    "church-member-list": "church-member-list"
   },
   "events": {
     "main": "Events",

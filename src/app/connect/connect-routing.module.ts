@@ -7,6 +7,8 @@ import {MinistriesComponent} from './ministries/ministries.component';
 import {PrayerMeetingsComponent} from './prayer-meetings/prayer-meetings.component';
 import {ServiceTeamsComponent} from './service-teams/service-teams.component';
 import {ChurchDateInformationComponent} from './church-date-information/church-date-information.component';
+import {AddChurchMemberComponent} from './add-church-member/add-church-member.component';
+import {ChurchMemberListComponent} from './church-member-list/church-member-list.component';
 
 const routes: Routes = [
   {
@@ -18,7 +20,10 @@ const routes: Routes = [
       {path:'ministries',component: MinistriesComponent},
       {path:'prayer-meetings',component: PrayerMeetingsComponent},
       {path:'service-teams',component: ServiceTeamsComponent},
-      {path:'church-info',component:ChurchDateInformationComponent}
+      {path:'church-info',component:ChurchDateInformationComponent},
+      {path:'add-church-member',component:AddChurchMemberComponent},
+      {path:'church-member-list', component:ChurchMemberListComponent}
+
     ]
   }
 ];

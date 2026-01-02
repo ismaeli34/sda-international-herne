@@ -1,0 +1,159 @@
+:host {
+  display: block;
+  padding: 2rem 1rem;
+  background: #f5f7fb;
+}
+/* Photo upload row */
+.photo-section {
+  grid-column: 1 / -1; /* span full width of the form */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Label + file input */
+.photo-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Preview image */
+.photo-preview {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #d0d6e4;
+}
+
+/* Heading */
+h3 {
+  text-align: center;
+  color: #0f3d81;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Form Card */
+form {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem 2rem;
+}
+
+/* Full width fields */
+textarea,
+h4,
+button {
+  grid-column: 1 / -1;
+}
+
+/* Inputs & Selects */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #cfd6e4;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  background: #fff;
+
+  &:focus {
+    outline: none;
+    border-color: #1976d2;
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+  }
+
+  &::placeholder {
+    color: #9aa3b2;
+  }
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Section Titles */
+h4 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #0f3d81;
+  border-bottom: 2px solid #e3e8f3;
+  padding-bottom: 0.3rem;
+}
+
+/* Checkbox Groups */
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: #444;
+  cursor: pointer;
+
+  input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    accent-color: #1976d2;
+    cursor: pointer;
+  }
+}
+
+/* Make checkbox groups nice */
+h4 + label,
+h4 + label + label {
+  margin-top: 0.6rem;
+}
+
+/* Submit Button */
+button {
+  margin-top: 2rem;
+  justify-self: center;
+  padding: 0.8rem 2.2rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #1976d2, #0f3d81);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(25, 118, 210, 0.35);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.25);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+    padding: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}

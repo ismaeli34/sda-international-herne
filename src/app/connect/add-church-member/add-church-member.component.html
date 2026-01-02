@@ -1,0 +1,126 @@
+<h3>Add Church Member</h3>
+
+<form #memberForm="ngForm" (ngSubmit)="onSubmit()" class="member-form">
+
+  <!-- Profile Photo -->
+  <div class="photo-section">
+    <label class="photo-label">
+      Profile Photo
+      <input
+        type="file"
+        accept="image/*"
+        (change)="onPhotoSelected($event)"
+      />
+    </label>
+
+    <img
+      *ngIf="photoPreview"
+      [src]="photoPreview"
+      alt="Photo Preview"
+      class="photo-preview"
+    />
+  </div>
+
+  <input
+    name="name"
+    [(ngModel)]="member.name"
+    placeholder="Full Name"
+    required
+  />
+
+  <input
+    name="email"
+    [(ngModel)]="member.email"
+    type="email"
+    placeholder="Email"
+  />
+
+  <input
+    name="phone"
+    [(ngModel)]="member.phone"
+    placeholder="Phone Number"
+  />
+
+  <input
+    type="date"
+    name="dateOfBirth"
+    [(ngModel)]="member.dateOfBirth"
+    [max]="today"
+    placeholder="Date of Birth"
+  />
+
+  <textarea
+    name="address"
+    [(ngModel)]="member.address"
+    placeholder="Address"
+  ></textarea>
+
+  <select name="maritalStatus" [(ngModel)]="member.maritalStatus">
+    <option value="">Marital Status</option>
+    <option>Single</option>
+    <option>Married</option>
+    <option>Widowed</option>
+    <option>Divorced</option>
+    <option>Separated</option>
+    <option>Annulled</option>
+    <option>Engaged</option>
+    <option>In a Relationship</option>
+    <option>Not Disclosed</option>
+  </select>
+
+  <select name="gender" [(ngModel)]="member.gender">
+    <option value="">Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+  </select>
+
+  <input
+    type="text"
+    placeholder="Languages (comma separated)"
+    (change)="onLanguagesChange($event)"
+  />
+
+  <input
+    name="countryOfOrigin"
+    [(ngModel)]="member.countryOfOrigin"
+    placeholder="Country of Origin"
+  />
+
+  <input
+    name="occupation"
+    [(ngModel)]="member.occupation"
+    placeholder="Occupation"
+  />
+
+  <input
+    name="previousChurch"
+    [(ngModel)]="member.previousChurch"
+    placeholder="Previous Church"
+  />
+
+  <textarea
+    name="spiritualGifts"
+    [(ngModel)]="member.spiritualGifts"
+    placeholder="Spiritual Gifts"
+  ></textarea>
+
+  <h4>Ministry Interests</h4>
+  <label class="checkbox" *ngFor="let m of ministryOptions">
+    <input
+      type="checkbox"
+      (change)="toggleArrayValue(member.ministryInterests, m)"
+    />
+    {{ m }}
+  </label>
+
+  <h4>Volunteer Availability</h4>
+  <label class="checkbox" *ngFor="let a of availabilityOptions">
+    <input
+      type="checkbox"
+      (change)="toggleArrayValue(member.volunteerAvailability, a)"
+    />
+    {{ a }}
+  </label>
+
+  <button type="submit">Save Member</button>
+</form>

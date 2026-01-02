@@ -17,6 +17,10 @@
           <li><a [routerLink]="['ministries']" [routerLinkActive]="['current']">Ministries</a></li>
           <li><a [routerLink]="['prayer-meetings']" [routerLinkActive]="['current']">Prayer Meetings</a></li>
           <li><a [routerLink]="['service-teams']" [routerLinkActive]="['current']">Service Teams</a></li>
+          <li><a *ngIf="isLoggedIn" [routerLink]="['add-church-member']" [routerLinkActive]="['current']">Add Church Member</a></li>
+          <li><a *ngIf="isLoggedIn" [routerLink]="['church-member-list']" [routerLinkActive]="['current']"> Church Member List</a></li>
+
+
         </ul>
       </div>
     </div>

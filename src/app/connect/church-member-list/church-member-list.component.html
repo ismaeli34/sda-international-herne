@@ -1,0 +1,94 @@
+<h2 class="title">Church Members</h2>
+
+<div class="member-grid">
+  <div class="member-card" *ngFor="let member of members$ | async">
+
+    <!-- Profile Photo -->
+    <div class="photo-container">
+      <img
+        *ngIf="member.photoBase64"
+        [src]="member.photoBase64"
+        alt="{{ member.name }}"
+        class="member-photo"
+      />
+      <div *ngIf="!member.photoBase64" class="photo-placeholder">
+        {{ member.name.charAt(0).toUpperCase() }}
+      </div>
+    </div>
+
+    <div class="member-details">
+      <h3>{{ member.name }}</h3>
+      <p><strong>Email:</strong> {{ member.email || 'N/A' }}</p>
+      <p><strong>Phone:</strong> {{ member.phone || 'N/A' }}</p>
+      <p><strong>Gender:</strong> {{ member.gender || 'N/A' }}</p>
+      <p><strong>Marital Status:</strong> {{ member.maritalStatus || 'N/A' }}</p>
+      <p><strong>Date of Birth:</strong> {{ member.dateOfBirth || 'N/A' }}</p>
+      <p><strong>Languages:</strong> {{ member.languages?.join(', ') || 'N/A' }}</p>
+      <p><strong>Country:</strong> {{ member.countryOfOrigin || 'N/A' }}</p>
+      <p><strong>Occupation:</strong> {{ member.occupation || 'N/A' }}</p>
+      <p><strong>Previous Church:</strong> {{ member.previousChurch || 'N/A' }}</p>
+      <p><strong>Spiritual Gifts:</strong> {{ member.spiritualGifts || 'N/A' }}</p>
+      <p *ngIf="member.ministryInterests?.length"><strong>Ministry Interests:</strong> {{ member.ministryInterests.join(', ') }}</p>
+      <p *ngIf="member.volunteerAvailability?.length"><strong>Volunteer Availability:</strong> {{ member.volunteerAvailability.join(', ') }}</p>
+
+      <div class="card-actions">
+        <button (click)="selectMember(member)">Edit</button>
+        <button class="delete" (click)="deleteMember(member)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update Modal -->
+<div class="update-modal" *ngIf="selectedMember">
+  <form #updateForm="ngForm" (ngSubmit)="updateMember(updateForm)" class="update-form">
+    <h3>Update Member</h3>
+
+    <div class="photo-container">
+      <img *ngIf="photoPreview" [src]="photoPreview" class="member-photo" />
+      <div *ngIf="!photoPreview" class="photo-placeholder">
+        {{ selectedMember.name.charAt(0).toUpperCase() }}
+      </div>
+      <input type="file" (change)="onPhotoSelected($event)" />
+    </div>
+
+    <input name="name" [(ngModel)]="selectedMember.name" placeholder="Full Name" required />
+    <input name="email" [(ngModel)]="selectedMember.email" placeholder="Email" />
+    <input name="phone" [(ngModel)]="selectedMember.phone" placeholder="Phone" />
+    <input type="date" name="dateOfBirth" [(ngModel)]="selectedMember.dateOfBirth" />
+
+    <input type="text"
+           placeholder="Languages (comma separated)"
+           (change)="onLanguagesChange($event)"
+           [value]="selectedMember.languages?.join(', ')"
+    />
+
+    <input name="countryOfOrigin" [(ngModel)]="selectedMember.countryOfOrigin" placeholder="Country" />
+    <input name="occupation" [(ngModel)]="selectedMember.occupation" placeholder="Occupation" />
+    <input name="previousChurch" [(ngModel)]="selectedMember.previousChurch" placeholder="Previous Church" />
+    <input name="spiritualGifts" [(ngModel)]="selectedMember.spiritualGifts" placeholder="Spiritual Gifts" />
+
+    <h4>Ministry Interests</h4>
+    <label *ngFor="let m of ministryOptions">
+      <input type="checkbox"
+             [checked]="selectedMember.ministryInterests?.includes(m)"
+             (change)="toggleArrayValue(selectedMember.ministryInterests, m)"
+      />
+      {{ m }}
+    </label>
+
+    <h4>Volunteer Availability</h4>
+    <label *ngFor="let a of availabilityOptions">
+      <input type="checkbox"
+             [checked]="selectedMember.volunteerAvailability?.includes(a)"
+             (change)="toggleArrayValue(selectedMember.volunteerAvailability, a)"
+      />
+      {{ a }}
+    </label>
+
+    <div class="form-actions">
+      <button type="submit">Save</button>
+      <button type="button" class="cancel" (click)="cancelUpdate(updateForm)">Cancel</button>
+    </div>
+  </form>
+</div>

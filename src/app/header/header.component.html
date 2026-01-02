@@ -50,6 +50,8 @@
           <li><a routerLink="/connect/prayer-meetings">{{'connect.prayer-meetings'| translate}}</a></li>
           <li><a routerLink="/connect/service-teams">{{'connect.service-teams'| translate}}</a></li>
           <li><a routerLink="/connect/church-info">{{'connect.church-info'| translate}}</a></li>
+          <li *ngIf="isLoggedIn"><a routerLink="/connect/add-church-member">{{'connect.add-church-member'| translate}}</a></li>
+          <li *ngIf="isLoggedIn"><a routerLink="/connect/church-member-list">{{'connect.church-member-list'| translate}}</a></li>
 
         </ul>
       </li>

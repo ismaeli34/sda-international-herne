@@ -1,0 +1,201 @@
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.member-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  min-height: 720px; /* taller card for all details */
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 30px rgba(0,0,0,0.2);
+  }
+}
+
+/* Centered circular photo */
+.photo-container {
+  width: 130px;
+  height: 130px;
+  margin: 1rem auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #bdc3c7;
+
+  .member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .photo-placeholder {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.member-details {
+  padding: 1rem 1.5rem;
+  text-align: left;
+
+  h3 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1.6rem;
+    color: #34495e;
+    text-align: center;
+  }
+
+  p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    color: #555;
+
+    strong {
+      color: #2c3e50;
+    }
+  }
+}
+
+.card-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+
+    &.delete {
+      background: #e74c3c;
+      color: #fff;
+
+      &:hover {
+        background: #c0392b;
+      }
+    }
+
+    &:not(.delete) {
+      background: #3498db;
+      color: #fff;
+
+      &:hover {
+        background: #2980b9;
+      }
+    }
+  }
+}
+
+/* Modal styling remains same as before */
+.update-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  .update-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 550px;
+    width: 95%;
+    overflow-y: auto;
+    max-height: 90%;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    input[type="file"] {
+      margin-top: 0.5rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      margin: 0.3rem 0;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    label {
+      display: block;
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .form-actions {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        background: #3498db;
+        color: #fff;
+
+        &.cancel {
+          background: #e74c3c;
+        }
+      }
+    }
+  }
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); /* wider cards */
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.member-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  min-height: 750px; /* enough for all details */
+}

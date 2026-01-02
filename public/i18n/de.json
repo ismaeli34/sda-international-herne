@@ -1,4 +1,4 @@
-{
+  {
   "home": "Startseite",
   "about": {
     "main": "Über uns",
@@ -38,7 +38,9 @@
     "bible-studies": "Bibelstudien",
     "ministries": "Dienste",
     "prayer-meetings": "Gebetstreffen",
-    "service-teams": "Serviceteams"
+    "service-teams": "Serviceteams",
+    "add-church-member": "Add Church Member",
+    "church-member-list": "church-member-list"
   },
   "events": {
     "main": "Veranstaltungen",
