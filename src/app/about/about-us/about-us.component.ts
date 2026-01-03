@@ -23,7 +23,7 @@ export class AboutUsComponent implements OnInit{
       "@context": "https://schema.org",
       "@type": "AboutPage",
       "url": "https://seventh-day-adventist-international.vercel.app/about/about-us",
-      "name": "About Us - Lifeline SDA International Church",
+      "name": "About Us -  International Seventh Day Adventist Church",
       "description": "Learn about our church mission, vision, and community initiatives at Lifeline SDA International Church, Herne."
     };
 
@@ -37,7 +37,7 @@ export class AboutUsComponent implements OnInit{
     };
 
     this.seo.setMeta(
-      'About Us | Lifeline SDA International Church',
+      'About Us | International Seventh Day Adventist Church',
       'Learn about our mission, vision, and community activities at Lifeline SDA International Church, Herne.',
       [aboutWebPage, aboutBreadcrumb],
       'https://seventh-day-adventist-international.vercel.app/about/about-us'

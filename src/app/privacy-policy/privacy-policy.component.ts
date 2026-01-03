@@ -11,7 +11,7 @@ import {FooterComponent} from '../footer/footer.component';
 })
 export class PrivacyPolicyComponent {
 
-  churchName: string = 'Seventh Day Adventist, Herne';
+  churchName: string = 'International Seventh Day Adventist, Herne';
   contactEmail: string = 'kontakt@herne-international-sda.de';
   contactAddress: string = 'Bochumer Str. 229,\n' + '44625 Herne';
   dataProtectionOfficer: string = 'Rev Pastor Andy Weber';
