@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {
   Firestore,
   collectionData,
@@ -22,8 +22,11 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class ChurchMemberListComponent implements OnInit {
   members$: Observable<any[]> | undefined;
 
-  selectedMember: any = null; // member selected for update
-  photoPreview: string | null = null;
+  selectedMember: any = null;       // Currently selected member
+  photoPreview: string | null = null; // Base64 preview
+
+  @ViewChild('photoInput') photoInput!: ElementRef<HTMLInputElement>;
+
 
   ministryOptions = [
     'Worship', 'Preaching','Kids', 'Media', 'Outreach','Hospitality',
@@ -44,7 +47,7 @@ export class ChurchMemberListComponent implements OnInit {
     this.members$ = collectionData(membersCollection, { idField: 'id' }) as Observable<any[]>;
   }
 
-  /** Delete member */
+  /** Delete a member */
   async deleteMember(member: any) {
     if (!confirm(`Are you sure you want to delete ${member.name}?`)) return;
 
@@ -60,52 +63,77 @@ export class ChurchMemberListComponent implements OnInit {
 
   /** Select member for editing */
   selectMember(member: any) {
-    this.selectedMember = { ...member }; // clone to prevent live edits
+    this.selectedMember = { ...member }; // clone object to prevent direct changes
     this.photoPreview = member.photoBase64 || null;
   }
 
-  /** Cancel update */
+  /** Cancel update and reset */
   cancelUpdate(form: NgForm) {
     this.selectedMember = null;
     this.photoPreview = null;
     form.resetForm();
   }
 
-  /** Handle Base64 photo selection */
+  /** Triggered when a new photo is selected */
   onPhotoSelected(event: Event) {
     const input = event.target as HTMLInputElement;
     if (!input.files || input.files.length === 0) return;
 
     const file = input.files[0];
+
+    // Optional: limit size
     if (file.size > 500 * 1024) {
       alert('Please upload an image smaller than 500 KB.');
+      input.value = '';
       return;
     }
 
     const reader = new FileReader();
     reader.onload = () => {
       this.photoPreview = reader.result as string;
-      if (this.selectedMember) this.selectedMember.photoBase64 = reader.result as string;
+      if (this.selectedMember) {
+        this.selectedMember.photoBase64 = reader.result as string;
+      }
       this.cdr.detectChanges();
     };
     reader.readAsDataURL(file);
   }
 
-  /** Handle checkbox arrays */
-  toggleArrayValue(array: string[], value: string) {
-    const index = array.indexOf(value);
-    index === -1 ? array.push(value) : array.splice(index, 1);
+  /** Remove current photo */
+  removePhoto() {
+    if (!this.selectedMember) return;
+
+    this.photoPreview = null;
+    this.selectedMember.photoBase64 = null;
+
+    // Reset file input so a new file can be selected
+    if (this.photoInput && this.photoInput.nativeElement) {
+      this.photoInput.nativeElement.value = '';
+    }
+
     this.cdr.detectChanges();
   }
 
-  /** Handle comma-separated languages */
+  /** Handle array checkboxes for ministry / availability */
+  toggleArrayValue(array: string[], value: string) {
+    const index = array.indexOf(value);
+    if (index === -1) {
+      array.push(value);
+    } else {
+      array.splice(index, 1);
+    }
+    this.cdr.detectChanges();
+  }
+
+  /** Handle comma-separated languages input */
   onLanguagesChange(event: Event) {
     const input = event.target as HTMLInputElement;
-    if (this.selectedMember)
+    if (this.selectedMember) {
       this.selectedMember.languages = input.value
         .split(',')
         .map(lang => lang.trim())
         .filter(lang => lang.length > 0);
+    }
   }
 
   /** Update member in Firestore */
@@ -127,4 +155,7 @@ export class ChurchMemberListComponent implements OnInit {
       alert('Failed to update member.');
     }
   }
+
+  /** Open file dialog programmatically */
+
 }

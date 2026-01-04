@@ -2,15 +2,9 @@
 
 <div class="member-grid">
   <div class="member-card" *ngFor="let member of members$ | async">
-
     <!-- Profile Photo -->
     <div class="photo-container">
-      <img
-        *ngIf="member.photoBase64"
-        [src]="member.photoBase64"
-        alt="{{ member.name }}"
-        class="member-photo"
-      />
+      <img *ngIf="member.photoBase64" [src]="member.photoBase64" alt="{{ member.name }}" class="member-photo" />
       <div *ngIf="!member.photoBase64" class="photo-placeholder">
         {{ member.name.charAt(0).toUpperCase() }}
       </div>
@@ -45,11 +39,22 @@
     <h3>Update Member</h3>
 
     <div class="photo-container">
+      <!-- Preview or Placeholder -->
       <img *ngIf="photoPreview" [src]="photoPreview" class="member-photo" />
       <div *ngIf="!photoPreview" class="photo-placeholder">
         {{ selectedMember.name.charAt(0).toUpperCase() }}
       </div>
-      <input type="file" (change)="onPhotoSelected($event)" />
+
+      <!-- Hidden file input -->
+      <input #photoInput type="file" accept="image/*" (change)="onPhotoSelected($event)" />
+
+      <!-- Remove photo button -->
+      <button type="button" *ngIf="photoPreview" class="remove-btn" (click)="removePhoto()">×</button>
+
+      <!-- Visible Upload Button -->
+      <button type="button" class="upload-btn" (click)="photoInput.click()">
+        {{ photoPreview ? 'Change Photo' : 'Upload Photo' }}
+      </button>
     </div>
 
     <input name="name" [(ngModel)]="selectedMember.name" placeholder="Full Name" required />
